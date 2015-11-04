@@ -32,11 +32,19 @@ static public class AudioManager
     /// </summary>
     /// <param name="messageBroadcast">
     /// The message that is interested in.
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD:Assets/Scripts/Audio.cs
+>>>>>>> e5b34efe26fd2f02059a42bf4f0711c131a8ced6
     /// </param>
     /// <param name="threeD">
     /// boolean for 3D audio
     /// </param>
     static public void AddListener(string messageBroadcast, bool threeD)
+<<<<<<< HEAD
+=======
+>>>>>>> matthew/master:Assets/Scripts/AudioManager.cs
+>>>>>>> e5b34efe26fd2f02059a42bf4f0711c131a8ced6
     {
         if (threeD)
         {
@@ -79,6 +87,11 @@ static public class AudioManager
         AudioSource asrc = aud.GetComponent<AudioSource>();
         asrc.Play();
     }
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD:Assets/Scripts/Audio.cs
+=======
+>>>>>>> e5b34efe26fd2f02059a42bf4f0711c131a8ced6
 
     /// <summary>
     /// AmbientSound for background music
@@ -96,4 +109,8 @@ static public class AudioManager
         audioSource.volume = 0.1f;
         audioSource.Play();
     }
+<<<<<<< HEAD
+=======
+>>>>>>> matthew/master:Assets/Scripts/AudioManager.cs
+>>>>>>> e5b34efe26fd2f02059a42bf4f0711c131a8ced6
 }
