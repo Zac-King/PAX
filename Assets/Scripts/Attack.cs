@@ -3,7 +3,7 @@ using System.Collections;
 
 public class Attack : MonoBehaviour
 {
-    void OnTriggerEnter(Collider other)
+    protected virtual void OnTriggerEnter(Collider other)
     {
         if (canAttack)
         {
@@ -11,12 +11,12 @@ public class Attack : MonoBehaviour
         }
     }
 
-    void OnTriggerExit(Collider other)
+    protected virtual void OnTriggerExit(Collider other)
     {
         StopCoroutine("TakeDamage");
     }
 
-    IEnumerator TakeDamage(Collider other)
+    protected virtual IEnumerator TakeDamage(Collider other)
     {
         while (other)
         {

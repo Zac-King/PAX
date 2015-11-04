@@ -3,6 +3,7 @@ using System.Collections;
 
 public class Obstacle : HealthStats
 {
+
     protected override void OnDead()
     {
         GetComponent<Rigidbody>().isKinematic = false;
@@ -10,6 +11,16 @@ public class Obstacle : HealthStats
         GetComponent<Rigidbody>().AddForce(yoda * Vector3.up);
         //gameObject.SetActive(false);
         //Destroy(gameObject);
+    }
+
+    void OnTriggerEnter(Collider col)
+    {
+        if (col.gameObject.tag == "Player")
+        {
+            GetComponent<Rigidbody>().isKinematic = false;
+            float yoda = 5000f;
+            GetComponent<Rigidbody>().AddForce(yoda * Vector3.up);
+        }
     }
 
 

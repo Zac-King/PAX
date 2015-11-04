@@ -9,6 +9,7 @@ public class AmbientAudio : MonoBehaviour
 
     void Awake()
     {
+<<<<<<< HEAD
         ambientAudioAS = GetComponent<AudioSource>();
         ambientAudioAS.clip = backgroundSound;
         ambientAudioAS.playOnAwake = true;
@@ -16,6 +17,11 @@ public class AmbientAudio : MonoBehaviour
         ambientAudioAS.priority = 256;
         ambientAudioAS.volume = 0.1f;
         ambientAudioAS.Play();
+=======
+        backgroundAudioSource = GetComponent<AudioSource>();
+        AudioManager.audioSource = backgroundAudioSource;
+        AudioManager.AmbientSound(backgroundSound);
+>>>>>>> matthew/master
     }
 
     public void ChangeAmbientAudio()

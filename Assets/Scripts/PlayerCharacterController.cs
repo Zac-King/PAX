@@ -5,28 +5,15 @@ using System.Collections;
 
 public class PlayerCharacterController : MonoBehaviour
 {
-    DJG.FSM<E_CHARACTERSTATES> _fsm;
-
-    enum E_CHARACTERSTATES
-    {
-        e_Init,
-        e_Idle,
-        e_Walking,
-        e_Running,
-        e_Attacking,
-        e_Jumping,
-        e_Dead,
-        e_Count //Used to enumerate through the array
-    }
-
     [SerializeField]
     private float m_BaseMovementSpeed = 0;
     [SerializeField]
     private float m_RotateSpeed = 0;
     [SerializeField]
     private float m_JumpPower = 0;
-
     private float m_MovementSpeed;
+
+    float GroundDistance = 0.1f;
 
     float h; //horizontal movement
     float v; //vertical movement
@@ -35,12 +22,15 @@ public class PlayerCharacterController : MonoBehaviour
 
     Rigidbody rb;
 
+    Vector3 HorizontalVelocity;
+    Vector3 VerticalVelocity;
+
+    public Vector3 Position;
+    public Vector3 Rotation;
+    public Vector3 Forward;
+
     void Awake()
     {
-        _fsm = new DJG.FSM<E_CHARACTERSTATES>();
-        AddStates();
-        AddTransitions();
-        Instance = this;
         rb = GetComponent<Rigidbody>();
         AddListeners();
     }
@@ -48,7 +38,7 @@ public class PlayerCharacterController : MonoBehaviour
     // Use this for initialization
     void Start()
     {
-
+        Messenger.Broadcast<string>("Player", gameObject.name);
 	}
 
     void AddListeners()
@@ -60,51 +50,6 @@ public class PlayerCharacterController : MonoBehaviour
         Messenger.AddListener(gameObject.name + ":Special", SpecialAttack);
     }
 
-    void AddStates()
-    {
-        foreach(int i in Enum.GetValues(typeof(E_CHARACTERSTATES)))
-        {
-            if((E_CHARACTERSTATES)i != E_CHARACTERSTATES.e_Count)
-            {
-                _fsm.AddState((E_CHARACTERSTATES)i);
-            }
-        }
-    }
-
-    void AddTransitions()
-    {
-        //Transition from
-            //e_Init
-        _fsm.AddTransition(E_CHARACTERSTATES.e_Idle, E_CHARACTERSTATES.e_Idle);
-            //e_Idle
-        _fsm.AddTransition(E_CHARACTERSTATES.e_Idle, E_CHARACTERSTATES.e_Walking);
-        _fsm.AddTransition(E_CHARACTERSTATES.e_Idle, E_CHARACTERSTATES.e_Jumping);
-        _fsm.AddTransition(E_CHARACTERSTATES.e_Idle, E_CHARACTERSTATES.e_Attacking);
-        _fsm.AddTransition(E_CHARACTERSTATES.e_Idle, E_CHARACTERSTATES.e_Dead);
-            //e_Walking
-        _fsm.AddTransition(E_CHARACTERSTATES.e_Walking, E_CHARACTERSTATES.e_Idle);
-        _fsm.AddTransition(E_CHARACTERSTATES.e_Walking, E_CHARACTERSTATES.e_Running);
-        _fsm.AddTransition(E_CHARACTERSTATES.e_Walking, E_CHARACTERSTATES.e_Jumping);
-        _fsm.AddTransition(E_CHARACTERSTATES.e_Walking, E_CHARACTERSTATES.e_Attacking);
-        _fsm.AddTransition(E_CHARACTERSTATES.e_Walking, E_CHARACTERSTATES.e_Dead);
-            //e_Running
-        _fsm.AddTransition(E_CHARACTERSTATES.e_Running, E_CHARACTERSTATES.e_Walking);
-        _fsm.AddTransition(E_CHARACTERSTATES.e_Running, E_CHARACTERSTATES.e_Idle);
-        _fsm.AddTransition(E_CHARACTERSTATES.e_Running, E_CHARACTERSTATES.e_Attacking);
-        _fsm.AddTransition(E_CHARACTERSTATES.e_Running, E_CHARACTERSTATES.e_Jumping);
-        _fsm.AddTransition(E_CHARACTERSTATES.e_Running, E_CHARACTERSTATES.e_Dead);
-            //e_Attacking
-        _fsm.AddTransition(E_CHARACTERSTATES.e_Attacking, E_CHARACTERSTATES.e_Running);
-        _fsm.AddTransition(E_CHARACTERSTATES.e_Attacking, E_CHARACTERSTATES.e_Walking);
-        _fsm.AddTransition(E_CHARACTERSTATES.e_Attacking, E_CHARACTERSTATES.e_Idle);
-        _fsm.AddTransition(E_CHARACTERSTATES.e_Attacking, E_CHARACTERSTATES.e_Dead);
-        //e_Jumping
-        _fsm.AddTransition(E_CHARACTERSTATES.e_Jumping, E_CHARACTERSTATES.e_Idle);
-        _fsm.AddTransition(E_CHARACTERSTATES.e_Jumping, E_CHARACTERSTATES.e_Walking);
-        _fsm.AddTransition(E_CHARACTERSTATES.e_Jumping, E_CHARACTERSTATES.e_Running);
-        _fsm.AddTransition(E_CHARACTERSTATES.e_Jumping, E_CHARACTERSTATES.e_Attacking);
-        _fsm.AddTransition(E_CHARACTERSTATES.e_Jumping, E_CHARACTERSTATES.e_Dead);
-    }
 
     #region Event
 
@@ -141,36 +86,31 @@ public class PlayerCharacterController : MonoBehaviour
     {
         if (sprint == true)
         {
-            m_MovementSpeed = 0.2f;
+            m_MovementSpeed = 5.0f;
         }
         else if(sprint == false)
         {
             m_MovementSpeed = m_BaseMovementSpeed;
         }
-
-        if (v > 0.1)
+        
+        if(HorizontalVelocity + VerticalVelocity != Vector3.zero)
         {
-            transform.forward = new Vector3(transform.forward.x, transform.forward.y, v);
-            transform.Translate(0, 0, v * m_MovementSpeed);
-            transform.Rotate(0, h * 10.0f, 0);
+            Forward = HorizontalVelocity + VerticalVelocity;
+            transform.forward = Forward;
+        }
 
-        }
-        else if (v < -0.1)
-        {
-            transform.forward = new Vector3(transform.forward.x, transform.forward.y, v);
-            transform.Translate(0, 0, -v * m_MovementSpeed);
-            transform.Rotate(0, -h * 10.0f, 0);
-        }
+        HorizontalVelocity.x = (h / m_MovementSpeed);
+        VerticalVelocity.z = (v / m_MovementSpeed);
+
+        Position = (HorizontalVelocity + VerticalVelocity);
+
+        transform.position += Position;
+
         sprint = false;
     }
 
-    private PlayerCharacterController Instance;
-
-    protected PlayerCharacterController _Instance
+    void CheckGroundDistance()
     {
-        get
-        {
-            return Instance;
-        }
+        RaycastHit HitInfo;
     }
 }

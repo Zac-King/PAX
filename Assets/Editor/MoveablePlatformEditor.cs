@@ -15,9 +15,5 @@ public class MovablePlatformEditor : Editor
         {
             myScript.AddPathNode();
         }
-        //if (GUILayout.Button("Set Secondary Posistion"))
-        //{
-        //    myScript.SetSecondaryPos();
-        //}
     }
 }

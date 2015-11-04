@@ -91,10 +91,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 165410ab67c947845ae8cac303fa742f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  distance: 5
+  followTarget: {fileID: 0}
+  lookAtTarget: {fileID: 0}
+  yOffset: 0
+  followTargetDist: 3
+  pivotOffsetY: 0
   minDistance: 3
   maxDistance: 6
-  smoothing: 1
+  followSpeed: 1
+  smoothing: .100000001
 --- !u!124 &12480898
 Behaviour:
   m_ObjectHideFlags: 1
@@ -108,7 +113,11 @@ Prefab:
   serializedVersion: 2
   m_Modification:
     m_TransformParent: {fileID: 0}
-    m_Modifications: []
+    m_Modifications:
+    - target: {fileID: 0}
+      propertyPath: smoothing
+      value: .100000001
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 142020}
