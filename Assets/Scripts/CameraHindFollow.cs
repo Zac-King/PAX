@@ -5,8 +5,8 @@ public class CameraHindFollow : MonoBehaviour
 {
     Transform pivot;
     Transform cam;
-    public Transform followTarget;
     public Transform lookAtTarget;
+    public Transform followTarget;
 
     public float yOffset = 0f;
     public float followTargetDist = 3f;
@@ -22,8 +22,8 @@ public class CameraHindFollow : MonoBehaviour
     //bool isOccluded = false;
     Vector3 offset;
     Vector3 cameraLookDirection;
-    Vector3 playerMoveDirection;
-    Vector3 clipPos = new Vector3(0, 0, 0);
+    //Vector3 playerMoveDirection;
+    //Vector3 clipPos = new Vector3(0, 0, 0);
     //Vector3 preOccludedPos;
 
     Vector3 aboveClipPlane = new Vector3(0, -1, 0);
@@ -31,35 +31,37 @@ public class CameraHindFollow : MonoBehaviour
 
     //set lookAtTarget and followTarget in editor
     [ContextMenu("Set Camera Targets")]
-    void SetTargets()
+    void SetTargets(string camTarget)
     {
-        GameObject player1 = GameObject.Find("Player1");
+        GameObject player1 = GameObject.Find(camTarget);
 
         //set lookAt target
         if (GameObject.Find("lookAtTarget") != null)
         {
-            return;
+            if (lookAtTarget == null)
+                lookAtTarget = GameObject.Find("lookAtTarget").transform;
         }
         else
         {
             GameObject g = new GameObject();
             g.name = "lookAtTarget";
             g.transform.parent = player1.transform;
-            g.transform.position = player1.transform.position;// + new Vector3(0, 0.5f, 0);
+            g.transform.position = player1.transform.position;
             lookAtTarget = g.transform;
         }
-
         //set follow target
         if (GameObject.Find("followTarget") != null)
         {
-            return;
+            if (followTarget == null)
+                followTarget = GameObject.Find("followTarget").transform;
         }
         else
         {
             GameObject g = new GameObject();
             g.name = "followTarget";
             g.transform.parent = player1.transform;
-            g.transform.position = new Vector3(lookAtTarget.position.x, 0, lookAtTarget.position.z + followTargetDist);
+            g.transform.position = new Vector3(lookAtTarget.position.x, 0, 
+                                   lookAtTarget.position.z + followTargetDist);
             followTarget = g.transform;
         }
     }
@@ -72,17 +74,17 @@ public class CameraHindFollow : MonoBehaviour
         offset = new Vector3(0, yOffset, 0);
         pivotOffsetY = pivot.position.y;
 
-        SetTargets();
+        SetTargets("Player1");
 
         ////set initial camera position and orientation
-        //transform.position = followTarget.position + (-followTarget.forward * distance) + new Vector3(0, 3, 0);
+        //transform.position = followTarget.position + (-followTarget.forward * distance) + 
+        //                     new Vector3(0, 3, 0);
         //transform.LookAt(followTarget);
         //cameraLookDirection = transform.forward;
 
         //Reset();
         lookAtDistance = Vector3.Distance(lookAtTarget.position, pivot.transform.position);
         followDistance = Vector3.Distance(followTarget.position, pivot.transform.position);
-
     }
 
     void Update()
@@ -137,7 +139,8 @@ public class CameraHindFollow : MonoBehaviour
             //    Debug.Log("clipPos: " + clipPos);
             //    pivot.position -= clipAmount;
             //}
-            //transform.position = Vector3.Lerp(transform.position, lookAtTarget.position + (-lookAtTarget.forward * followDistance), Time.deltaTime * followSpeed);
+            //transform.position = Vector3.Lerp(transform.position, lookAtTarget.position + 
+            //                     (-lookAtTarget.forward * followDistance), Time.deltaTime * followSpeed);
         }
         //else
         //{
@@ -151,6 +154,7 @@ public class CameraHindFollow : MonoBehaviour
 
     void Reset()
     {
-        //transform.position = Vector3.Lerp(transform.position, lookAtTarget.position + (-lookAtTarget.forward * playerDistanceToCamera), Time.deltaTime * smoothing);
+        //transform.position = Vector3.Lerp(transform.position, lookAtTarget.position + 
+        //                    (-lookAtTarget.forward * playerDistanceToCamera), Time.deltaTime * smoothing);
     }
 }

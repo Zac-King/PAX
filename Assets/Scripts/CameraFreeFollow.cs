@@ -5,18 +5,18 @@ public class CameraFreeFollow : MonoBehaviour
 {
     Transform pivot;
     Transform cam;
-    public Transform followTarget;
     public Transform lookAtTarget;
+    public Transform followTarget;
 
     public float yOffset = 0f;
     public float followTargetDist = 3f;
     public float pivotOffsetY;
-    public float minDistance = 15f;
-    public float maxDistance = 20f;
+    //public float minDistance = 15f;
+    //public float maxDistance = 20f;
     public float followSpeed = 1f;
-    public float smoothing = 0.1f;
-    private float lookAtDistance;
-    private float followDistance;
+    //public float smoothing = 0.1f;
+    //private float lookAtDistance;
+    //private float followDistance;
     
     Vector3 offset;
     Vector3 camOffset;
@@ -29,14 +29,15 @@ public class CameraFreeFollow : MonoBehaviour
 
     //set lookAtTarget and followTarget in editor
     [ContextMenu("Set Camera Targets")]
-    void SetTargets()
+    void SetTargets(string camTarget)
     {
-        GameObject player1 = GameObject.Find("Player1");
+        GameObject player1 = GameObject.Find(camTarget);
 
         //set lookAt target
         if (GameObject.Find("lookAtTarget") != null)
         {
-            return;
+            if (lookAtTarget == null)
+                lookAtTarget = GameObject.Find("lookAtTarget").transform;
         }
         else
         {
@@ -46,18 +47,19 @@ public class CameraFreeFollow : MonoBehaviour
             g.transform.position = player1.transform.position;
             lookAtTarget = g.transform;
         }
-
         //set follow target
         if (GameObject.Find("followTarget") != null)
         {
-            return;
+            if (followTarget == null)
+                followTarget = GameObject.Find("followTarget").transform;
         }
         else
         {
             GameObject g = new GameObject();
             g.name = "followTarget";
             g.transform.parent = player1.transform;
-            g.transform.position = new Vector3(lookAtTarget.position.x, 0, lookAtTarget.position.z + followTargetDist);
+            g.transform.position = new Vector3(lookAtTarget.position.x, 0, 
+                                   lookAtTarget.position.z + followTargetDist);
             followTarget = g.transform;
         }
     }
@@ -70,13 +72,12 @@ public class CameraFreeFollow : MonoBehaviour
         offset = new Vector3(0, yOffset, 0);
         pivotOffsetY = pivot.position.y;
 
-        SetTargets();
+        SetTargets("Player1");
 
         //Reset();
         //lookAtDistance = Vector3.Distance(lookAtTarget.position, pivot.transform.position);
         //followDistance = Vector3.Distance(followTarget.position, pivot.transform.position);
         camOffset = followTarget.position - transform.position;
-
     }
 
     void Update()

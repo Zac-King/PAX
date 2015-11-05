@@ -12,7 +12,7 @@ GameObject:
   - 114: {fileID: 11458864}
   m_Layer: 0
   m_Name: FreeFollowCam
-  m_TagString: Untagged
+  m_TagString: MainCamera
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -148,15 +148,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 62db84c225112514fbe5a0364886fd20, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  followTarget: {fileID: 0}
   lookAtTarget: {fileID: 0}
+  followTarget: {fileID: 0}
   yOffset: 4
   followTargetDist: 3
   pivotOffsetY: 0
-  minDistance: 15
-  maxDistance: 20
   followSpeed: 1
-  smoothing: .100000001
 --- !u!114 &11458864
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -209,6 +206,10 @@ Prefab:
     - target: {fileID: 0}
       propertyPath: listeningFor
       value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: m_TagString
+      value: MainCamera
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}

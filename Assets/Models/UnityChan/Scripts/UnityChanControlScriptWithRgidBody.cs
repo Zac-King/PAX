@@ -94,6 +94,7 @@ public class UnityChanControlScriptWithRgidBody : MonoBehaviour
         // CapsuleColliderコンポーネントのHeight、Centerの初期値を保存する
         orgColHight = col.height;
         orgVectColCenter = col.center;
+        Messenger.Broadcast<string>("Player", gameObject.name);
     }
 
     #region Events

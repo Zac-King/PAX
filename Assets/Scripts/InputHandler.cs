@@ -47,7 +47,7 @@ public class InputHandler : Singleton<InputHandler>
         e_F,
         e_G,
         e_Q, 
-        //e_R,
+        e_R,
         e_S,
         e_T,
         e_V,
@@ -64,7 +64,7 @@ public class InputHandler : Singleton<InputHandler>
     {
         base.Awake();
         Messenger.AddListener<string>("Player", NumberOfPlayers);
-
+        Messenger.MarkAsPermanent("Player");
     }
 
     void Start()
@@ -72,43 +72,38 @@ public class InputHandler : Singleton<InputHandler>
         //Adds all the controls to the list
         //They are modified in the SetControls Functions for each player
         CheckControlType();
+    }
 
+    void CustomContols()
+    {
+        PlayerControls.Clear();
         if (keyboard)
         {
-            P1Controls.Add(kAttack + ":Attack");
-            P1Controls.Add(kJump + ":Jump");
-            P1Controls.Add(kSpecial + ":Special");
-            P1Controls.Add(kSprint + ":Sprint");
+            PlayerControls.Add(kAttack + ":Attack");
+            PlayerControls.Add(kJump + ":Jump");
+            PlayerControls.Add(kSpecial + ":Special");
+            PlayerControls.Add(kSprint + ":Sprint");
         }
         else
         {
-            P1Controls.Add(jAttack + ":Attack");
-            P1Controls.Add(jJump + ":Jump");
-            P1Controls.Add(jSpecial + ":Special");
-            P1Controls.Add(jSprint + ":p1Sprint");
-
-            P2Controls.Add(jAttack + ":Attack");
-            P2Controls.Add(jJump + ":Jump");
-            P2Controls.Add(jSpecial + ":Special");
-            P2Controls.Add(jSprint + ":Sprint");
+            PlayerControls.Add(jAttack + ":Attack");
+            PlayerControls.Add(jJump + ":Jump");
+            PlayerControls.Add(jSpecial + ":Special");
+            PlayerControls.Add(jSprint + ":Sprint");
         }
-        SetP1Controls();
-        SetP2Controls();
+        SetControls(numPlayers, keyboard);
     }
 
+    void OnDisable()
+    {
+        Messenger.RemoveListener<string>("Player", NumberOfPlayers);
+    }
 
     void Update()
     {
         IdleTimer();
 
-        if (numPlayers != 0)
-        {
-            P1Events();
-            if (MaxPlayers)
-            {
-                P2Evnets();
-            }
-        }
+        PlayerEvents();
     }
 
     /// <summary>
@@ -132,39 +127,32 @@ public class InputHandler : Singleton<InputHandler>
     }
 
     /// <summary>
-    /// Contains all the Event Triggers for Player1
-    /// This function is only called in while there is at least one player in the scene
+    /// Broadcasts a message that an event trigger has happened
+    /// in this case a button that has been assigned to a player event
     /// </summary>
-    private void P1Events()
+    private void PlayerEvents()
     {
         Messenger.Broadcast<float, float>(Players[0] + ":", Input.GetAxis(p1Vert),
             Input.GetAxis(p1Horizon));
-        //Checks for inputs that are in the List of controls for player1
-        foreach (string s in P1Controls)
+        if (numPlayers == 2)
         {
-            string[] temp = s.Split(':');
-            if (Input.GetKeyDown(temp[0]))
-            {
-                Messenger.Broadcast(Players[0] + ":" + temp[1]);
-            }
+            Messenger.Broadcast<float, float>(Players[1] + ":", Input.GetAxis(p2Vert),
+             Input.GetAxis(p2Horizon));
         }
-    }
-
-    /// <summary>
-    /// Contains all the Event Triggers for Player2
-    /// This function is only called in while there is at least two players in the scene
-    /// </summary>
-    private void P2Evnets()
-    {
-        Messenger.Broadcast<float, float>(Players[1] + ":", Input.GetAxis(p2Vert),
-            Input.GetAxis(p2Horizon));
-        //Checks for inputs that are in the List of controls for player2
-        foreach (string s in P2Controls)
+        //Checks for inputs that are in the List of controls for player1
+        foreach (string s in DefinedControls)
         {
             string[] temp = s.Split(':');
             if (Input.GetKeyDown(temp[0]))
             {
-                Messenger.Broadcast(Players[1] + ":" + temp[1]);
+                if(temp[0].Contains("joystick 2"))
+                {
+                    Messenger.Broadcast(Players[1] + ":" + temp[1]);
+                }
+                else
+                {
+                    Messenger.Broadcast(Players[0] + ":" + temp[1]);
+                }
             }
         }
     }
@@ -179,166 +167,95 @@ public class InputHandler : Singleton<InputHandler>
         {
             Players.Add(pName);
             numPlayers += 1;
-            if(Players.Count == 2)
+            if (Players.Count == 2)
             {
                 MaxPlayers = true;
             }
         }
+        CustomContols();
     }
 
     /// <summary>
-    /// Sets the controls the user defines in to the list of controls for there selected character
-    /// to utilize and react to when they are pressed
+    /// Sets the controls defined by the player to be 
+    /// recognized by unity
     /// </summary>
-    private void SetP1Controls()
+    /// <param name="playerNum"></param>
+    private void SetControls(int playerNum, bool keyboard)
     {
-        for (int i = 0; i < P1Controls.Capacity; i++)
+        for (int i = 0; i < PlayerControls.Capacity; i++)
         {
-            string[] temp = P1Controls[i].Split(':');
+
+            string[] temp = PlayerControls[i].Split(':');
             string[] split = temp[0].Split('_');
+            if (keyboard == false)
             {
                 switch (split[1])
                 {
                     case "A":
                         {
-                            P1Controls[i] = "joystick 1 button 0:" + temp[1];
+                            DefinedControls.Add("joystick " + playerNum + " button 0:" + temp[1]);
                             break;
                         }
                     case "B":
                         {
-                            P1Controls[i] = "joystick 1 button 1:" + temp[1];
+                            DefinedControls.Add("joystick " + playerNum + " button 1:" + temp[1]);
                             break;
                         }
                     case "X":
                         {
-                            P1Controls[i] = "joystick 1 button 2:" + temp[1];
+                            DefinedControls.Add("joystick " + playerNum + " button 2:" + temp[1]);
                             break;
                         }
                     case "Y":
                         {
-                            P1Controls[i] = "joystick 1 button 3:" + temp[1];
+                            DefinedControls.Add("joystick " + playerNum + " button 3:" + temp[1]);
                             break;
                         }
                     case "LeftBumper":
                         {
-                            P1Controls[i] = "joystick 1 button 4:" + temp[1];
+                            DefinedControls.Add("joystick " + playerNum + " button 4:" + temp[1]);
                             break;
                         }
                     case "RightBumper":
                         {
-                            P1Controls[i] = "joystick 1 button 5:" + temp[1];
+                            DefinedControls.Add("joystick " + playerNum + " button 5:" + temp[1]);
                             break;
                         }
                     case "BackButton":
                         {
-                            P1Controls[i] = "joystick 1 button 6:" + temp[1];
+                            DefinedControls.Add("joystick " + playerNum + " button 6:" + temp[1]);
                             break;
                         }
                     case "StartButton":
                         {
-                            P1Controls[i] = "joystick 1 button 7:" + temp[1];
+                            DefinedControls.Add("joystick " + playerNum + " button 7:" + temp[1]);
                             break;
                         }
                     case "LeftStick":
                         {
-                            P1Controls[i] = "joystick 1 button 8:" + temp[1];
+                            DefinedControls.Add("joystick " + playerNum + " button 8:" + temp[1]);
                             break;
                         }
                     case "RightStick":
                         {
-                            P1Controls[i] = "joystick 1 button 9:" + temp[1];
+                            DefinedControls.Add("joystick " + playerNum + " button 9:" + temp[1]);
                             break;
                         }
+                    default:
+                        break;
                 }
             }
-
-            if(keyboard)
+            else if (keyboard == true)
             {
-                if (split[1].ToLower() == "leftshift")
+                if(split[1] == "LeftShift")
                 {
-                    P1Controls[i] = "left shift:" + temp[1];
-                }
-                else if (split[1].ToLower() == "rightshift")
-                {
-                    P1Controls[i] = "right shift:" + temp[1];
+                    DefinedControls.Add("left shift:" + temp[1]);
                 }
                 else
                 {
-                    P1Controls[i] = split[1].ToLower() + ":" + temp[1];
+                    DefinedControls.Add(split[1].ToLower() + ":" + temp[1]);
                 }
-            }
-        }
-    }
 
-    /// <summary>
-    /// Sets the controls the user defines in to the list of controls for there selected character
-    /// to utilize and react to when they are pressed
-    /// </summary>
-    private void SetP2Controls()
-    {
-        //Checks the button the user assigns to the selected action and assigns it to the appropriate
-        //string value for unity to recognize inputs of that type
-
-        for (int i = 0; i < P2Controls.Capacity; i++)
-        {
-            string[] temp = P2Controls[i].Split(':');
-            string[] split = temp[0].Split('_');
-            switch (split[1])
-            {
-                case "A":
-                    {
-                        P2Controls[i] = "joystick 2 button 0:" + temp[1];
-                        break;
-                    }
-                case "B":
-                    {
-                        P2Controls[i] = "joystick 2 button 1:" + temp[1];
-                        break;
-                    }
-                case "X":
-                    {
-                        P2Controls[i] = "joystick 2 button 2:" + temp[1];
-                        break;
-                    }
-                case "Y":
-                    {
-                        P2Controls[i] = "joystick 2 button 3:" + temp[1];
-                        break;
-                    }
-                case "LeftBumper":
-                    {
-                        P2Controls[i] = "joystick 2 button 4:" + temp[1];
-                        break;
-                    }
-                case "RightBumper":
-                    {
-                        P2Controls[i] = "joystick 2 button 5:" + temp[1];
-                        break;
-                    }
-                case "BackButton":
-                    {
-                        P2Controls[i] = "joystick 2 button 6:" + temp[1];
-                        break;
-                    }
-                case "StartButton":
-                    {
-                        P2Controls[i] = "joystick 2 button 7:" + temp[1];
-                        break;
-                    }
-                case "LeftStick":
-                    {
-                        P2Controls[i] = "joystick 2 button 8:" + temp[1];
-                        break;
-                    }
-                case "RightStick":
-                    {
-                        P2Controls[i] = "joystick 2 button 9:" + temp[1];
-                        break;
-                    }
-                default:
-                    {
-                        break;
-                    }
             }
         }
     }
@@ -349,9 +266,7 @@ public class InputHandler : Singleton<InputHandler>
     /// </summary>
     void CheckControlType()
     {
-
-        string[] s = Input.GetJoystickNames();
-        if (s[0] != "")
+        if (Input.GetJoystickNames()[0] != "")
         {
             keyboard = false;
             p1Horizon = "p1Horizontal";
@@ -362,20 +277,16 @@ public class InputHandler : Singleton<InputHandler>
         else
         {
             keyboard = true;
-            p1Vert = "KeyBoardVertical";
-            p1Horizon = "KeyBoardHorizontal";
-            p2Horizon = "p1Horizontal";
-            p2Vert = "p1Vertical";
+            p1Vert = "p1KeyBoardVertical";
+            p1Horizon = "p1KeyBoardHorizontal";
+            p2Vert = "p2KeyBoardVertical";
+            p2Horizon = "p2KeyBoardHorizontal";
         }
-
-
-
     }
 
     /// <summary>
     /// Sets defaults for the controls
     /// </summary>
-    [ContextMenu("Set Defualts")]
     public void SetDefualts()
     {
         jAttack = E_JOYSTICK.e_B;
@@ -403,8 +314,8 @@ public class InputHandler : Singleton<InputHandler>
     [SerializeField]
     private E_JOYSTICK jSprint; //Control assigned to the Sprint Action if using a joystick
 
-    [Space(25)]
     [Header("Keyboard Controls")]
+    [Space(25)]
     [SerializeField]
     private E_KEYBOARD kAttack; //Control assigned to the attack action if using the Keyboard
     [SerializeField]
@@ -416,7 +327,7 @@ public class InputHandler : Singleton<InputHandler>
 
     private bool keyboard; //A boolean to determine if the controls are configured for keyboard or Controler
 
-    private int numPlayers; //Keeps track of number of players active in the game
+    public int numPlayers; //Keeps track of number of players active in the game
 
     bool MaxPlayers; //If num players = 2 this is true
 
@@ -428,6 +339,9 @@ public class InputHandler : Singleton<InputHandler>
     private string p2Horizon;
 
     private List<string> Players = new List<string>(); //List of players
+
+    public List<string> PlayerControls = new List<string>(); //Controls defined by player
+    public List<string> DefinedControls = new List<string>(); //Assigns the controls to controls recognized by unity
 
     private List<string> P1Controls = new List<string>(); //List that stores all controls for player 1
     private List<string> P2Controls = new List<string>(); //List that stores all controls for player 2

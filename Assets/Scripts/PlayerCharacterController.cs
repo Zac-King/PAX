@@ -43,13 +43,28 @@ public class PlayerCharacterController : MonoBehaviour
 
     void AddListeners()
     {
+        Debug.Log("adding listeners");
         Messenger.AddListener<float,float>(gameObject.name + ":", Movement);
         Messenger.AddListener(gameObject.name + ":Jump", Jump);
         Messenger.AddListener(gameObject.name + ":Attack", Attack);
         Messenger.AddListener(gameObject.name + ":Sprint", Sprint);
         Messenger.AddListener(gameObject.name + ":Special", SpecialAttack);
+        Messenger.MarkAsPermanent(gameObject.name + ":Jump");
+        Messenger.MarkAsPermanent(gameObject.name + ":Attack");
+        Messenger.MarkAsPermanent(gameObject.name + ":Sprint");
+        Messenger.MarkAsPermanent(gameObject.name + ":Special");
+        Messenger.MarkAsPermanent(gameObject.name + ":");
     }
 
+    void OnDisable()
+    {
+        Debug.Log("removing listeners");
+        Messenger.RemoveListener<float, float>(gameObject.name + ":", Movement);
+        Messenger.RemoveListener(gameObject.name + ":Jump", Jump);
+        Messenger.RemoveListener(gameObject.name + ":Attack", Attack);
+        Messenger.RemoveListener(gameObject.name + ":Sprint", Sprint);
+        Messenger.RemoveListener(gameObject.name + ":Special", SpecialAttack);
+    }
 
     #region Event
 
