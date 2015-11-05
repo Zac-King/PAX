@@ -10,7 +10,7 @@ static public class AudioManager
     /// <summary>
     /// Audio Source to play audio
     /// </summary>
-    static public AudioSource audioSource;
+    static public AudioSource AmbientAS;
 
     /// <summary>
     /// Key : string arg
@@ -19,12 +19,31 @@ static public class AudioManager
     /// </summary>
     static Dictionary<string, GameObject> audioTable = new Dictionary<string, GameObject>();
 
+    static Dictionary<string, AudioClip> ambientTable = new Dictionary<string, AudioClip>();
+
     /// Add AudioClip with string argument to Dictionary
     /// Argument that audio need to play to
     /// GameObject that plays with the assign argument
     static public void AddAudioToDictionary(string argument, GameObject audioGameObject)
     {
-            audioTable.Add(argument, audioGameObject);
+        audioTable.Add(argument, audioGameObject);
+    }
+
+
+    static public void AddAmbientAudio(string argument, AudioClip sound)
+    {
+        ambientTable.Add(argument, sound);
+    }
+
+    static public void AddAmbientListener(string message)
+    {
+        Messenger.AddListener<string>(message, changeAmbientAudio);
+    }
+
+    static private void changeAmbientAudio(string argument)
+    {
+        AmbientAS.clip = ambientTable[argument];
+        AmbientAS.Play();
     }
 
     /// <summary>
@@ -60,7 +79,7 @@ static public class AudioManager
         GameObject aud = audioTable[argument];
         AudioSource asrc = aud.GetComponent<AudioSource>();
         // Setting spatialBlend 0 is 2D & 1 is 3D;
-        asrc.clip = audioTable[argument].GetComponent<AudioSource>().clip ;
+        asrc.clip = audioTable[argument].GetComponent<AudioSource>().clip;
         asrc.spatialBlend = 1;
         asrc.minDistance = 1.0f;
         asrc.maxDistance = 5.0f;
@@ -80,20 +99,4 @@ static public class AudioManager
         asrc.Play();
     }
 
-    /// <summary>
-    /// AmbientSound for background music
-    /// </summary>
-    /// <param name="sound">
-    /// Audioclip that is passed in for background
-    /// </param>
-    static public void AmbientSound(AudioClip sound)
-    {
-        //Ambient = surround sound (3D sound)
-        audioSource.clip = sound;
-        audioSource.playOnAwake = true;
-        audioSource.loop = true;
-        audioSource.priority = 256;
-        audioSource.volume = 0.1f;
-        audioSource.Play();
-    }
 }
