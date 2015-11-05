@@ -2,7 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 
-public class FriendlyUnit : MonoBehaviour
+public class Follower : MonoBehaviour
 {
     /// <summary>
     /// Chui's follower!
@@ -11,7 +11,7 @@ public class FriendlyUnit : MonoBehaviour
     /// </summary>
     public GameObject follower;
 
-    void Follower()
+    void flyingFollower()
     {
         follower.gameObject.transform.position = follower.transform.forward;
         follower.gameObject.transform.position = new Vector3(0, 5, 0);
