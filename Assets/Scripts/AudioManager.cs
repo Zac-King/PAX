@@ -19,31 +19,12 @@ static public class AudioManager
     /// </summary>
     static Dictionary<string, GameObject> audioTable = new Dictionary<string, GameObject>();
 
-    static Dictionary<string, AudioClip> ambientTable = new Dictionary<string, AudioClip>();
-
     /// Add AudioClip with string argument to Dictionary
     /// Argument that audio need to play to
     /// GameObject that plays with the assign argument
     static public void AddAudioToDictionary(string argument, GameObject audioGameObject)
     {
         audioTable.Add(argument, audioGameObject);
-    }
-
-
-    static public void AddAmbientAudio(string argument, AudioClip sound)
-    {
-        ambientTable.Add(argument, sound);
-    }
-
-    static public void AddAmbientListener(string message)
-    {
-        Messenger.AddListener<string>(message, changeAmbientAudio);
-    }
-
-    static private void changeAmbientAudio(string argument)
-    {
-        AmbientAS.clip = ambientTable[argument];
-        AmbientAS.Play();
     }
 
     /// <summary>
