@@ -10,7 +10,7 @@ static public class AudioManager
     /// <summary>
     /// Audio Source to play audio
     /// </summary>
-    static public AudioSource AmbientAS;
+    static public AudioSource audioSource;
 
     /// <summary>
     /// Key : string arg
@@ -24,7 +24,7 @@ static public class AudioManager
     /// GameObject that plays with the assign argument
     static public void AddAudioToDictionary(string argument, GameObject audioGameObject)
     {
-        audioTable.Add(argument, audioGameObject);
+            audioTable.Add(argument, audioGameObject);
     }
 
     /// <summary>
@@ -85,7 +85,6 @@ static public class AudioManager
             asrc.Play();
         }
     }
-
 }
 
 /*

@@ -9,11 +9,5 @@ public class Follower : MonoBehaviour
     /// 
     /// The Idea is like dungeon defender followers.
     /// </summary>
-    public GameObject follower;
-
-    void flyingFollower()
-    {
-        follower.gameObject.transform.position = follower.transform.forward;
-        follower.gameObject.transform.position = new Vector3(0, 5, 0);
-    }
+    
 }
