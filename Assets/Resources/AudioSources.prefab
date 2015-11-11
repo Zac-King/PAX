@@ -112,7 +112,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   audioSource: {fileID: 0}
   sound: {fileID: 0}
-  audioEvent: 
+  audioEvent: playaudio
   argument: 
   sound3D: 0
 --- !u!1001 &100100000
@@ -125,6 +125,10 @@ Prefab:
     - target: {fileID: 0}
       propertyPath: m_PlayOnAwake
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: audioEvent
+      value: playaudio
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}

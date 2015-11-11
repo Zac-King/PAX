@@ -59,6 +59,10 @@ static public class AudioManager
         // AudioSource asrc = Gameobject aud AudioSource.  AudioSource Asrc = Aud(AudioSource) What?!
         GameObject aud = audioTable[argument];
         AudioSource asrc = aud.GetComponent<AudioSource>();
+
+		if (asrc == null)
+			Debug.Log ("Need to add AudioSource");
+
         // Setting spatialBlend 0 is 2D & 1 is 3D;
         asrc.clip = audioTable[argument].GetComponent<AudioSource>().clip;
         asrc.spatialBlend = 1;
@@ -80,6 +84,10 @@ static public class AudioManager
     {
         GameObject aud = audioTable[argument];
         AudioSource asrc = aud.GetComponent<AudioSource>();
+
+		if (asrc == null)
+			Debug.Log ("Need to add AudioSource");
+
         if (!asrc.isPlaying)
         {
             asrc.Play();
@@ -99,5 +107,21 @@ static public class AudioManager
     When switching, destroy Init Audio and switch to Game Background Audio and etc
 
     Problem: Keep playing AudioClips without cutting them off/resetting everytime they enter the trigger
-    Solution: 3:22pm, we got nothing for now. BUT SPOON!
+    Solution: We used an if statement to check if it was playing or not.
+
+
+	AudioSource audioSource;
+	public AudioClip audioClip;
+	public string message;
+
+	void Awake()
+	{
+		AudioManager.AddAudioToDictionary (message, gameObject);
+		AudioManager.AddListener (message, true);
+	}
+
+	public void audioBroadCasting()
+	{
+		Messenger.Broadcast<string>(message, audioClip);
+	}
 */

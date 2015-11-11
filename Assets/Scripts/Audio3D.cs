@@ -4,7 +4,7 @@ using System.Collections;
 public class Audio3D : MonoBehaviour
 {
     /// <summary>
-    /// Tran & Chui's test Audio script.
+    /// Tran & Chui 3D Audio script.
     /// </summary>
 
     

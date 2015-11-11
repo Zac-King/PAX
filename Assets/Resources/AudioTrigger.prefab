@@ -85,7 +85,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6f4526860b023da4f9b6d53a978c663d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  message: 
+  message: playaudio
   argument: 
 --- !u!1001 &100100000
 Prefab:
@@ -93,7 +93,11 @@ Prefab:
   serializedVersion: 2
   m_Modification:
     m_TransformParent: {fileID: 0}
-    m_Modifications: []
+    m_Modifications:
+    - target: {fileID: 0}
+      propertyPath: message
+      value: playaudio
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 192052}
