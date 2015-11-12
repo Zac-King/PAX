@@ -3,6 +3,11 @@ using System.Collections;
 
 public class GUI_Audio : MonoBehaviour 
 {
+	/// <summary>
+	/// Chui And Tran's script.
+	/// This script will play a sound when you click on a GUI button
+	/// </summary>
+
 	AudioSource guiAudio;
 	public AudioClip guiButton;
 

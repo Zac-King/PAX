@@ -6,6 +6,12 @@ public class AmbientAudio : MonoBehaviour
     public AudioSource ambientAudioAS;
     public AudioClip backgroundSound;
 
+	/// <summary>
+	/// Chui and Tran's audio script. 
+	/// Pass in any audio clip that will loop in the background.
+	/// Will be used as prefab.
+	/// </summary>
+
     void Awake()
     {
         ambientAudioAS = GetComponent<AudioSource>();
