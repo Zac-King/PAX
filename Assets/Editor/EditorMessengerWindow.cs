@@ -32,10 +32,10 @@ public class MessengerWindow : EditorWindow
 		{
 		foreach(string s in StaticMessengerGetter.MessengerListenerList())
 		{
-			//if(messages == "<<Empty>>")
-			//		messages = s;
+			if(messages == "<<Empty>>")
+					messages = s;
 
-			//else 
+			else 
 					messages += Environment.NewLine + s;
 		}
 		}
