@@ -5,7 +5,7 @@ using System.Collections.Generic;
 
 
 
-    
+
 /// <summary>
 /// Dylan Guidry
 /// InputHandler.cs
@@ -43,15 +43,15 @@ public class InputHandler : Singleton<InputHandler>
         e_A,
         e_C,
         e_D,
-        e_E, 
+        e_E,
         e_F,
         e_G,
-        e_Q, 
+        e_Q,
         e_R,
         e_S,
         e_T,
         e_V,
-        e_W, 
+        e_W,
         e_X,
         e_Y,
         e_Z,
@@ -63,13 +63,18 @@ public class InputHandler : Singleton<InputHandler>
     protected override void Awake()
     {
         base.Awake();
+        //listening from player character controller
         Messenger.AddListener<string>("Player", NumberOfPlayers);
         Messenger.MarkAsPermanent("Player");
     }
 
     void Start()
     {
+    }
 
+    void ClearList()
+    {
+        this.DefinedControls.Clear();
     }
 
     void CustomContols()
@@ -90,7 +95,7 @@ public class InputHandler : Singleton<InputHandler>
             PlayerControls.Add(jSpecial + ":Special");
             PlayerControls.Add(jSprint + ":Sprint");
         }
-        SetControls(numPlayers, keyboard);
+        
     }
 
     void OnDisable()
@@ -112,17 +117,7 @@ public class InputHandler : Singleton<InputHandler>
     private void IdleTimer()
     {
         IdleTime += Time.deltaTime;
-        if (IdleTime > 20)
-        {
-            // Debug.Log("Thanks for playing");
-            //Enable once we have an exit game
-        }
 
-        //if (Input.anyKey || Input.GetAxis(p1Vert) != 0 || Input.GetAxis(p1Horizon) != 0 ||
-          //  Input.GetAxis(p2Vert) != 0 || Input.GetAxis(p2Horizon) != 0)
-        {
-            //IdleTime = 0;
-        }
     }
 
     /// <summary>
@@ -131,20 +126,13 @@ public class InputHandler : Singleton<InputHandler>
     /// </summary>
     private void PlayerEvents()
     {
-     //   Messenger.Broadcast<float, float>(Players[0] + ":", Input.GetAxis(p1Vert),
-        //    Input.GetAxis(p1Horizon));
-       // if (numPlayers == 2)
-        {
-       //     Messenger.Broadcast<float, float>(Players[1] + ":", Input.GetAxis(p2Vert),
-        //     Input.GetAxis(p2Horizon));
-        }
         //Checks for inputs that are in the List of controls for player1
         foreach (string s in DefinedControls)
         {
             string[] temp = s.Split(':');
             if (Input.GetKeyDown(temp[0]))
             {
-                if(temp[0].Contains("joystick 2"))
+                if (temp[0].Contains("joystick 2"))
                 {
                     Messenger.Broadcast(Players[1] + ":" + temp[1]);
                 }
@@ -162,18 +150,14 @@ public class InputHandler : Singleton<InputHandler>
     /// </summary>
     private void NumberOfPlayers(string pName)
     {
-        if(!MaxPlayers)
-        {
-            Players.Add(pName);
-            numPlayers += 1;
-            if (Players.Count == 2)
-            {
-                MaxPlayers = true;
-            }
-        }
-		CustomContols();
-		Messenger.Broadcast<int>(pName, Players.IndexOf(pName));
-
+    
+    
+    if(PlayerManager.instance.PlayerCount >= 2)
+            MaxPlayers = true;
+            
+        
+        CustomContols();
+        //Messenger.Broadcast<int>(pName, Players.IndexOf(pName));
     }
 
     /// <summary>
@@ -185,7 +169,6 @@ public class InputHandler : Singleton<InputHandler>
     {
         for (int i = 0; i < PlayerControls.Capacity; i++)
         {
-
             string[] temp = PlayerControls[i].Split(':');
             string[] split = temp[0].Split('_');
             if (keyboard == false)
@@ -248,7 +231,7 @@ public class InputHandler : Singleton<InputHandler>
             }
             else if (keyboard == true)
             {
-                if(split[1] == "LeftShift")
+                if (split[1] == "LeftShift")
                 {
                     DefinedControls.Add("left shift:" + temp[1]);
                 }
@@ -263,13 +246,16 @@ public class InputHandler : Singleton<InputHandler>
     /// <summary>
     /// Checks to see what kind of controller the user is using
     /// possible control options are Keyboard or Joystick Controller
+    /// CALLED from number of players function
     /// </summary>
     void CheckControlType()
     {
+        //get a list of the controllers hooked up
         List<string> joy = new List<string>(Input.GetJoystickNames());
-        Debug.Log(joy.Count); 
-        if(joy.Count > 0)
-            {
+        
+        //check the size and if its not 0 then we have controllers
+        if (joy.Count > 0)
+        {
             if (Input.GetJoystickNames()[0] != "")
             {
                 keyboard = false;
@@ -321,7 +307,7 @@ public class InputHandler : Singleton<InputHandler>
     [SerializeField]
     private E_JOYSTICK jSprint; //Control assigned to the Sprint Action if using a joystick
 
-	[Space(25)]
+    [Space(25)]
     [Header("Keyboard Controls")]
     [SerializeField]
     private E_KEYBOARD kAttack; //Control assigned to the attack action if using the Keyboard
@@ -334,7 +320,8 @@ public class InputHandler : Singleton<InputHandler>
 
     public bool keyboard; //A boolean to determine if the controls are configured for keyboard or Controler
 
-    public int numPlayers; //Keeps track of number of players active in the game
+    [SerializeField]
+    int numPlayers = 0; //Keeps track of number of players active in the game
 
     bool MaxPlayers; //If num players = 2 this is true
 
@@ -356,5 +343,5 @@ public class InputHandler : Singleton<InputHandler>
     private float IdleTime; //Will be used to turn return to main menu if no input for a certain time.
 
 
-#endregion
+    #endregion
 }

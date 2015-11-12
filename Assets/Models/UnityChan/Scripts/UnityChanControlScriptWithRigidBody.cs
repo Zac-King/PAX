@@ -63,27 +63,33 @@ public class UnityChanControlScriptWithRigidBody : MonoBehaviour
     public enum InputState
     {
         DEFAULT,
-        PLAYER1,
-        PLAYER2,
+        CONTROLLER1,
+        CONTROLLER2,
         KEYBOARD1,
         KEYBOARD2,
     }
 
-    public InputState inputType = InputState.DEFAULT;
+    /// <summary>
+    /// set from inputhandler
+    /// </summary>
+    public InputState inputType;
 
     void FixedUpdate()
     {
+        ///DEFAULT  
         string jump = "Jump";
         float h = Input.GetAxis("Horizontal");
         float v = Input.GetAxis("Vertical");
+
+
         switch (inputType)
         {
-            case InputState.PLAYER1:
+            case InputState.CONTROLLER1:
                 h = Input.GetAxis("p1Horizontal");
                 v = Input.GetAxis("p1Vertical");
                 jump = "c1Jump";
                 break;
-            case InputState.PLAYER2:
+            case InputState.CONTROLLER2:
                 h = Input.GetAxis("p2Horizontal");
                 v = Input.GetAxis("p2Vertical");
                 jump = "c2Jump";
@@ -92,8 +98,11 @@ public class UnityChanControlScriptWithRigidBody : MonoBehaviour
                 h = Input.GetAxis("p1KeyBoardHorizontal");
                 v = Input.GetAxis("p1KeyBoardVertical");
                 break;
-            default:
+            case InputState.DEFAULT:
+                h = Input.GetAxis("Horizontal");
+                v = Input.GetAxis("Vertical");
                 break;
+
         }
         anim.SetFloat("Speed", v);
         anim.SetFloat("Direction", h);
