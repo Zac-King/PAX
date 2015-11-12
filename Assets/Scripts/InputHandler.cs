@@ -13,8 +13,8 @@ using System.Collections.Generic;
 /// </summary>
 public class InputHandler : Singleton<InputHandler>
 {
-	public int TotalControllers;
-	public int AvailableContollers;
+	public int TotalControllers; //Total controllers connected to the system
+	public int AvailableContollers; //Controllers availiable at any one time that can be assigned for use
 
     protected override void Awake()
     {
@@ -50,7 +50,7 @@ public class InputHandler : Singleton<InputHandler>
 		{
 			//Throws an error if there are no available controllers and 
 			//A player tries to assign a controler to a player object
-			Debug.LogError("No Controllers Available");
+			Debug.LogError("Not enough Controllers Available");
 			Debug.Break();
 		}
 	}

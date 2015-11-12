@@ -44,4 +44,5 @@ public class PlayerCharacterController : MonoBehaviour
 			prev = GetComponent<UnityChanControlScriptWithRigidBody>().inputType;
 		}
 	}
+
 }
