@@ -17,7 +17,7 @@ public class StaticMessengerGetter
 			//Listener.Add
 
 			Listener.Add(list.Key);
-
+			
 		}
 		}
 		return Listener;

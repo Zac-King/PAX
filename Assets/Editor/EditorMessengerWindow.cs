@@ -24,7 +24,7 @@ public class MessengerWindow : EditorWindow
 	}
 	public void OnGUI()
 	{
-		string messages = null;
+		string messages = "<<Empty>>";
 
 		//EditorWindow.GetWindow(typeof(MessengerWindow));
 
@@ -32,18 +32,16 @@ public class MessengerWindow : EditorWindow
 		{
 		foreach(string s in StaticMessengerGetter.MessengerListenerList())
 		{
-			if(messages == null)
-					messages = s;
+			//if(messages == "<<Empty>>")
+			//		messages = s;
 
-			else 
+			//else 
 					messages += Environment.NewLine + s;
 		}
 		}
-		else
-			messages = Environment.NewLine + "<<Empty>>";
-
+	//	MonoBehaviour.print(messages);
 		EditorGUILayout.LabelField("Listening For: ",EditorStyles.boldLabel);
-		EditorGUILayout.LabelField(messages);
+		EditorGUILayout.LabelField(messages,EditorStyles.textArea);
 
 		if(GUILayout.Button("Scan"))
 			OnGUI();
