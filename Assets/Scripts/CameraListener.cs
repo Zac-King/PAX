@@ -24,7 +24,7 @@ public class CameraListener : MonoBehaviour
     {
         cm = GetComponentInParent<CameraManager>();
 
-        Messenger.AddListener<string,string>(listeningForSetCam, SetCam);
+        Messenger.AddListener<GameObject,string>(listeningForSetCam, SetCam);
         Messenger.AddListener<string>(listeningForReTarget, SetTarget);
         Messenger.MarkAsPermanent(listeningForSetCam);
         Messenger.MarkAsPermanent(listeningForReTarget);
@@ -37,9 +37,9 @@ public class CameraListener : MonoBehaviour
     /// </summary>
     /// <param name="s">Name of the gameobject that triggered the event.</param>
     /// <param name="broadcaster">Name of the gameobject that broadcasts the message.</param>
-    void SetCam(string s, string broadcaster)
+    void SetCam(GameObject o, string broadcaster)
     {
-        if (s == "Player")
+        if (o.tag == "Player")
         {
             if (gameObject.activeSelf == false)
             {
@@ -67,7 +67,7 @@ public class CameraListener : MonoBehaviour
 
     void OnDestroy()
     {
-        Messenger.RemoveListener<string, string>(listeningForSetCam, SetCam);
+        Messenger.RemoveListener<GameObject, string>(listeningForSetCam, SetCam);
         Messenger.RemoveListener<string>(listeningForReTarget, SetTarget);
     }
 }
