@@ -10,8 +10,8 @@ using System.Collections.Generic;
 /// Purpose:
 /// 	Creates an editor window to show the messages that have been listened for.
 /// 
-/// 
-/// 
+/// Use: 
+/// 	Drop into an Editor Folder in unity. At the top of Unity Editor in the Tool Bar. Press the tab that says "Messenger" then the menu "Messages".
 /// 
 /// </summary>
 
