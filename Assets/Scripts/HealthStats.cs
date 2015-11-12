@@ -12,11 +12,8 @@
 /// </summary>
 ///////////////////////////////////
 
-
 using UnityEngine;
 using System.Collections;
-
-
 
 public class HealthStats : MonoBehaviour
 {
@@ -42,8 +39,6 @@ public class HealthStats : MonoBehaviour
         }
 
      }
-
-    
 
     protected virtual void TakeDamage(string message)
     {

@@ -5,62 +5,52 @@ using System.Collections;
 
 public class PlayerCharacterController : MonoBehaviour
 {
-	bool KeyBoard;
+	public int PlayerNumber;
 
-	void ControlCheck(bool check)
-	{
-		KeyBoard = check;
-	}
+ 	void Awake()
+    {
+		Messenger.AddListener<int>("NumOfJoysticks", AssignPlayerControls);
+		Messenger.MarkAsPermanent("NumOfJoysticks");
+    }
+    // Use this for initialization
+    void Start()
+    {
 
-	void Awake ()
-	{
-		AddListeners ();
-	}
+    }
 
-	// Use this for initialization
-	void Start ()
-	{
-		Messenger.Broadcast<string> ("Player", gameObject.name);
-	}
 
-	void AddListeners ()
-	{
-		Debug.Log ("adding listeners");
-		Messenger.AddListener<bool>("Controller", ControlCheck);
-		Messenger.AddListener<int>(gameObject.name, PlayerNum);
-		Messenger.MarkAsPermanent(gameObject.name);
-	}
+    void OnDisable()
+    {
+		Messenger.RemoveListener<int>("NumOfJoysticks", AssignPlayerControls);
+    }
 
-	void OnDisable ()
+	/// <summary>
+	/// Assigns the correct controls to the players depending on the 
+	/// amount of joysticks connected to the controls.
+	/// </summary>
+	void AssignPlayerControls(int joysticks)
 	{
-		Debug.Log ("removing listeners");
-		Messenger.RemoveListener<int>(gameObject.name, PlayerNum);
-		Messenger.RemoveListener<bool>("Controller", ControlCheck);
-	}
-		
-	void PlayerNum(int num)
-	{
-		Debug.Log(KeyBoard);
-		switch(num)
+		if(joysticks == 1)
 		{
-		case 0:
-			if(KeyBoard == true)
+			if(PlayerNumber == 1)
+				GetComponent<UnityChanControlScriptWithRigidBody>().inputType = UnityChanControlScriptWithRigidBody.InputState.KEYBOARD1;
+			else if(PlayerNumber == 2)
+				GetComponent<UnityChanControlScriptWithRigidBody>().inputType = UnityChanControlScriptWithRigidBody.InputState.CONTROLLER1;
+		}
+		else if(joysticks == 2)
+		{
+			if(PlayerNumber == 1)
+				GetComponent<UnityChanControlScriptWithRigidBody>().inputType = UnityChanControlScriptWithRigidBody.InputState.CONTROLLER1;
+			else if(PlayerNumber == 2)
+				GetComponent<UnityChanControlScriptWithRigidBody>().inputType = UnityChanControlScriptWithRigidBody.InputState.CONTROLLER2;
+		}
+		else
+		{
+			if(PlayerNumber == 1)
 			{
-				GetComponent<UnityChanControlScriptWithRigidBody>().inputType = 
-					UnityChanControlScriptWithRigidBody.InputState.KEYBOARD1;
+				GetComponent<UnityChanControlScriptWithRigidBody>().inputType = UnityChanControlScriptWithRigidBody.InputState.KEYBOARD1;
 			}
-			else
-			{
-				GetComponent<UnityChanControlScriptWithRigidBody>().inputType = 
-					UnityChanControlScriptWithRigidBody.InputState.PLAYER1;
-			}
-			break;
-		case 1:
-			GetComponent<UnityChanControlScriptWithRigidBody>().inputType = 
-				UnityChanControlScriptWithRigidBody.InputState.PLAYER2;
-			break;
-		default:
-			break;
+			//If there are no controllers 
 		}
 	}
 }
