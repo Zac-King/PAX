@@ -23,7 +23,7 @@ public class BroadcastOnTriggerStay : MonoBehaviour
     {
         while (other)
         {
-            Messenger.Broadcast(m_message.ToLower(), other.name);
+            Messenger.Broadcast(m_message.ToLower() + other.GetInstanceID(), other.name);
             yield return new WaitForSeconds(m_timer);
         }
     }
