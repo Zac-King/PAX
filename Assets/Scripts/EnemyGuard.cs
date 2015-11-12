@@ -5,7 +5,7 @@ public class EnemyGuard : MonoBehaviour
 {
     void Awake()
     {
-        Messenger.AddListener<string>("entitydied", Die);// Listens for the instance of its own death
+        Messenger.AddListener<string>("entitydied", Die);	// Listens for the instance of its own death
         Messenger.MarkAsPermanent("entitydied");
     }
 
@@ -40,11 +40,14 @@ public class EnemyGuard : MonoBehaviour
                 Vector3 heading = Vector3.Normalize(targetPos - currentPos);                                            // Get the direction to move it towards the target
                 rb.AddForce(heading * speedConst * speed);                                                              // Move towards the target
 
-				if(target.transform.position.y - transform.position.y > 0.1f)
+				float yDist = target.transform.position.y - transform.position.y;
+
+				if(yDist > 1f)
 				{
 					if(canJump)
 					{
-						rb.AddForce(transform.up * speed * dist * 100);
+						rb.AddForce(transform.up * speed * yDist * 100);
+						rb.velocity.y = rb.velocity.y > 10 ? 10 : rb.velocity.y;
 						canJump = !canJump;
 					}
 				}
@@ -54,9 +57,9 @@ public class EnemyGuard : MonoBehaviour
                 rb.velocity = new Vector3(0, rb.velocity.y, 0);                                                         // Don't move
             }
 
-            // DEBUGGING // DEBUGGING // DEBUGGING // DEBUGGING // DEBUGGING // DEBUGGING  // DEBUGGING // DEBUGGING // DEBUGGING // DEBUGGING // DEBUGGING // DEBUGGING 
+////////////// DEBUGGING // DEBUGGING // DEBUGGING // DEBUGGING // DEBUGGING // DEBUGGING  // DEBUGGING // DEBUGGING // DEBUGGING // DEBUGGING // DEBUGGING // DEBUGGING 
             Debug.DrawLine(transform.position, levelTarget, Color.red);
-            // DEBUGGING // DEBUGGING // DEBUGGING // DEBUGGING // DEBUGGING // DEBUGGING  // DEBUGGING // DEBUGGING // DEBUGGING // DEBUGGING // DEBUGGING // DEBUGGING 
+////////////// DEBUGGING // DEBUGGING // DEBUGGING // DEBUGGING // DEBUGGING // DEBUGGING  // DEBUGGING // DEBUGGING // DEBUGGING // DEBUGGING // DEBUGGING // DEBUGGING 
 
             yield return null;  // Restarts the loop
         }
