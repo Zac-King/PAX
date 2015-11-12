@@ -21,12 +21,13 @@ public class PlayerManager : Singleton<PlayerManager>
 
         set { PlayerCount = value; }
     }
+
     [SerializeField]
     List<GameObject> players = new List<GameObject>();
     protected override void Awake()
     {
         //players are initially 0
-       // PlayerCount = 0;
+        //PlayerCount = 0;
 
         List<PlayerCharacterController> pcc = new List<PlayerCharacterController>(FindObjectsOfType<PlayerCharacterController>());
 
@@ -34,16 +35,17 @@ public class PlayerManager : Singleton<PlayerManager>
         {
             players.Add(p.gameObject);
         }
+
         if (players[0] != null)
         {
             Player1 = players[0];
-           // PlayerCount++;
+			Player1.GetComponent<PlayerCharacterController>().PlayerNumber = 1;
         }
 
         if (players[1] != null)
         {
             Player2 = players[1];
-            //PlayerCount++;
+			Player1.GetComponent<PlayerCharacterController>().PlayerNumber = 2;
         }
     }
 }

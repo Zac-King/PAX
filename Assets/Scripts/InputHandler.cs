@@ -3,9 +3,6 @@ using System.Collections;
 using UnityStandardAssets.CrossPlatformInput;
 using System.Collections.Generic;
 
-
-
-
 /// <summary>
 /// Dylan Guidry
 /// InputHandler.cs
@@ -63,9 +60,6 @@ public class InputHandler : Singleton<InputHandler>
     protected override void Awake()
     {
         base.Awake();
-        //listening from player character controller
-        Messenger.AddListener<string>("NumPlayersCheck", NumberOfPlayers);
-		Messenger.MarkAsPermanent("NumPlayersCheck");
     }
 
     void Start()
@@ -75,7 +69,6 @@ public class InputHandler : Singleton<InputHandler>
 
     void OnDisable()
     {
-		Messenger.RemoveListener<string>("NumPlayersCheck", NumberOfPlayers);
     }
 
     void Update()
@@ -90,45 +83,30 @@ public class InputHandler : Singleton<InputHandler>
     private void IdleTimer()
     {
         IdleTime += Time.deltaTime;
-
-    }
-
-    /// <summary>
-    /// Will be used to tell how many players are active in the game and will enable 
-    /// the controls only necessary for that many players
-    /// </summary>
-    private void NumberOfPlayers(string pName)
-    {
-    	if(PlayerManager.instance.PlayerCount >= 2)
-            MaxPlayers = true;
-
-		CheckControlType();
     }
 
     /// <summary>
     /// Checks to see what kind of controller the user is using
     /// possible control options are Keyboard or Joystick Controller
-    /// CALLED from number of players function
+    /// CALLED from context menu
     /// </summary>
+	[ContextMenu("Check Controls")]
     void CheckControlType()
     {
+		int numJoysticks = 0;
         //get a list of the controllers hooked up
         List<string> joy = new List<string>(Input.GetJoystickNames());
-		Debug.Log(joy.Count);
         //check the size and if its not 0 then we have controllers
         if (joy.Count > 0)
         {
-            if (Input.GetJoystickNames()[0] != "")
-            {
-                keyboard = false;
-                Messenger.Broadcast<bool>("Controller", keyboard);
-            }
-            else
-            {
-                keyboard = true;
-                Messenger.Broadcast<bool>("Controller", keyboard);
-            }
-        }
+			foreach(string s in joy)
+			{
+				if(s.Contains("Controller"))
+				{
+
+				}
+			}
+		}
     }
 
     /// <summary>
@@ -173,11 +151,6 @@ public class InputHandler : Singleton<InputHandler>
     private E_KEYBOARD kSprint; //Control assigned to the Sprint Action if using the Keyboard
 
     public bool keyboard; //A boolean to determine if the controls are configured for keyboard or Controler
-
-    [SerializeField]
-    int numPlayers = 0; //Keeps track of number of players active in the game
-
-    bool MaxPlayers; //If num players = 2 this is true
 
     //Strings to store the axis the objects move on
     //Used primarily to clean up the code
