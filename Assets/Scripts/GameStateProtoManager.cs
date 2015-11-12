@@ -23,7 +23,7 @@ public class GameStateProtoManager: MonoBehaviour
        //Test**
         else if (msg == "init->start")
 			Time.timeScale = 0;
-		else if (msg == "start -> play")
+		else if (msg == "start->play")
 		         Time.timeScale = 1;
         //
         else if (msg == "play->gameover" || msg == "pause->gameover")
