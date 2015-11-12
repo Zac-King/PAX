@@ -11,30 +11,19 @@ public class MovablePlatform : MonoBehaviour
             AddPathNode();
         }
         gameObject.transform.position = _pathFlow[0];
-        StartCoroutine(FollowPath());
-        Messenger.AddListener<GameObject>("Chilled", OnCoolToggle);
-	}
+        StartCoroutine(StartItAll());
+        //Messenger.AddListener<GameObject>("Chilled", OnCoolToggle);
+    }
     
+    IEnumerator StartItAll()
+    {
+        yield return new WaitForSeconds(initDelay);
+        StartCoroutine(FollowPath());
+    }
+
     public void AddPathNode()
     {
         _pathFlow.Add(gameObject.transform.position);
-    }
-
-    private void OnCoolToggle(GameObject go) //*
-    {
-        if(go == gameObject)
-        {
-            if (_chilled)
-            {
-                _chilled = false;
-            }
-
-            else
-            {
-                _chilled = true;
-            }
-        }
-        
     }
 
     IEnumerator FollowPath()
@@ -44,10 +33,19 @@ public class MovablePlatform : MonoBehaviour
             _count = 0;
         }
 
-        while(Vector3.Distance(transform.position, _pathFlow[_count]) > 0.3f)
+        if(!lerpMotion)
+        while(Vector3.Distance(transform.position, _pathFlow[_count]) > 0.003f)
         {
-            transform.position = Vector3.Lerp(transform.position, _pathFlow[_count], _speed * Time.deltaTime);
+            transform.position += ((_pathFlow[_count] - transform.position)) * _speed * Time.deltaTime; 
             yield return null;
+        }
+
+        if(lerpMotion)
+        {
+            while (Vector3.Distance(transform.position, _pathFlow[_count]) > 0.003f)
+            {
+                transform.position = Vector3.Lerp(transform.position, _pathFlow[_count], _speed * Time.deltaTime);
+            }
         }
 
         yield return new WaitForSeconds(_platformDelay);
@@ -66,8 +64,13 @@ public class MovablePlatform : MonoBehaviour
     private float _platformDelay;
     [SerializeField]
     private float _speed;
+    [SerializeField]
+    private bool lerpMotion = false;
 
-    private bool _chilled = false; //*
+    [SerializeField]
+    private float initDelay = 0;
+
+    //private bool _chilled = false; //*
 }
 
 ///

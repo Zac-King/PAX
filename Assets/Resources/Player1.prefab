@@ -1556,7 +1556,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 163658}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1.12300992, y: .0299999993, z: -1.8271637}
+  m_LocalPosition: {x: -2.79003572, y: 9.28461004e-17, z: -16.725666}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 490606}
@@ -2031,7 +2031,7 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 135302}
-  m_LocalRotation: {x: .532675207, y: .0703404546, z: .836132765, w: -.110415146}
+  m_LocalRotation: {x: .532675147, y: .0703404471, z: .836132646, w: -.110415131}
   m_LocalPosition: {x: 2.22714643e-05, y: -6.1504652e-05, z: .0260270257}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -2480,13 +2480,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c0c30f7ce9c19ea439c1aacded1b96f5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Horizontal: Horizontal
-  Vertical: Vertical
-  Jump: Jump
-  Attack: Attack
-  Special: Special
-  Run: Run
-  IdleTime: 0
+  jAttack: 0
+  jJump: 0
+  jSpecial: 0
+  jSprint: 0
+  kAttack: 0
+  kJump: 0
+  kSpecial: 0
+  kSprint: 0
+  numPlayers: 0
+  PlayerControls: []
+  DefinedControls: []
 --- !u!114 &11481638
 MonoBehaviour:
   m_ObjectHideFlags: 1

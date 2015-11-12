@@ -12,14 +12,23 @@ using UnityEngine;
 
 public class CameraListener : MonoBehaviour
 {
-    public string listeningFor;
+    public string listeningForSetCam;
+    string listeningForReTarget = "playerdied";
     public bool startCam;
-    public GameObject activator1, activator2;
+    public GameObject activator1, activator2;    
+
+    private CameraManager cm;
+
 	// Use this for initialization
 	void Awake()
     {
-        Messenger.AddListener<string,string>(listeningFor, SetCam);
-        if(!startCam)
+        cm = GetComponentInParent<CameraManager>();
+
+        Messenger.AddListener<GameObject,string>(listeningForSetCam, SetCam);
+        Messenger.AddListener<string>(listeningForReTarget, SetTarget);
+        Messenger.MarkAsPermanent(listeningForSetCam);
+        Messenger.MarkAsPermanent(listeningForReTarget);
+        if (!startCam)
             gameObject.SetActive(false);
     }
 
@@ -28,9 +37,9 @@ public class CameraListener : MonoBehaviour
     /// </summary>
     /// <param name="s">Name of the gameobject that triggered the event.</param>
     /// <param name="broadcaster">Name of the gameobject that broadcasts the message.</param>
-    void SetCam(string s, string broadcaster)
+    void SetCam(GameObject o, string broadcaster)
     {
-        if (s == "Player1")
+        if (o.tag == "Player")
         {
             if (gameObject.activeSelf == false)
             {
@@ -48,5 +57,17 @@ public class CameraListener : MonoBehaviour
             else
                 gameObject.SetActive(false);
         }
+    }
+
+    void SetTarget(string s)
+    {
+        if(s == "Player")
+            cm.SetTargets();
+    }
+
+    void OnDestroy()
+    {
+        Messenger.RemoveListener<GameObject, string>(listeningForSetCam, SetCam);
+        Messenger.RemoveListener<string>(listeningForReTarget, SetTarget);
     }
 }

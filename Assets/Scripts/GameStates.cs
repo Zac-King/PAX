@@ -1,44 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections.Generic;
-
-public class GameStates : Singleton<MonoBehaviour>
-{
-    protected override void Awake()
-    {
-        base.Awake();
-
-        Messenger.AddListener<STATES>("maketransition", CallTransition);
-        Messenger.AddListener<string>("win", RestartLevel);
-
-        Messenger.MarkAsPermanent("maketransition");
-        Messenger.MarkAsPermanent("win");
-
-        callback = DoSomething;
-
-        _fsm.AddState(STATES.INIT);
-        _fsm.AddState(STATES.START);
-        _fsm.AddState(STATES.PLAY);
-        _fsm.AddState(STATES.PAUSE);
-        _fsm.AddState(STATES.GAMEOVER);
-        _fsm.AddState(STATES.END);
-        _fsm.AddState(STATES.TERM);
-
-        _fsm.m_currentState = STATES.INIT;
-
-        _fsm.AddTransition(STATES.INIT, STATES.START, callback);
-        _fsm.AddTransition(STATES.START, STATES.PLAY, callback);
-        _fsm.AddTransition(STATES.PLAY, STATES.PAUSE, callback);
-        _fsm.AddTransition(STATES.PAUSE, STATES.PLAY, callback);
-        _fsm.AddTransition(STATES.PLAY, STATES.GAMEOVER, callback);
-        _fsm.AddTransition(STATES.PAUSE, STATES.GAMEOVER, callback);
-        _fsm.AddTransition(STATES.GAMEOVER, STATES.START, callback);
-        _fsm.AddTransition(STATES.START, STATES.END, callback);
-        _fsm.AddTransition(STATES.END, STATES.TERM, callback);
-
-        _fsm.AddTransition(STATES.GAMEOVER, STATES.PLAY, callback);
-    }
-
-    public enum STATES
+public enum STATES
     {
         INIT,
         START,
@@ -48,21 +10,48 @@ public class GameStates : Singleton<MonoBehaviour>
         END,
         TERM,
     }
+public class GameStates : Singleton<MonoBehaviour>
+{
+    protected override void Awake()
+    {
+        base.Awake();
 
+        Messenger.AddListener<STATES>("maketransition", CallTransition);
 
+        Messenger.MarkAsPermanent("maketransition");
+      
 
-    Callback<string> callback;
+        callback = DoSomething;
+
+        _fsm.AddState(STATES.INIT); 
+        _fsm.AddState(STATES.START); 
+        _fsm.AddState(STATES.PLAY);
+        _fsm.AddState(STATES.PAUSE);
+        _fsm.AddState(STATES.GAMEOVER);
+        _fsm.AddState(STATES.END);
+        _fsm.AddState(STATES.TERM);
+
+        _fsm.m_currentState = STATES.INIT;
+                                                                        //||   transition   ||
+        _fsm.AddTransition(STATES.INIT,     STATES.START, callback);    //||init->start     ||
+        _fsm.AddTransition(STATES.START,    STATES.PLAY, callback);     //||start->play     ||
+        _fsm.AddTransition(STATES.PLAY,     STATES.PAUSE, callback);    //||play->pause     ||
+        _fsm.AddTransition(STATES.PAUSE,    STATES.PLAY, callback);     //||pause->play     ||
+        _fsm.AddTransition(STATES.PLAY,     STATES.GAMEOVER, callback); //||play->gameover  ||
+        _fsm.AddTransition(STATES.PAUSE,    STATES.GAMEOVER, callback); //||pause->gameover ||
+        _fsm.AddTransition(STATES.GAMEOVER, STATES.START, callback);    //||gameover->start ||
+        _fsm.AddTransition(STATES.START,    STATES.END, callback);      //||start->end      ||
+        _fsm.AddTransition(STATES.END,      STATES.TERM, callback);     //||end->term       ||
+
+        _fsm.AddTransition(STATES.GAMEOVER, STATES.PLAY, callback);     //||gameover->play  ||
+        CallTransition(STATES.START);
+    }   
 
     void DoSomething(string transition)
     {
-        Messenger.Broadcast("transition", transition);
-    }
-
-    void RestartLevel(string s)
-    {
-        Messenger.RemoveListener<string>("win", RestartLevel);
-        Messenger.RemoveListener<STATES>("maketransition", CallTransition);
-        Application.LoadLevel(Application.loadedLevel);
+        /// Will broadcast transition and as a param the previous state to the new state
+        /// string param as "oldstate->currentstate"
+        Messenger.Broadcast("transition", transition.ToLower());
     }
 
     void CallTransition(STATES transition)
@@ -70,5 +59,14 @@ public class GameStates : Singleton<MonoBehaviour>
         _fsm.MakeTransitionTo(transition);
     }
 
+    void OnDisable()
+    {
+        Messenger.RemoveListener<STATES>("maketransition", CallTransition);
+    }
+
+
+
+    Callback<string> callback;
     private _FSM<STATES> _fsm = new _FSM<STATES>();
+    
 }

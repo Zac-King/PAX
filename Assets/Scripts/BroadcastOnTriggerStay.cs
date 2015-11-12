@@ -10,7 +10,8 @@ public class BroadcastOnTriggerStay : MonoBehaviour
 {
     protected virtual void OnTriggerEnter(Collider other)
     {
-        StartCoroutine("Broadcast", other);
+        if(!other.isTrigger)
+            StartCoroutine("Broadcast", other);
     }
 
     protected virtual void OnTriggerExit(Collider other)
@@ -22,7 +23,7 @@ public class BroadcastOnTriggerStay : MonoBehaviour
     {
         while (other)
         {
-            Messenger.Broadcast(m_message.ToLower(), other.name);
+            Messenger.Broadcast(m_message.ToLower() + other.GetInstanceID(), other.name);
             yield return new WaitForSeconds(m_timer);
         }
     }
