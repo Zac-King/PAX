@@ -66,13 +66,9 @@ public class UnityChanControlScriptWithRigidBody : MonoBehaviour
         CONTROLLER1,
         CONTROLLER2,
         KEYBOARD1,
-        KEYBOARD2,
     }
 
-    /// <summary>
-    /// set from inputhandler
-    /// </summary>
-    public InputState inputType;
+	public InputState inputType;
 
     void FixedUpdate()
     {

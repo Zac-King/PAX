@@ -3,7 +3,6 @@ using System.Collections.Generic;
 
 public class PlayerManager : Singleton<PlayerManager>
 {
-
     public GameObject Player1
     {
         get;
@@ -26,9 +25,10 @@ public class PlayerManager : Singleton<PlayerManager>
     List<GameObject> players = new List<GameObject>();
     protected override void Awake()
     {
+		base.Awake();
+
         //players are initially 0
         //PlayerCount = 0;
-
         List<PlayerCharacterController> pcc = new List<PlayerCharacterController>(FindObjectsOfType<PlayerCharacterController>());
 
         foreach (PlayerCharacterController p in pcc)
@@ -48,4 +48,8 @@ public class PlayerManager : Singleton<PlayerManager>
 			Player1.GetComponent<PlayerCharacterController>().PlayerNumber = 2;
         }
     }
+
+
+
+
 }
