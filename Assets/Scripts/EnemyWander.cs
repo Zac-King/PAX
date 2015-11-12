@@ -47,7 +47,7 @@ public class EnemyWander : MonoBehaviour
 
     void OnTriggerStay(Collider other)
     {
-        if (other.GetComponent<UnityChanControlScriptWithRgidBody>() && target == null)
+        if (other.GetComponent<UnityChanControlScriptWithRigidBody>() && target == null)
             target = other.gameObject;
     }
     void OnTriggerExit(Collider other)

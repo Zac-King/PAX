@@ -58,7 +58,7 @@ public class HealthStats : MonoBehaviour
 
     protected virtual void OnDead()
     {
-        Messenger.Broadcast("playerdied", name); //Broacasts "playerdied" with gameObject.name
+        Messenger.Broadcast("entitydied", name); //Broacasts "playerdied" with gameObject.name
     }
 
     public virtual void OnEnable()
@@ -66,13 +66,19 @@ public class HealthStats : MonoBehaviour
         Messenger.AddListener<string>("takedamage", TakeDamage); //AddListener of "takedamage" with TakeDamage function
         Messenger.MarkAsPermanent("takedamage");
         Messenger.AddListener<string>("gethealed", GetHealed);
-        Messenger.MarkAsPermanent("takedamage");
+        Messenger.MarkAsPermanent("gethealed");
     }
     public virtual void OnDisable()
     {
         Messenger.RemoveListener<string>("takedamage", TakeDamage); //Removes listener of "takedamage" with TakeDamage function
         Messenger.RemoveListener<string>("gethealed", GetHealed);
     }
+
+    //public virtual void OnDestroy()
+    //{
+    //    Messenger.RemoveListener<string>("takedamage", TakeDamage); //Removes listener of "takedamage" with TakeDamage function
+    //    Messenger.RemoveListener<string>("gethealed", GetHealed);
+    //}
    [SerializeField]
    protected int _health = 3;
     /// <summary>

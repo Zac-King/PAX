@@ -10,7 +10,8 @@ public class BroadcastOnTriggerStay : MonoBehaviour
 {
     protected virtual void OnTriggerEnter(Collider other)
     {
-        StartCoroutine("Broadcast", other);
+        if(!other.isTrigger)
+            StartCoroutine("Broadcast", other);
     }
 
     protected virtual void OnTriggerExit(Collider other)

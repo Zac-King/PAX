@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
+using UnityEditor;
 using System.Collections;
 using System.Collections.Generic;
-
 /// <summary>
 /// 
 /// Develop by: Quinton "Kiro" Baudoin
@@ -27,6 +27,7 @@ public class Spawner : MonoBehaviour
 
     void Start()
     {
+        index = 0;
         StartCoroutine(Spawn());
     }
 
@@ -55,14 +56,18 @@ public class Spawner : MonoBehaviour
                 {
                     while (limit <= units.Count)
                     {
+                        if (despawnTimerBool)
+                            yield return new WaitForSeconds(despawnTimer);
+
                         Destroy(units[0]);
                         units.RemoveAt(0);
                     }
 
                 }
-
-                units.Add((GameObject)Instantiate(prefab, transform.position, transform.rotation));
-
+                GameObject go = (GameObject)Instantiate(prefab, transform.position, transform.rotation);
+                go.name = name + go.name + index;
+                units.Add(go);
+                index++;
             }
 
             yield return new WaitForSeconds(timer);
@@ -75,29 +80,60 @@ public class Spawner : MonoBehaviour
     /// DespawnAtLimit: When limit is reached will despawn oldes object from this script
     /// NoLimit: Will ignor limit set
     /// </summary>
-    public enum Spawning {StopAtLimit,WaitAtLimit,DespawnAtLimit,NoLimit};
-    [SerializeField]
+    public enum Spawning {NoLimit, StopAtLimit,WaitAtLimit,DespawnAtLimit};
+   // [SerializeField]
     public Spawning spawningType = Spawning.NoLimit;
 
     /// <summary>
     /// Seconds per spawn.
     /// </summary>
-    [SerializeField]
-    private float timer = 1;
+    public float timer = 1;
+    public bool despawnTimerBool = false;
+
+    public float despawnTimer = 1f;
     /// <summary>
     /// Prefab to be spawned
     /// </summary>
-    [SerializeField]
-    private GameObject prefab;
+    public GameObject prefab;
     /// <summary>
     /// Max number of spawned(If despawnAtLimit is true)
     /// </summary>
-    [SerializeField]
-    private int limit = 1;
+    public int limit = 1;
+    int index;
+
     /// <summary>
     /// storage and queue for each unit spawned(if despawnedAtLimit is true)
     /// </summary>
-
-
     private List<GameObject> units = new List<GameObject>();
+    
+}
+
+//Custom Inspector
+[CustomEditor(typeof(Spawner))]
+public class SpawnerEditor : Editor
+{
+    public override void OnInspectorGUI()
+    {
+        var spawner = (Spawner)target;
+
+        spawner.prefab = (GameObject)EditorGUILayout.ObjectField("Prefab", spawner.prefab, typeof(GameObject),true);
+
+        spawner.spawningType = (Spawner.Spawning)EditorGUILayout.EnumPopup("Limit Options", spawner.spawningType);
+
+        if (spawner.spawningType != Spawner.Spawning.NoLimit)
+        {
+            spawner.limit = EditorGUILayout.IntField("Spawn Limit",spawner.limit);
+            if (spawner.spawningType == Spawner.Spawning.DespawnAtLimit)
+            {
+                spawner.despawnTimerBool = EditorGUILayout.Toggle("Despawn Timer" , spawner.despawnTimerBool);
+            
+                if(spawner.despawnTimerBool)
+                spawner.despawnTimer = EditorGUILayout.FloatField("Despawn Timer", spawner.despawnTimer);
+            }
+        }
+        spawner.timer = EditorGUILayout.FloatField("Spawn Timer", spawner.timer);
+
+    }
+
+
 }

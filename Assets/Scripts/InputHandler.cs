@@ -69,13 +69,12 @@ public class InputHandler : Singleton<InputHandler>
 
     void Start()
     {
-        //Adds all the controls to the list
-        //They are modified in the SetControls Functions for each player
-        CheckControlType();
+
     }
 
     void CustomContols()
     {
+        CheckControlType();
         PlayerControls.Clear();
         if (keyboard)
         {
@@ -119,10 +118,10 @@ public class InputHandler : Singleton<InputHandler>
             //Enable once we have an exit game
         }
 
-        if (Input.anyKey || Input.GetAxis(p1Vert) != 0 || Input.GetAxis(p1Horizon) != 0 ||
-            Input.GetAxis(p2Vert) != 0 || Input.GetAxis(p2Horizon) != 0)
+        //if (Input.anyKey || Input.GetAxis(p1Vert) != 0 || Input.GetAxis(p1Horizon) != 0 ||
+          //  Input.GetAxis(p2Vert) != 0 || Input.GetAxis(p2Horizon) != 0)
         {
-            IdleTime = 0;
+            //IdleTime = 0;
         }
     }
 
@@ -132,12 +131,12 @@ public class InputHandler : Singleton<InputHandler>
     /// </summary>
     private void PlayerEvents()
     {
-        Messenger.Broadcast<float, float>(Players[0] + ":", Input.GetAxis(p1Vert),
-            Input.GetAxis(p1Horizon));
-        if (numPlayers == 2)
+     //   Messenger.Broadcast<float, float>(Players[0] + ":", Input.GetAxis(p1Vert),
+        //    Input.GetAxis(p1Horizon));
+       // if (numPlayers == 2)
         {
-            Messenger.Broadcast<float, float>(Players[1] + ":", Input.GetAxis(p2Vert),
-             Input.GetAxis(p2Horizon));
+       //     Messenger.Broadcast<float, float>(Players[1] + ":", Input.GetAxis(p2Vert),
+        //     Input.GetAxis(p2Horizon));
         }
         //Checks for inputs that are in the List of controls for player1
         foreach (string s in DefinedControls)
@@ -172,7 +171,9 @@ public class InputHandler : Singleton<InputHandler>
                 MaxPlayers = true;
             }
         }
-        CustomContols();
+		CustomContols();
+		Messenger.Broadcast<int>(pName, Players.IndexOf(pName));
+
     }
 
     /// <summary>
@@ -255,7 +256,6 @@ public class InputHandler : Singleton<InputHandler>
                 {
                     DefinedControls.Add(split[1].ToLower() + ":" + temp[1]);
                 }
-
             }
         }
     }
@@ -273,6 +273,7 @@ public class InputHandler : Singleton<InputHandler>
             p1Vert = "p1Vertical";
             p2Horizon = "p2Horizontal";
             p2Vert = "p2Vertical";
+				Messenger.Broadcast<bool>("Controller", keyboard);
         }
         else
         {
@@ -281,6 +282,7 @@ public class InputHandler : Singleton<InputHandler>
             p1Horizon = "p1KeyBoardHorizontal";
             p2Vert = "p2KeyBoardVertical";
             p2Horizon = "p2KeyBoardHorizontal";
+				Messenger.Broadcast<bool>("Controller", keyboard);
         }
     }
 
@@ -314,8 +316,8 @@ public class InputHandler : Singleton<InputHandler>
     [SerializeField]
     private E_JOYSTICK jSprint; //Control assigned to the Sprint Action if using a joystick
 
+	[Space(25)]
     [Header("Keyboard Controls")]
-    [Space(25)]
     [SerializeField]
     private E_KEYBOARD kAttack; //Control assigned to the attack action if using the Keyboard
     [SerializeField]
@@ -325,7 +327,7 @@ public class InputHandler : Singleton<InputHandler>
     [SerializeField]
     private E_KEYBOARD kSprint; //Control assigned to the Sprint Action if using the Keyboard
 
-    private bool keyboard; //A boolean to determine if the controls are configured for keyboard or Controler
+    public bool keyboard; //A boolean to determine if the controls are configured for keyboard or Controler
 
     public int numPlayers; //Keeps track of number of players active in the game
 
