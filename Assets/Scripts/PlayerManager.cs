@@ -57,11 +57,13 @@ public class PlayerManager : Singleton<PlayerManager>
 			Player1.GetComponent<PlayerCharacterController>().PlayerNumber = 1;
         }
 
-        if (players[1] != null)
-        {
-            Player2 = players[1];
-			Player1.GetComponent<PlayerCharacterController>().PlayerNumber = 2;
-        }
+		//Checks to see if the amount of elements in the array are greater than
+		if(players.Count > 1)
+        	if (players[1] != null)
+        	{
+            	Player2 = players[1];
+				Player1.GetComponent<PlayerCharacterController>().PlayerNumber = 2;
+        	}
     }
 
 

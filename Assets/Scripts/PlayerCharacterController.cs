@@ -18,6 +18,7 @@ public class PlayerCharacterController : MonoBehaviour
 		if(GetComponent<UnityChanControlScriptWithRigidBody>().inputType == UnityChanControlScriptWithRigidBody.InputState.DEFAULT)
 		{
 			Debug.LogError("A valid control scheme not set " + gameObject.name);
+			Debug.Break();
 		}
 	}
 

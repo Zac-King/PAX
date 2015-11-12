@@ -51,6 +51,7 @@ public class InputHandler : Singleton<InputHandler>
 			//Throws an error if there are no available controllers and 
 			//A player tries to assign a controler to a player object
 			Debug.LogError("No Controllers Available");
+			Debug.Break();
 		}
 	}
 	
