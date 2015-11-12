@@ -171,6 +171,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _health: 3
+  maxHealth: 3
 --- !u!1 &88458346
 GameObject:
   m_ObjectHideFlags: 0
@@ -442,8 +443,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 968f7eedc9f396c49959f5a66b942807, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  timer: 1
-  canAttack: 1
+  m_message: 
+  m_timer: 1
 --- !u!1 &208455743
 GameObject:
   m_ObjectHideFlags: 0
@@ -530,6 +531,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _health: 3
+  maxHealth: 3
 --- !u!1 &212329944
 GameObject:
   m_ObjectHideFlags: 0
@@ -895,6 +897,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _health: 3
+  maxHealth: 3
 --- !u!1 &285279388
 GameObject:
   m_ObjectHideFlags: 0
@@ -1277,6 +1280,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _health: 3
+  maxHealth: 3
 --- !u!1 &386842024
 GameObject:
   m_ObjectHideFlags: 0
@@ -1964,6 +1968,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _health: 3
+  maxHealth: 3
 --- !u!1 &627547081
 GameObject:
   m_ObjectHideFlags: 0
@@ -2481,6 +2486,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _health: 3
+  maxHealth: 3
 --- !u!1 &723225311
 GameObject:
   m_ObjectHideFlags: 0
@@ -2640,6 +2646,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _health: 3
+  maxHealth: 3
 --- !u!1 &915412934
 GameObject:
   m_ObjectHideFlags: 0
@@ -2838,8 +2845,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 968f7eedc9f396c49959f5a66b942807, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  timer: 1
-  canAttack: 1
+  m_message: 
+  m_timer: 1
 --- !u!1 &939250861
 GameObject:
   m_ObjectHideFlags: 0
@@ -2998,8 +3005,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 968f7eedc9f396c49959f5a66b942807, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  timer: 1
-  canAttack: 1
+  m_message: 
+  m_timer: 1
 --- !u!1001 &982219696
 Prefab:
   m_ObjectHideFlags: 0
@@ -3471,8 +3478,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 968f7eedc9f396c49959f5a66b942807, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  timer: 1
-  canAttack: 1
+  m_message: 
+  m_timer: 1
 --- !u!1 &1121256867
 GameObject:
   m_ObjectHideFlags: 0
@@ -3781,8 +3788,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 968f7eedc9f396c49959f5a66b942807, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  timer: .00999999978
-  canAttack: 1
+  m_message: 
+  m_timer: 1
 --- !u!1 &1238792870
 GameObject:
   m_ObjectHideFlags: 0
@@ -4269,8 +4276,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 968f7eedc9f396c49959f5a66b942807, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  timer: 1
-  canAttack: 1
+  m_message: 
+  m_timer: 1
 --- !u!1 &1398377679
 GameObject:
   m_ObjectHideFlags: 0
@@ -4769,8 +4776,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 968f7eedc9f396c49959f5a66b942807, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  timer: 1
-  canAttack: 1
+  m_message: 
+  m_timer: 1
 --- !u!4 &1516947814 stripped
 Transform:
   m_PrefabParentObject: {fileID: 454384, guid: dc0633129d888d34486147f22c44592c, type: 2}
@@ -4973,6 +4980,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _health: 3
+  maxHealth: 3
 --- !u!1 &1596312226
 GameObject:
   m_ObjectHideFlags: 0
@@ -6488,8 +6496,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 968f7eedc9f396c49959f5a66b942807, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  timer: 1
-  canAttack: 1
+  m_message: 
+  m_timer: 1
 --- !u!1 &2089085130
 GameObject:
   m_ObjectHideFlags: 0
@@ -6575,8 +6583,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 968f7eedc9f396c49959f5a66b942807, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  timer: 1
-  canAttack: 1
+  m_message: 
+  m_timer: 1
 --- !u!1 &2098509958
 GameObject:
   m_ObjectHideFlags: 0
