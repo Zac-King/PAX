@@ -19,6 +19,7 @@ public class InputHandler : Singleton<InputHandler>
     protected override void Awake()
     {
         base.Awake();
+		//Braodcasted from the PlayerCharacterController
 		Messenger.AddListener<string>("InputTypeChanged", AvailablePlayerControls);
     }
 
@@ -28,21 +29,27 @@ public class InputHandler : Singleton<InputHandler>
 	}
 
 	/// <summary>
-	/// Assigns the correct controls to the players depending on the 
-	/// amount of joysticks connected to the controls.
+	/// Checks what control types are availiable for the player to use
+	/// Throws errors when they user tries to assign a control type that is not availiable
+	/// 
+	/// CALLED from PlayerCharacterController
 	/// </summary>
 	void AvailablePlayerControls(string change)
 	{
 		if(change == "KeyBoard" && AvailableContollers < TotalControllers)
 		{
+			//Adds a controller to the AvailiableControllers
 			AvailableContollers++;
 		}
 		if(change == "Controller" && AvailableContollers != 0)
 		{
+			//Takes away a controller to the AvailiableControllers
 			AvailableContollers--;
 		}
 		else if(change == "Controller" && AvailableContollers == 0)
 		{
+			//Throws an error if there are no available controllers and 
+			//A player tries to assign a controler to a player object
 			Debug.LogError("No Controllers Available");
 		}
 	}
