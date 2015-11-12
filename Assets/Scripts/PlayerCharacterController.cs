@@ -33,22 +33,22 @@ public class PlayerCharacterController : MonoBehaviour
 		if(joysticks == 1)
 		{
 			if(PlayerNumber == 1)
-				GetComponent<UnityChanControlScriptWithRigidBody.InputState>() = UnityChanControlScriptWithRigidBody.InputState.KEYBOARD1;
+				GetComponent<UnityChanControlScriptWithRigidBody>().inputType = UnityChanControlScriptWithRigidBody.InputState.KEYBOARD1;
 			else if(PlayerNumber == 2)
-				GetComponent<UnityChanControlScriptWithRigidBody.InputState>() = UnityChanControlScriptWithRigidBody.InputState.CONTROLLER1;
+				GetComponent<UnityChanControlScriptWithRigidBody>().inputType = UnityChanControlScriptWithRigidBody.InputState.CONTROLLER1;
 		}
 		else if(joysticks == 2)
 		{
 			if(PlayerNumber == 1)
-				GetComponent<UnityChanControlScriptWithRigidBody.InputState>() = UnityChanControlScriptWithRigidBody.InputState.CONTROLLER1;
+				GetComponent<UnityChanControlScriptWithRigidBody>().inputType = UnityChanControlScriptWithRigidBody.InputState.CONTROLLER1;
 			else if(PlayerNumber == 2)
-				GetComponent<UnityChanControlScriptWithRigidBody.InputState>() = UnityChanControlScriptWithRigidBody.InputState.CONTROLLER2;
+				GetComponent<UnityChanControlScriptWithRigidBody>().inputType = UnityChanControlScriptWithRigidBody.InputState.CONTROLLER2;
 		}
 		else
 		{
 			if(PlayerNumber == 1)
 			{
-				GetComponent<UnityChanControlScriptWithRigidBody.InputState>() = UnityChanControlScriptWithRigidBody.InputState.KEYBOARD1;
+				GetComponent<UnityChanControlScriptWithRigidBody>().inputType = UnityChanControlScriptWithRigidBody.InputState.KEYBOARD1;
 			}
 			//If there are no controllers 
 		}
