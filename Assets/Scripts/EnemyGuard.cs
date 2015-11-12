@@ -47,7 +47,6 @@ public class EnemyGuard : MonoBehaviour
 					if(canJump)
 					{
 						rb.AddForce(transform.up * speed * yDist * 100);
-						rb.velocity.y = rb.velocity.y > 10 ? 10 : rb.velocity.y;
 						canJump = !canJump;
 					}
 				}
