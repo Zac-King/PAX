@@ -43,6 +43,7 @@ public class CreditMenu : MonoBehaviour {
 		yield return new WaitForSeconds (2f);
 		Programmers.gameObject.SetActive (false);
 		Programmers.transform.position = textPos;
+		gameObject.SetActive (false);
 	}
 
 }
