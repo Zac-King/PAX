@@ -1,4 +1,4 @@
-﻿using UnityEngine;
+using UnityEngine;
 using System.Collections;
 
 public class PlayerChain : MonoBehaviour 
@@ -7,29 +7,37 @@ public class PlayerChain : MonoBehaviour
 	[SerializeField]
 	private float ChainLength;
 
-	GameObject ChainAnchor;
-	GameObject ChainTarget;
+	[SerializeField]
+	private GameObject ChainTarget;
 
-	void Awake()
-	{
-		Messenger.AddListener<GameObject, GameObject>("Chained", ChainSetUp);
-	}
 
 	// Use this for initialization
 	void Start () 
 	{
-	
+		ChainSetUp();
 	}
 	
 	// Update is called once per frame
 	void Update () 
 	{
-	
+
 	}
 
-	void ChainSetUp(GameObject anchor, GameObject target)
+	[ContextMenu("Check Distance")]
+	void CheckChainDistance()
 	{
-		ChainAnchor = anchor;
-		ChainTarget = target;
+		Vector3 anchorPos = this.gameObject.transform.position;
+		Vector3 targetPos = ChainTarget.transform.position;
+
+		Vector3 DistanceBetween = anchorPos - targetPos;
+		Debug.Log(DistanceBetween.x + DistanceBetween.z);
+	}
+
+	void ChainSetUp()
+	{
+		if(GameObject.FindGameObjectWithTag("Player") != this.gameObject)
+		{
+			ChainTarget = GameObject.FindGameObjectWithTag("Player");
+		}
 	}
 }

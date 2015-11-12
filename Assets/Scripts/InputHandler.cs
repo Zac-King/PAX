@@ -1,4 +1,4 @@
-﻿using UnityEngine;
+using UnityEngine;
 using System.Collections;
 using UnityStandardAssets.CrossPlatformInput;
 using System.Collections.Generic;
@@ -64,50 +64,23 @@ public class InputHandler : Singleton<InputHandler>
     {
         base.Awake();
         //listening from player character controller
-        Messenger.AddListener<string>("Player", NumberOfPlayers);
-        Messenger.MarkAsPermanent("Player");
+        Messenger.AddListener<string>("NumPlayersCheck", NumberOfPlayers);
+		Messenger.MarkAsPermanent("NumPlayersCheck");
     }
 
     void Start()
     {
-    }
 
-    void ClearList()
-    {
-        this.DefinedControls.Clear();
-    }
-
-    void CustomContols()
-    {
-        CheckControlType();
-        PlayerControls.Clear();
-        if (keyboard)
-        {
-            PlayerControls.Add(kAttack + ":Attack");
-            PlayerControls.Add(kJump + ":Jump");
-            PlayerControls.Add(kSpecial + ":Special");
-            PlayerControls.Add(kSprint + ":Sprint");
-        }
-        else
-        {
-            PlayerControls.Add(jAttack + ":Attack");
-            PlayerControls.Add(jJump + ":Jump");
-            PlayerControls.Add(jSpecial + ":Special");
-            PlayerControls.Add(jSprint + ":Sprint");
-        }
-        
     }
 
     void OnDisable()
     {
-        Messenger.RemoveListener<string>("Player", NumberOfPlayers);
+		Messenger.RemoveListener<string>("NumPlayersCheck", NumberOfPlayers);
     }
 
     void Update()
     {
         IdleTimer();
-
-        PlayerEvents();
     }
 
     /// <summary>
@@ -121,126 +94,15 @@ public class InputHandler : Singleton<InputHandler>
     }
 
     /// <summary>
-    /// Broadcasts a message that an event trigger has happened
-    /// in this case a button that has been assigned to a player event
-    /// </summary>
-    private void PlayerEvents()
-    {
-        //Checks for inputs that are in the List of controls for player1
-        foreach (string s in DefinedControls)
-        {
-            string[] temp = s.Split(':');
-            if (Input.GetKeyDown(temp[0]))
-            {
-                if (temp[0].Contains("joystick 2"))
-                {
-                    Messenger.Broadcast(Players[1] + ":" + temp[1]);
-                }
-                else
-                {
-                    Messenger.Broadcast(Players[0] + ":" + temp[1]);
-                }
-            }
-        }
-    }
-
-    /// <summary>
     /// Will be used to tell how many players are active in the game and will enable 
     /// the controls only necessary for that many players
     /// </summary>
     private void NumberOfPlayers(string pName)
     {
-    
-    
-    if(PlayerManager.instance.PlayerCount >= 2)
+    	if(PlayerManager.instance.PlayerCount >= 2)
             MaxPlayers = true;
-            
-        
-        CustomContols();
-        //Messenger.Broadcast<int>(pName, Players.IndexOf(pName));
-    }
 
-    /// <summary>
-    /// Sets the controls defined by the player to be 
-    /// recognized by unity
-    /// </summary>
-    /// <param name="playerNum"></param>
-    private void SetControls(int playerNum, bool keyboard)
-    {
-        for (int i = 0; i < PlayerControls.Capacity; i++)
-        {
-            string[] temp = PlayerControls[i].Split(':');
-            string[] split = temp[0].Split('_');
-            if (keyboard == false)
-            {
-                switch (split[1])
-                {
-                    case "A":
-                        {
-                            DefinedControls.Add("joystick " + playerNum + " button 0:" + temp[1]);
-                            break;
-                        }
-                    case "B":
-                        {
-                            DefinedControls.Add("joystick " + playerNum + " button 1:" + temp[1]);
-                            break;
-                        }
-                    case "X":
-                        {
-                            DefinedControls.Add("joystick " + playerNum + " button 2:" + temp[1]);
-                            break;
-                        }
-                    case "Y":
-                        {
-                            DefinedControls.Add("joystick " + playerNum + " button 3:" + temp[1]);
-                            break;
-                        }
-                    case "LeftBumper":
-                        {
-                            DefinedControls.Add("joystick " + playerNum + " button 4:" + temp[1]);
-                            break;
-                        }
-                    case "RightBumper":
-                        {
-                            DefinedControls.Add("joystick " + playerNum + " button 5:" + temp[1]);
-                            break;
-                        }
-                    case "BackButton":
-                        {
-                            DefinedControls.Add("joystick " + playerNum + " button 6:" + temp[1]);
-                            break;
-                        }
-                    case "StartButton":
-                        {
-                            DefinedControls.Add("joystick " + playerNum + " button 7:" + temp[1]);
-                            break;
-                        }
-                    case "LeftStick":
-                        {
-                            DefinedControls.Add("joystick " + playerNum + " button 8:" + temp[1]);
-                            break;
-                        }
-                    case "RightStick":
-                        {
-                            DefinedControls.Add("joystick " + playerNum + " button 9:" + temp[1]);
-                            break;
-                        }
-                    default:
-                        break;
-                }
-            }
-            else if (keyboard == true)
-            {
-                if (split[1] == "LeftShift")
-                {
-                    DefinedControls.Add("left shift:" + temp[1]);
-                }
-                else
-                {
-                    DefinedControls.Add(split[1].ToLower() + ":" + temp[1]);
-                }
-            }
-        }
+		CheckControlType();
     }
 
     /// <summary>
@@ -252,26 +114,18 @@ public class InputHandler : Singleton<InputHandler>
     {
         //get a list of the controllers hooked up
         List<string> joy = new List<string>(Input.GetJoystickNames());
-        
+		Debug.Log(joy.Count);
         //check the size and if its not 0 then we have controllers
         if (joy.Count > 0)
         {
             if (Input.GetJoystickNames()[0] != "")
             {
                 keyboard = false;
-                p1Horizon = "p1Horizontal";
-                p1Vert = "p1Vertical";
-                p2Horizon = "p2Horizontal";
-                p2Vert = "p2Vertical";
                 Messenger.Broadcast<bool>("Controller", keyboard);
             }
             else
             {
                 keyboard = true;
-                p1Vert = "p1KeyBoardVertical";
-                p1Horizon = "p1KeyBoardHorizontal";
-                p2Vert = "p2KeyBoardVertical";
-                p2Horizon = "p2KeyBoardHorizontal";
                 Messenger.Broadcast<bool>("Controller", keyboard);
             }
         }
