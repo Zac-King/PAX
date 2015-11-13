@@ -834,7 +834,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 196284, guid: 3f06eb30bddb36b428bdce59aa6e1b02, type: 2}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 11467538, guid: 3f06eb30bddb36b428bdce59aa6e1b02, type: 2}
       propertyPath: PlayerNumber
@@ -5063,7 +5063,7 @@ Transform:
   - {fileID: 1624047502}
   - {fileID: 1836282986}
   m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_RootOrder: 7
 --- !u!114 &903640929
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7134,7 +7134,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 196284, guid: 3f06eb30bddb36b428bdce59aa6e1b02, type: 2}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 11467538, guid: 3f06eb30bddb36b428bdce59aa6e1b02, type: 2}
       propertyPath: PlayerNumber
@@ -7181,7 +7181,7 @@ Transform:
   - {fileID: 995352444}
   - {fileID: 2077086498}
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 3
 --- !u!1 &1255900306
 GameObject:
   m_ObjectHideFlags: 0
@@ -8096,7 +8096,7 @@ Transform:
   - {fileID: 875266193}
   - {fileID: 881629477}
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 6
 --- !u!1 &1451246563
 GameObject:
   m_ObjectHideFlags: 0
