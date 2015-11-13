@@ -33,15 +33,15 @@ public class GameStates : Singleton<MonoBehaviour>
 
         _fsm.m_currentState = STATES.INIT;
                                                                         //||   transition   ||
-        _fsm.AddTransition(STATES.INIT,     STATES.START, callback);    //||init->start     ||
-        _fsm.AddTransition(STATES.START,    STATES.PLAY, callback);     //||start->play     ||
-        _fsm.AddTransition(STATES.PLAY,     STATES.PAUSE, callback);    //||play->pause     ||
-        _fsm.AddTransition(STATES.PAUSE,    STATES.PLAY, callback);     //||pause->play     ||
+        _fsm.AddTransition(STATES.INIT,     STATES.START,  	 callback);    //||init->start     ||
+        _fsm.AddTransition(STATES.START,    STATES.PLAY,   	 callback);     //||start->play     ||
+        _fsm.AddTransition(STATES.PLAY,     STATES.PAUSE,  	 callback);    //||play->pause     ||
+        _fsm.AddTransition(STATES.PAUSE,    STATES.PLAY,   	 callback);     //||pause->play     ||
         _fsm.AddTransition(STATES.PLAY,     STATES.GAMEOVER, callback); //||play->gameover  ||
         _fsm.AddTransition(STATES.PAUSE,    STATES.GAMEOVER, callback); //||pause->gameover ||
-        _fsm.AddTransition(STATES.GAMEOVER, STATES.START, callback);    //||gameover->start ||
-        _fsm.AddTransition(STATES.START,    STATES.END, callback);      //||start->end      ||
-        _fsm.AddTransition(STATES.END,      STATES.TERM, callback);     //||end->term       ||
+        _fsm.AddTransition(STATES.GAMEOVER, STATES.START, 	 callback);    //||gameover->start ||
+        _fsm.AddTransition(STATES.START,    STATES.END, 	 callback);      //||start->end      ||
+        _fsm.AddTransition(STATES.END,      STATES.TERM, 	 callback);     //||end->term       ||
 
         _fsm.AddTransition(STATES.GAMEOVER, STATES.PLAY, callback);     //||gameover->play  ||
         CallTransition(STATES.START);
@@ -59,7 +59,7 @@ public class GameStates : Singleton<MonoBehaviour>
         _fsm.MakeTransitionTo(transition);
     }
 
-    void OnDisable()
+    void OnDestroy()
     {
         Messenger.RemoveListener<STATES>("maketransition", CallTransition);
     }
