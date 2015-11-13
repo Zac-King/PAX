@@ -7,9 +7,6 @@ public class EnemyGuard : MonoBehaviour
     {
 		rb = GetComponent<Rigidbody>();
 
-        Messenger.AddListener<string>("entitydied", Die);	// Listens for the instance of its own death, _Stats
-        Messenger.MarkAsPermanent("entitydied");			// Preents errors from switching scenes
-
 		fsm.AddState(STATES.INIT);		// Adds states to  the list of possible states
 		fsm.AddState(STATES.IDLE);		//
 		fsm.AddState(STATES.CHASING);	//
@@ -158,7 +155,7 @@ public class EnemyGuard : MonoBehaviour
 		}											//
 	}
 
-////// VARIABLES // VARIABLES // VARIABLES // VARIABLES // VARIABLES 
+////// VARIABLES // VARIABLES // VARIABLES // VARIABLES // VARIABLES  
     public float speed;
 
     public GameObject target;
