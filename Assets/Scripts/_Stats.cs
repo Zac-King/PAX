@@ -3,13 +3,6 @@ using System.Collections;
 
 public class _Stats : MonoBehaviour
 {
-	// DEBUGGING // DEBUGGING // DEBUGGING // DEBUGGING // DEBUGGING 
-	void Start()
-	{
-		Messenger.Broadcast("modstat", gameObject.GetInstanceID().ToString(), "health", -7f);
-	}
-	// DEBUGGING // DEBUGGING // DEBUGGING // DEBUGGING // DEBUGGING 
-
 	/// <summary>
 	/// Awake this instance.
 	/// </summary>

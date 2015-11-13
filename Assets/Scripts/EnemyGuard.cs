@@ -84,6 +84,15 @@ public class EnemyGuard : MonoBehaviour
 		fsm.MakeTransitionTo(STATES.IDLE);
 	}
 
+	IEnumerator Attack(Collision other)
+	{
+		while(attacking)
+		{
+			Messenger.Broadcast("modstat", other.gameObject.GetInstanceID().ToString(), "health", -1f);
+			yield return new WaitForSeconds(1);
+		}
+	}
+
     void OnTriggerStay(Collider other)
 	{
 		if (other.gameObject.CompareTag("Player") && target == null	)
@@ -99,20 +108,29 @@ public class EnemyGuard : MonoBehaviour
 		{
 			fsm.MakeTransitionTo(STATES.IDLE);
 		}
-
     }
 
     void OnCollisionEnter(Collision other)
 	{
 		if (other.gameObject.CompareTag("Player"))
         {
-            //Messenger.Broadcast("modstat", other.gameObject.GetInstanceID().ToString(), "health", -1f);
+			attacking = true;
+			StartCoroutine(Attack(other));
         }
 		if(other.contacts[0].point.y <= transform.position.y)
 		{
 			canJump = true;
 		}
     }
+
+	void OnCollisionExit(Collision other)
+	{
+		if (other.gameObject.CompareTag("Player"))
+		{
+			attacking = false;
+			StopCoroutine(Attack(other));
+		}
+	}
 
     void Die(string a_instance)
     {
@@ -131,6 +149,7 @@ public class EnemyGuard : MonoBehaviour
     public GameObject target;
 
 	bool canJump;
+	bool attacking;
 
     const float speedConst = 100;
 
