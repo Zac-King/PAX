@@ -51,7 +51,9 @@ public class PlayerManager : Singleton<PlayerManager>
 
     void Update()
     {
-        //if(Player1.activeSelf == false && Player2.activeSelf == false)
+        if(Player1.activeSelf == false && Player2.activeSelf == false)
+        {
             
+        }
     }
 }
