@@ -5,7 +5,7 @@ using System.Collections.Generic;
 public class PlayerChain : MonoBehaviour 
 {
 	[SerializeField]
-	float ChainLenght;
+	Vector3 ChainLength;
 
 	[SerializeField]
 	float ChainSlack;
@@ -23,11 +23,9 @@ public class PlayerChain : MonoBehaviour
 		ChainAnchor = FindObjectOfType<PlayerManager>().GetComponent<PlayerManager>().Player1;
 		ChainTarget = FindObjectOfType<PlayerManager>().GetComponent<PlayerManager>().Player2;
 
-		ChainLenght = CalcDis(ChainAnchor.transform.position, ChainTarget.transform.position) + ChainSlack;
-
-		Debug.Log(ChainAnchor.transform.position + LinkPrefab.transform.lossyScale);
-
-		DrawChain();
+		ChainLength = new Vector3(CalcDis(ChainAnchor.transform.position, ChainTarget.transform.position) + ChainSlack, 
+		                          CalcDis(ChainAnchor.transform.position, ChainTarget.transform.position) + ChainSlack,
+		                          CalcDis(ChainAnchor.transform.position, ChainTarget.transform.position) + ChainSlack);
 	}
 
 	void DrawChain()
@@ -42,10 +40,14 @@ public class PlayerChain : MonoBehaviour
 		return Mathf.Sqrt(dis);
 	}
 
-	void DistanceCheck(GameObject a)
-	{
-		
-	}
+//	Vector3 CheckDisplacment(GameObject a)
+//	{
+////		Vector3 a = Vector3.zero;
+////		if(CalcDis(ChainAnchor.transform.position, ChainTarget.transform.position) > ChainLength.x)
+////		{
+////			a.x = CalcDis(ChainAnchor.transform.position, ChainTarget.transform.position) - ChainLength;
+////		}
+//	}
 
 	// Update is called once per frame
 	void Update () 
