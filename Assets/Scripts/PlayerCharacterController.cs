@@ -15,7 +15,7 @@ public class PlayerCharacterController : MonoBehaviour
     // Use this for initialization
     void Start()
     {
-
+        Messenger.Broadcast("PlayerEnabled", GetComponent<_Stats>().health);
     }
 
 
