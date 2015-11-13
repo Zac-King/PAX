@@ -16,7 +16,7 @@ public class BroadcastOnTriggerStay : MonoBehaviour
 
     protected virtual void OnTriggerExit(Collider other)
     {
-        StopCoroutine("Broadcast");
+        StopCoroutine(Broadcast(other));
     }
 
     protected virtual IEnumerator Broadcast(Collider other)
@@ -30,7 +30,7 @@ public class BroadcastOnTriggerStay : MonoBehaviour
 
 
     [SerializeField] private string m_message;
-    [SerializeField] private float m_timer = 1;
+    [SerializeField] protected float m_timer = 1;
 }
 
 /// Eric Mouledoux and Q-Dog
