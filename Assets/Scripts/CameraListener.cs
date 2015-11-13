@@ -103,12 +103,12 @@ public class CameraListener : MonoBehaviour
             {
                 if(activator2 == null)
                 {
-                    if (broadcaster == activator1.transform)
+                    if (broadcaster == activator1.transform && activator1.activeSelf)
                         gameObject.SetActive(true);
                 }
                 else
                 {
-                    if(broadcaster == activator1.transform || broadcaster == activator2.transform)
+                    if(broadcaster == activator1.transform || broadcaster == activator2.transform && activator2.activeSelf)
                         gameObject.SetActive(true);
                 }
             }
@@ -119,8 +119,11 @@ public class CameraListener : MonoBehaviour
 
     void SetTarget(string s)
     {
-        if(s == "Player")
+        if (s == "Player")
+        {
+            Debug.Log("set target");
             cm.SetTargets();
+        }
     }
 
     void OnDestroy()
