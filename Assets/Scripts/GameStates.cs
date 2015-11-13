@@ -1,4 +1,4 @@
-﻿using UnityEngine;
+using UnityEngine;
 using System.Collections.Generic;
 public enum STATES
     {
@@ -32,16 +32,16 @@ public class GameStates : Singleton<MonoBehaviour>
         _fsm.AddState(STATES.TERM);
 
         _fsm.m_currentState = STATES.INIT;
-                                                                        //||   transition   ||
-        _fsm.AddTransition(STATES.INIT,     STATES.START,  	 callback);    //||init->start     ||
-        _fsm.AddTransition(STATES.START,    STATES.PLAY,   	 callback);     //||start->play     ||
-        _fsm.AddTransition(STATES.PLAY,     STATES.PAUSE,  	 callback);    //||play->pause     ||
-        _fsm.AddTransition(STATES.PAUSE,    STATES.PLAY,   	 callback);     //||pause->play     ||
-        _fsm.AddTransition(STATES.PLAY,     STATES.GAMEOVER, callback); //||play->gameover  ||
-        _fsm.AddTransition(STATES.PAUSE,    STATES.GAMEOVER, callback); //||pause->gameover ||
-        _fsm.AddTransition(STATES.GAMEOVER, STATES.START, 	 callback);    //||gameover->start ||
+                                                                        	 //||   transition   ||
+        _fsm.AddTransition(STATES.INIT,     STATES.START,  	 callback);    	 //||init->start     ||
+        _fsm.AddTransition(STATES.START,    STATES.PLAY,   	 callback);      //||start->play     ||
+        _fsm.AddTransition(STATES.PLAY,     STATES.PAUSE,  	 callback);   	 //||play->pause     ||
+        _fsm.AddTransition(STATES.PAUSE,    STATES.PLAY,   	 callback);      //||pause->play     ||
+        _fsm.AddTransition(STATES.PLAY,     STATES.GAMEOVER, callback); 	 //||play->gameover  ||
+        _fsm.AddTransition(STATES.PAUSE,    STATES.GAMEOVER, callback); 	 //||pause->gameover ||
+        _fsm.AddTransition(STATES.GAMEOVER, STATES.START, 	 callback);    	 //||gameover->start ||
         _fsm.AddTransition(STATES.START,    STATES.END, 	 callback);      //||start->end      ||
-        _fsm.AddTransition(STATES.END,      STATES.TERM, 	 callback);     //||end->term       ||
+        _fsm.AddTransition(STATES.END,      STATES.TERM, 	 callback);      //||end->term       ||
 
         _fsm.AddTransition(STATES.GAMEOVER, STATES.PLAY, callback);     //||gameover->play  ||
         CallTransition(STATES.START);
@@ -51,7 +51,7 @@ public class GameStates : Singleton<MonoBehaviour>
     {
         /// Will broadcast transition and as a param the previous state to the new state
         /// string param as "oldstate->currentstate"
-        Messenger.Broadcast("transition", transition.ToLower());
+        Messenger.Broadcast("gamestatechanged", transition.ToLower());
     }
 
     void CallTransition(STATES transition)
@@ -61,7 +61,7 @@ public class GameStates : Singleton<MonoBehaviour>
 
     void OnDestroy()
     {
-        Messenger.RemoveListener<STATES>("maketransition", CallTransition);
+        Messenger.RemoveListener<STATES>("changegamestate", CallTransition);
     }
 
 
