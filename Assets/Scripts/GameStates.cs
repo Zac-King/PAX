@@ -16,9 +16,9 @@ public class GameStates : Singleton<MonoBehaviour>
     {
         base.Awake();
 
-        Messenger.AddListener<STATES>("maketransition", CallTransition);
+		Messenger.AddListener<STATES>("changegamestate", CallTransition);
 
-        Messenger.MarkAsPermanent("maketransition");
+		Messenger.MarkAsPermanent("changegamestate");
       
 
         callback = DoSomething;
@@ -52,6 +52,9 @@ public class GameStates : Singleton<MonoBehaviour>
         /// Will broadcast transition and as a param the previous state to the new state
         /// string param as "oldstate->currentstate"
         Messenger.Broadcast("gamestatechanged", transition.ToLower());
+		//Listeneres would be Whoever needs to know when to play a state when a gamestate has been changed.
+		//They would receivea a stringof one of the strings listed both on Trello and in the above comments.
+		//Each string is what the transition was and desided what to do based on that transition.
     }
 
     void CallTransition(STATES transition)
