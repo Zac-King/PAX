@@ -13,7 +13,7 @@ public class InputHandlerEditor : Editor
 
         if (GUILayout.Button("Reset Defaults"))
         {
-            InputScript.SetDefualts();
+            
         }
     }
 }
