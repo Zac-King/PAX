@@ -5,6 +5,6 @@ public class CameraBroadcast : BroadcastOnTrigger
 {    
     protected override void OnTriggerEnter(Collider col)
     {
-        Messenger.Broadcast<GameObject, string>(message, col.gameObject, this.name);
+        Messenger.Broadcast<GameObject, Transform>(message, col.gameObject, this.transform);
     }
 }
