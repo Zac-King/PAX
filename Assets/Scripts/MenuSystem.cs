@@ -1,17 +1,24 @@
 ﻿using UnityEngine;
 using UnityEngine.UI;
 using System.Collections;
+using System.Collections.Generic;
 
-public class MenuSystem : MonoBehaviour
+static public class MenuSystem
 {
-
-	public void selfActivate(GameObject self)
+	static Dictionary<string, GameObject> menus = new Dictionary<string, GameObject>();
+	
+	static public void AddPrefab(string argument, GameObject prefab)
 	{
-		self.SetActive (true);
+		menus.Add(argument, prefab);
 	}
-
-	public void selfDeactivate(GameObject self)
+	
+	static public void ListenerToTransition(string message)
 	{
-		self.SetActive(false);
+		Messenger.AddListener<string>(message, selfActivate);
+	}
+	
+	static private void selfActivate(string argument)
+	{
+		menus [argument].SetActive(true);
 	}
 }

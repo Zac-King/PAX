@@ -15,7 +15,7 @@ public class CameraListener : MonoBehaviour
     public string listeningForSetCam;
     string listeningForReTarget = "playerdied";
     public bool startCam;
-    public GameObject activator1, activator2;    
+    public GameObject activator1, activator2;
 
     private CameraManager cm;
 
@@ -23,6 +23,48 @@ public class CameraListener : MonoBehaviour
 	void Awake()
     {
         cm = GetComponentInParent<CameraManager>();
+
+        if (activator1 != null)
+        {
+            GameObject temp = activator1;
+            if (activator1.transform.childCount > 0)
+            {
+                Collider[] _activator1 = activator1.gameObject.GetComponentsInChildren<Collider>();
+                activator1 = null;
+                
+                foreach (Collider c in _activator1)
+                {
+                    if (c.isTrigger == true)
+                    {
+                        activator1 = c.gameObject;
+                    }
+                }
+
+                if (activator1 == null)
+                    activator1 = temp;
+
+            }
+        }
+
+        if (activator2 != null)
+        {
+            GameObject temp = activator2;
+            if (activator2.transform.childCount > 0)
+            {
+                Collider[] _activator2 = activator2.gameObject.GetComponentsInChildren<Collider>();
+                activator2 = null;
+
+                foreach (Collider c in _activator2)
+                {
+                    if (c.isTrigger == true)
+                        activator2 = c.gameObject;
+                }
+
+                if (activator2 == null)
+                    activator2 = temp;
+
+            }
+        }
 
         Messenger.AddListener<GameObject,string>(listeningForSetCam, SetCam);
         Messenger.AddListener<string>(listeningForReTarget, SetTarget);
