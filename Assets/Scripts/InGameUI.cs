@@ -8,7 +8,7 @@ public class InGameUI : MonoBehaviour
 	void Start () 
 	{
 		MenuSystem.AddPrefab ("play->pause", gameObject);
-		MenuSystem.ListenerToTransition("transition");
+		MenuSystem.ListenerToTransition("gamestatechanged");
 	}
 
 	public void resume()

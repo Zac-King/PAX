@@ -8,7 +8,7 @@ public class StartMenuUI : MonoBehaviour
 	{
 		MenuSystem.AddPrefab("init->start", gameObject);
 		MenuSystem.AddPrefab ("gameover->start", gameObject);
-		MenuSystem.ListenerToTransition("transition");
+		MenuSystem.ListenerToTransition("gamestatechanged");
 	}
 
 	public void playButton()

@@ -7,7 +7,7 @@ public class GameOverUI : MonoBehaviour
 	{
 		MenuSystem.AddPrefab ("play->gameover", gameObject);
 		MenuSystem.AddPrefab ("pause->gameover", gameObject);
-		MenuSystem.ListenerToTransition ("transition");
+		MenuSystem.ListenerToTransition ("gamestatechanged");
 	}
 
 	public void GameOverButton()

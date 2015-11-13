@@ -5,7 +5,7 @@ using System.Collections;
 {
 	void Awake()
 	{
-		Messenger.AddListener<string>("transition", TransitionMade);
+		Messenger.AddListener<string>("gamestatechanged", TransitionMade);
 	}
 	void TransitionMade(string transition)
 	{
@@ -23,22 +23,22 @@ using System.Collections;
 	}
 	static public void ToPlay()
 	{
-		Messenger.Broadcast("maketransition", STATES.PLAY);
+		Messenger.Broadcast("changegamestate", STATES.PLAY);
 	}
 	static public void ToPause()
 	{
-		Messenger.Broadcast("maketransition",STATES.PAUSE);
+		Messenger.Broadcast("changegamestate",STATES.PAUSE);
 	}
 	static public void ToGameover()
 	{
-		Messenger.Broadcast("maketransition",STATES.GAMEOVER);
+		Messenger.Broadcast("changegamestate",STATES.GAMEOVER);
 	}
 	static public void ToEnd()
 	{
-		Messenger.Broadcast("maketransition",STATES.END);
+		Messenger.Broadcast("changegamestate",STATES.END);
 	}
 	static public void ToTerm()
 	{
-		Messenger.Broadcast("maketransition",STATES.TERM);
+		Messenger.Broadcast("changegamestate",STATES.TERM);
 	}
 }
