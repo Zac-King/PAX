@@ -48,4 +48,10 @@ public class PlayerManager : Singleton<PlayerManager>
 			Player1.GetComponent<PlayerCharacterController>().PlayerNumber = 2;
         }
     }
+
+    void Update()
+    {
+        //if(Player1.activeSelf == false && Player2.activeSelf == false)
+            
+    }
 }
