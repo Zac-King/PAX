@@ -5,37 +5,25 @@ public class SetPlayerPosition : MonoBehaviour
 {
     public string listeningFor;
     public float maxDistance;
-    string activator;
+    Transform trigger;
     List<Transform> players = new List<Transform>();
 
     void Awake()
     {
-        Messenger.AddListener<GameObject, string>(listeningFor, SetPlayerPos);
+        Messenger.AddListener<GameObject, Transform>(listeningFor, SetPlayerPos);
 
         //keep track of players
         var playerTemp = GameObject.FindGameObjectsWithTag("Player");
         for(int i = 0; i < playerTemp.Length; ++i)
             players.Add(playerTemp[i].transform);
 
-        //if hierarchy has multiple colliders, use the one that's a trigger
-        BoxCollider[] children = GetComponentsInParent<BoxCollider>();
-        foreach (Collider c in children)
-        {
-            if (c.isTrigger == true)
-            {
-                activator = c.name;
-                return;
-            }
-        }
-
-        //Debug.Log("players[0] == " + players[0]);
-        //Debug.Log("players[1] == " + players[1]);
+        trigger = GetComponentInChildren<CameraBroadcast>().gameObject.transform;
 
     }
 
-    void SetPlayerPos(GameObject o, string broadcaster)
+    void SetPlayerPos(GameObject o, Transform broadcaster)
     {
-        if (players.Count == 2 && o.tag == "Player" && broadcaster == activator)
+        if (players.Count == 2 && o.tag == "Player" && broadcaster == trigger.transform)
         {
             //if (Physics.Linecast(players[0].position, players[1].position) || 
             //    Vector3.Distance(players[0].position, 
@@ -57,6 +45,6 @@ public class SetPlayerPosition : MonoBehaviour
 
     void OnDestroy()
     {
-        Messenger.RemoveListener<GameObject, string>(listeningFor, SetPlayerPos);
+        Messenger.RemoveListener<GameObject, Transform>(listeningFor, SetPlayerPos);
     }
 }

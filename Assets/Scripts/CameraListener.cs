@@ -26,6 +26,7 @@ public class CameraListener : MonoBehaviour
 
         if (activator1 != null)
         {
+            //store activator gameObject in a temporary variable for when null we can retrieve later
             GameObject temp = activator1;
             if (activator1.transform.childCount > 0)
             {
@@ -35,9 +36,7 @@ public class CameraListener : MonoBehaviour
                 foreach (Collider c in _activator1)
                 {
                     if (c.isTrigger == true)
-                    {
                         activator1 = c.gameObject;
-                    }
                 }
 
                 if (activator1 == null)
@@ -66,7 +65,7 @@ public class CameraListener : MonoBehaviour
             }
         }
 
-        Messenger.AddListener<GameObject,string>(listeningForSetCam, SetCam);
+        Messenger.AddListener<GameObject,Transform>(listeningForSetCam, SetCam);
         Messenger.AddListener<string>(listeningForReTarget, SetTarget);
         Messenger.MarkAsPermanent(listeningForSetCam);
         Messenger.MarkAsPermanent(listeningForReTarget);
@@ -79,7 +78,7 @@ public class CameraListener : MonoBehaviour
     /// </summary>
     /// <param name="s">Name of the gameobject that triggered the event.</param>
     /// <param name="broadcaster">Name of the gameobject that broadcasts the message.</param>
-    void SetCam(GameObject o, string broadcaster)
+    void SetCam(GameObject o, Transform broadcaster)
     {
         if (o.tag == "Player")
         {
@@ -87,12 +86,12 @@ public class CameraListener : MonoBehaviour
             {
                 if(activator2 == null)
                 {
-                    if (broadcaster == activator1.name)
+                    if (broadcaster == activator1.transform)
                         gameObject.SetActive(true);
                 }
                 else
                 {
-                    if(broadcaster == activator1.name || broadcaster == activator2.name)
+                    if(broadcaster == activator1.transform || broadcaster == activator2.transform)
                         gameObject.SetActive(true);
                 }
             }
@@ -109,7 +108,7 @@ public class CameraListener : MonoBehaviour
 
     void OnDestroy()
     {
-        Messenger.RemoveListener<GameObject, string>(listeningForSetCam, SetCam);
+        Messenger.RemoveListener<GameObject, Transform>(listeningForSetCam, SetCam);
         Messenger.RemoveListener<string>(listeningForReTarget, SetTarget);
     }
 }
