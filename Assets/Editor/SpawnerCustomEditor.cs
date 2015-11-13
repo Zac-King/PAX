@@ -28,3 +28,4 @@ using System.Collections;
 		spawner.timer = EditorGUILayout.FloatField("Spawn Timer", spawner.timer);
 		
 	}
+}
