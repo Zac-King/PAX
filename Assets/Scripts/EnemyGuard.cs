@@ -28,9 +28,9 @@ public class EnemyGuard : MonoBehaviour
                                                                                                                     //
             Vector3 levelTarget =                                                                                   //
                 new Vector3(target.transform.position.x, transform.position.y, target.transform.position.z);        // Bring the target position down to the current elevation to prevent flying 
-            float dist = Vector3.Distance(transform.position, levelTarget);                                         // Get the distance from here to the target position
+            float dist = Vector3.Distance(transform.position, target.transform.position);                           // Get the distance from here to the target position
                                                                                                                     //
-            Vector3 direction = (levelTarget - transform.position).normalized;                                      // Get the direction the target is in
+            Vector3 direction = (target.transform.position - transform.position).normalized;                                      // Get the direction the target is in
             bool hasHit = Physics.Raycast(transform.position, direction, out hit, dist);                            // Check to see if anything is between here and the target
                                                                                                                     //
             if (hasHit && hit.transform.gameObject == target)                                                       // If there is nothing between here and the target, but still a target
@@ -39,6 +39,15 @@ public class EnemyGuard : MonoBehaviour
                 Vector3 currentPos = new Vector3(transform.position.x, 0, transform.position.z);                        // Get the current position minus the elevation
                 Vector3 heading = Vector3.Normalize(targetPos - currentPos);                                            // Get the direction to move it towards the target
                 rb.AddForce(heading * speedConst * speed);                                                              // Move towards the target
+
+				if(target.transform.position.y - transform.position.y > 0.1f)
+				{
+					if(canJump)
+					{
+						rb.AddForce(transform.up * speed * dist * 100);
+						canJump = !canJump;
+					}
+				}
             }                                                                                                       //    
             else                                                                                                    // If there is something btween here and the target
             {                                                                                                       //
@@ -71,19 +80,20 @@ public class EnemyGuard : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Player"))
         {
-            Messenger.Broadcast("takedamage", name);
+            Messenger.Broadcast("modstat", other.gameObject.GetInstanceID().ToString(), "health", -1f);
         }
+		if(other.contacts[0].point.y <= transform.position.y)
+		{
+			canJump = true;
+		}
     }
 
-    void Die(string a)
+    void Die(string a_instance)
     {
-
-        if (a == name)
-        {
-          //  Messenger.RemoveListener<string>("entitydied", Die);
-            Destroy(gameObject);
-        }
+		if(a_instance == gameObject.GetInstanceID().ToString())
+			Destroy(gameObject);
     }
+
     void OnDestroy()
     {
         Messenger.RemoveListener<string>("entitydied", Die);
@@ -92,6 +102,8 @@ public class EnemyGuard : MonoBehaviour
     public float speed;
 
     public GameObject target;
+
+	bool canJump;
 
     const float speedConst = 100;
 

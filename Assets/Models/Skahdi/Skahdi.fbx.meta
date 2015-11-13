@@ -1,0 +1,1964 @@
+fileFormatVersion: 2
+guid: 1d6b47c936fb41745aeb8cfa87ce3d1b
+timeCreated: 1447278974
+licenseType: Pro
+ModelImporter:
+  serializedVersion: 18
+  fileIDToRecycleName:
+    100000: BeltMesh
+    100002: BodyGroup
+    100004: BuckleMesh1
+    100006: BuckleMesh2
+    100008: EyebrowMeshL
+    100010: EyebrowMeshR
+    100012: EyebrwMeshR
+    100014: EyeL
+    100016: EyeR
+    100018: group
+    100020: HairGroup
+    100022: HairMesh1
+    100024: HairMesh2
+    100026: HairMesh3
+    100028: HairMesh4
+    100030: HairMesh5
+    100032: HairMesh6
+    100034: HairMesh7
+    100036: HairMesh8
+    100038: HairMesh9
+    100040: HeadGroup
+    100042: HeadMesh
+    100044: HornMeshL
+    100046: MouthGroup
+    100048: NecklaceMesh1
+    100050: NecklaceMesh2
+    100052: pasted__directionalLight1
+    100054: pasted__directionalLight2
+    100056: pasted__directionalLight3
+    100058: pasted__directionalLight4
+    100060: ShakdiBody
+    100062: ShakleGroup
+    100064: ShakleMesh1
+    100066: ShakleMesh2
+    100068: ShakleMesh3
+    100070: ShakleMesh4
+    100072: ShakleMesh5
+    100074: ShakleMesh6
+    100076: ShakleMesh7
+    100078: ShirtMesh
+    100080: //RootNode
+    100082: SkahdiRig_Chain2_AuxSHJnt
+    100084: SkahdiRig_Hair1_01_01SHJnt
+    100086: SkahdiRig_Hair1_01_02SHJnt
+    100088: SkahdiRig_Hair1_01_03SHJnt
+    100090: SkahdiRig_Hair1_01_04SHJnt
+    100092: SkahdiRig_Hair1_01_05SHJnt
+    100094: SkahdiRig_Hair1_01_06SHJnt
+    100096: SkahdiRig_HairBits1_01_01SHJnt
+    100098: SkahdiRig_HairBits1_01_02SHJnt
+    100100: SkahdiRig_HairBits2_01_01SHJnt
+    100102: SkahdiRig_HairBits2_01_02SHJnt
+    100104: SkahdiRig_HairBits3_01_01SHJnt
+    100106: SkahdiRig_HairBits3_01_02SHJnt
+    100108: SkahdiRig_HairBits4_01_01SHJnt
+    100110: SkahdiRig_HairBits4_01_02SHJnt
+    100112: SkahdiRig_HairBits4_01_03SHJnt
+    100114: SkahdiRig_HairBits5_01_01SHJnt
+    100116: SkahdiRig_HairBits5_01_02SHJnt
+    100118: SkahdiRig_HairBits5_01_03SHJnt
+    100120: SkahdiRig_Head_JawEndSHJnt
+    100122: SkahdiRig_Head_JawSHJnt
+    100124: SkahdiRig_Head_TopSHJnt
+    100126: SkahdiRig_l_Arm_ClavicleSHJnt
+    100128: SkahdiRig_l_Arm_ElbowSHJnt
+    100130: SkahdiRig_l_Arm_ShoulderSHJnt
+    100132: SkahdiRig_l_Arm_WristSHJnt
+    100134: SkahdiRig_l_Breast2_AuxSHJnt
+    100136: SkahdiRig_l_Breast_AuxSHJnt
+    100138: SkahdiRig_l_Chain1_AuxSHJnt
+    100140: SkahdiRig_l_Cheek_AuxSHJnt
+    100142: SkahdiRig_l_Ear_01_01SHJnt
+    100144: SkahdiRig_l_Ear_01_02SHJnt
+    100146: SkahdiRig_l_Ear_01_03SHJnt
+    100148: SkahdiRig_l_Eye_01SHJnt
+    100150: SkahdiRig_l_Eyebrow2_AuxSHJnt
+    100152: SkahdiRig_l_Eyebrow3_AuxSHJnt
+    100154: SkahdiRig_l_Eyebrow_AuxSHJnt
+    100156: SkahdiRig_l_Finger_01_01SHJnt
+    100158: SkahdiRig_l_Finger_01_02SHJnt
+    100160: SkahdiRig_l_Finger_01_03SHJnt
+    100162: SkahdiRig_l_Finger_01_04SHJnt
+    100164: SkahdiRig_l_Finger_02_01SHJnt
+    100166: SkahdiRig_l_Finger_02_02SHJnt
+    100168: SkahdiRig_l_Finger_02_03SHJnt
+    100170: SkahdiRig_l_Finger_02_04SHJnt
+    100172: SkahdiRig_l_Finger_03_01SHJnt
+    100174: SkahdiRig_l_Finger_03_02SHJnt
+    100176: SkahdiRig_l_Finger_03_03SHJnt
+    100178: SkahdiRig_l_Finger_03_04SHJnt
+    100180: SkahdiRig_l_Finger_04_01SHJnt
+    100182: SkahdiRig_l_Finger_04_02SHJnt
+    100184: SkahdiRig_l_Finger_04_03SHJnt
+    100186: SkahdiRig_l_Finger_04_04SHJnt
+    100188: SkahdiRig_l_Hair2_01_01SHJnt
+    100190: SkahdiRig_l_Hair2_01_02SHJnt
+    100192: SkahdiRig_l_Hair2_01_03SHJnt
+    100194: SkahdiRig_l_Hair2_01_04SHJnt
+    100196: SkahdiRig_l_Leg_AnkleSHJnt
+    100198: SkahdiRig_l_Leg_BallSHJnt
+    100200: SkahdiRig_l_Leg_HipSHJnt
+    100202: SkahdiRig_l_Leg_KneeSHJnt
+    100204: SkahdiRig_l_Leg_ToeSHJnt
+    100206: SkahdiRig_l_Lip1_AuxSHJnt
+    100208: SkahdiRig_l_Lip4_AuxSHJnt
+    100210: SkahdiRig_l_Lip5_AuxSHJnt
+    100212: SkahdiRig_l_LowerLid_AuxSHJnt
+    100214: SkahdiRig_l_Shackle_AuxSHJnt
+    100216: SkahdiRig_l_ShirtSide_01_01SHJnt
+    100218: SkahdiRig_l_ShirtSide_01_02SHJnt
+    100220: SkahdiRig_l_ShirtSide_01_03SHJnt
+    100222: SkahdiRig_l_Thumb_01_01SHJnt
+    100224: SkahdiRig_l_Thumb_01_02SHJnt
+    100226: SkahdiRig_l_Thumb_01_03SHJnt
+    100228: SkahdiRig_l_Thumb_01_04SHJnt
+    100230: SkahdiRig_l_UpperLid_AuxSHJnt
+    100232: SkahdiRig_Lip2_AuxSHJnt
+    100234: SkahdiRig_Lip_AuxSHJnt
+    100236: SkahdiRig_MAINSHJnt
+    100238: SkahdiRig_Neck_01SHJnt
+    100240: SkahdiRig_Neck_02SHJnt
+    100242: SkahdiRig_Neck_TopSHJnt
+    100244: SkahdiRig_Necklace_01_01SHJnt
+    100246: SkahdiRig_Necklace_01_02SHJnt
+    100248: SkahdiRig_Necklace_01_03SHJnt
+    100250: SkahdiRig_Nose_AuxSHJnt
+    100252: SkahdiRig_r_Arm_ClavicleSHJnt
+    100254: SkahdiRig_r_Arm_ElbowSHJnt
+    100256: SkahdiRig_r_Arm_ShoulderSHJnt
+    100258: SkahdiRig_r_Arm_WristSHJnt
+    100260: SkahdiRig_r_Breast2_AuxSHJnt
+    100262: SkahdiRig_r_Breast_AuxSHJnt
+    100264: SkahdiRig_r_Chain1_AuxSHJnt
+    100266: SkahdiRig_r_Cheek_AuxSHJnt
+    100268: SkahdiRig_r_Ear_01_01SHJnt
+    100270: SkahdiRig_r_Ear_01_02SHJnt
+    100272: SkahdiRig_r_Ear_01_03SHJnt
+    100274: SkahdiRig_r_Eye_01SHJnt
+    100276: SkahdiRig_r_Eyebrow2_AuxSHJnt
+    100278: SkahdiRig_r_Eyebrow3_AuxSHJnt
+    100280: SkahdiRig_r_Eyebrow_AuxSHJnt
+    100282: SkahdiRig_r_Finger_01_01SHJnt
+    100284: SkahdiRig_r_Finger_01_02SHJnt
+    100286: SkahdiRig_r_Finger_01_03SHJnt
+    100288: SkahdiRig_r_Finger_01_04SHJnt
+    100290: SkahdiRig_r_Finger_02_01SHJnt
+    100292: SkahdiRig_r_Finger_02_02SHJnt
+    100294: SkahdiRig_r_Finger_02_03SHJnt
+    100296: SkahdiRig_r_Finger_02_04SHJnt
+    100298: SkahdiRig_r_Finger_03_01SHJnt
+    100300: SkahdiRig_r_Finger_03_02SHJnt
+    100302: SkahdiRig_r_Finger_03_03SHJnt
+    100304: SkahdiRig_r_Finger_03_04SHJnt
+    100306: SkahdiRig_r_Finger_04_01SHJnt
+    100308: SkahdiRig_r_Finger_04_02SHJnt
+    100310: SkahdiRig_r_Finger_04_03SHJnt
+    100312: SkahdiRig_r_Finger_04_04SHJnt
+    100314: SkahdiRig_r_Hair2_01_01SHJnt
+    100316: SkahdiRig_r_Hair2_01_02SHJnt
+    100318: SkahdiRig_r_Hair2_01_03SHJnt
+    100320: SkahdiRig_r_Hair2_01_04SHJnt
+    100322: SkahdiRig_r_Leg_AnkleSHJnt
+    100324: SkahdiRig_r_Leg_BallSHJnt
+    100326: SkahdiRig_r_Leg_HipSHJnt
+    100328: SkahdiRig_r_Leg_KneeSHJnt
+    100330: SkahdiRig_r_Leg_ToeSHJnt
+    100332: SkahdiRig_r_Lip1_AuxSHJnt
+    100334: SkahdiRig_r_Lip4_AuxSHJnt
+    100336: SkahdiRig_r_Lip5_AuxSHJnt
+    100338: SkahdiRig_r_LowerLid_AuxSHJnt
+    100340: SkahdiRig_r_Shackle_AuxSHJnt
+    100342: SkahdiRig_r_ShirtSide_01_01SHJnt
+    100344: SkahdiRig_r_ShirtSide_01_02SHJnt
+    100346: SkahdiRig_r_ShirtSide_01_03SHJnt
+    100348: SkahdiRig_r_Thumb_01_01SHJnt
+    100350: SkahdiRig_r_Thumb_01_02SHJnt
+    100352: SkahdiRig_r_Thumb_01_03SHJnt
+    100354: SkahdiRig_r_Thumb_01_04SHJnt
+    100356: SkahdiRig_r_UpperLid_AuxSHJnt
+    100358: SkahdiRig_ROOTSHJnt
+    100360: SkahdiRig_ShirtBack_01_01SHJnt
+    100362: SkahdiRig_ShirtBack_01_02SHJnt
+    100364: SkahdiRig_ShirtBack_01_03SHJnt
+    100366: SkahdiRig_ShirtFront_01_01SHJnt
+    100368: SkahdiRig_ShirtFront_01_02SHJnt
+    100370: SkahdiRig_ShirtFront_01_03SHJnt
+    100372: SkahdiRig_SHJntGrp
+    100374: SkahdiRig_Spine_01SHJnt
+    100376: SkahdiRig_Spine_02SHJnt
+    100378: SkahdiRig_Spine_03SHJnt
+    100380: SkahdiRig_Spine_04SHJnt
+    100382: SkahdiRig_Spine_TopSHJnt
+    100384: SkahdiRig_tongue_01_01SHJnt
+    100386: SkahdiRig_tongue_01_02SHJnt
+    100388: SkahdiRig_tongue_01_03SHJnt
+    100390: TeethMesh1
+    100392: TeethMesh2
+    100394: TongueMesh
+    100396: TorsoMesh
+    400000: BeltMesh
+    400002: BodyGroup
+    400004: BuckleMesh1
+    400006: BuckleMesh2
+    400008: EyebrowMeshL
+    400010: EyebrowMeshR
+    400012: EyebrwMeshR
+    400014: EyeL
+    400016: EyeR
+    400018: group
+    400020: HairGroup
+    400022: HairMesh1
+    400024: HairMesh2
+    400026: HairMesh3
+    400028: HairMesh4
+    400030: HairMesh5
+    400032: HairMesh6
+    400034: HairMesh7
+    400036: HairMesh8
+    400038: HairMesh9
+    400040: HeadGroup
+    400042: HeadMesh
+    400044: HornMeshL
+    400046: MouthGroup
+    400048: NecklaceMesh1
+    400050: NecklaceMesh2
+    400052: pasted__directionalLight1
+    400054: pasted__directionalLight2
+    400056: pasted__directionalLight3
+    400058: pasted__directionalLight4
+    400060: ShakdiBody
+    400062: ShakleGroup
+    400064: ShakleMesh1
+    400066: ShakleMesh2
+    400068: ShakleMesh3
+    400070: ShakleMesh4
+    400072: ShakleMesh5
+    400074: ShakleMesh6
+    400076: ShakleMesh7
+    400078: ShirtMesh
+    400080: //RootNode
+    400082: SkahdiRig_Chain2_AuxSHJnt
+    400084: SkahdiRig_Hair1_01_01SHJnt
+    400086: SkahdiRig_Hair1_01_02SHJnt
+    400088: SkahdiRig_Hair1_01_03SHJnt
+    400090: SkahdiRig_Hair1_01_04SHJnt
+    400092: SkahdiRig_Hair1_01_05SHJnt
+    400094: SkahdiRig_Hair1_01_06SHJnt
+    400096: SkahdiRig_HairBits1_01_01SHJnt
+    400098: SkahdiRig_HairBits1_01_02SHJnt
+    400100: SkahdiRig_HairBits2_01_01SHJnt
+    400102: SkahdiRig_HairBits2_01_02SHJnt
+    400104: SkahdiRig_HairBits3_01_01SHJnt
+    400106: SkahdiRig_HairBits3_01_02SHJnt
+    400108: SkahdiRig_HairBits4_01_01SHJnt
+    400110: SkahdiRig_HairBits4_01_02SHJnt
+    400112: SkahdiRig_HairBits4_01_03SHJnt
+    400114: SkahdiRig_HairBits5_01_01SHJnt
+    400116: SkahdiRig_HairBits5_01_02SHJnt
+    400118: SkahdiRig_HairBits5_01_03SHJnt
+    400120: SkahdiRig_Head_JawEndSHJnt
+    400122: SkahdiRig_Head_JawSHJnt
+    400124: SkahdiRig_Head_TopSHJnt
+    400126: SkahdiRig_l_Arm_ClavicleSHJnt
+    400128: SkahdiRig_l_Arm_ElbowSHJnt
+    400130: SkahdiRig_l_Arm_ShoulderSHJnt
+    400132: SkahdiRig_l_Arm_WristSHJnt
+    400134: SkahdiRig_l_Breast2_AuxSHJnt
+    400136: SkahdiRig_l_Breast_AuxSHJnt
+    400138: SkahdiRig_l_Chain1_AuxSHJnt
+    400140: SkahdiRig_l_Cheek_AuxSHJnt
+    400142: SkahdiRig_l_Ear_01_01SHJnt
+    400144: SkahdiRig_l_Ear_01_02SHJnt
+    400146: SkahdiRig_l_Ear_01_03SHJnt
+    400148: SkahdiRig_l_Eye_01SHJnt
+    400150: SkahdiRig_l_Eyebrow2_AuxSHJnt
+    400152: SkahdiRig_l_Eyebrow3_AuxSHJnt
+    400154: SkahdiRig_l_Eyebrow_AuxSHJnt
+    400156: SkahdiRig_l_Finger_01_01SHJnt
+    400158: SkahdiRig_l_Finger_01_02SHJnt
+    400160: SkahdiRig_l_Finger_01_03SHJnt
+    400162: SkahdiRig_l_Finger_01_04SHJnt
+    400164: SkahdiRig_l_Finger_02_01SHJnt
+    400166: SkahdiRig_l_Finger_02_02SHJnt
+    400168: SkahdiRig_l_Finger_02_03SHJnt
+    400170: SkahdiRig_l_Finger_02_04SHJnt
+    400172: SkahdiRig_l_Finger_03_01SHJnt
+    400174: SkahdiRig_l_Finger_03_02SHJnt
+    400176: SkahdiRig_l_Finger_03_03SHJnt
+    400178: SkahdiRig_l_Finger_03_04SHJnt
+    400180: SkahdiRig_l_Finger_04_01SHJnt
+    400182: SkahdiRig_l_Finger_04_02SHJnt
+    400184: SkahdiRig_l_Finger_04_03SHJnt
+    400186: SkahdiRig_l_Finger_04_04SHJnt
+    400188: SkahdiRig_l_Hair2_01_01SHJnt
+    400190: SkahdiRig_l_Hair2_01_02SHJnt
+    400192: SkahdiRig_l_Hair2_01_03SHJnt
+    400194: SkahdiRig_l_Hair2_01_04SHJnt
+    400196: SkahdiRig_l_Leg_AnkleSHJnt
+    400198: SkahdiRig_l_Leg_BallSHJnt
+    400200: SkahdiRig_l_Leg_HipSHJnt
+    400202: SkahdiRig_l_Leg_KneeSHJnt
+    400204: SkahdiRig_l_Leg_ToeSHJnt
+    400206: SkahdiRig_l_Lip1_AuxSHJnt
+    400208: SkahdiRig_l_Lip4_AuxSHJnt
+    400210: SkahdiRig_l_Lip5_AuxSHJnt
+    400212: SkahdiRig_l_LowerLid_AuxSHJnt
+    400214: SkahdiRig_l_Shackle_AuxSHJnt
+    400216: SkahdiRig_l_ShirtSide_01_01SHJnt
+    400218: SkahdiRig_l_ShirtSide_01_02SHJnt
+    400220: SkahdiRig_l_ShirtSide_01_03SHJnt
+    400222: SkahdiRig_l_Thumb_01_01SHJnt
+    400224: SkahdiRig_l_Thumb_01_02SHJnt
+    400226: SkahdiRig_l_Thumb_01_03SHJnt
+    400228: SkahdiRig_l_Thumb_01_04SHJnt
+    400230: SkahdiRig_l_UpperLid_AuxSHJnt
+    400232: SkahdiRig_Lip2_AuxSHJnt
+    400234: SkahdiRig_Lip_AuxSHJnt
+    400236: SkahdiRig_MAINSHJnt
+    400238: SkahdiRig_Neck_01SHJnt
+    400240: SkahdiRig_Neck_02SHJnt
+    400242: SkahdiRig_Neck_TopSHJnt
+    400244: SkahdiRig_Necklace_01_01SHJnt
+    400246: SkahdiRig_Necklace_01_02SHJnt
+    400248: SkahdiRig_Necklace_01_03SHJnt
+    400250: SkahdiRig_Nose_AuxSHJnt
+    400252: SkahdiRig_r_Arm_ClavicleSHJnt
+    400254: SkahdiRig_r_Arm_ElbowSHJnt
+    400256: SkahdiRig_r_Arm_ShoulderSHJnt
+    400258: SkahdiRig_r_Arm_WristSHJnt
+    400260: SkahdiRig_r_Breast2_AuxSHJnt
+    400262: SkahdiRig_r_Breast_AuxSHJnt
+    400264: SkahdiRig_r_Chain1_AuxSHJnt
+    400266: SkahdiRig_r_Cheek_AuxSHJnt
+    400268: SkahdiRig_r_Ear_01_01SHJnt
+    400270: SkahdiRig_r_Ear_01_02SHJnt
+    400272: SkahdiRig_r_Ear_01_03SHJnt
+    400274: SkahdiRig_r_Eye_01SHJnt
+    400276: SkahdiRig_r_Eyebrow2_AuxSHJnt
+    400278: SkahdiRig_r_Eyebrow3_AuxSHJnt
+    400280: SkahdiRig_r_Eyebrow_AuxSHJnt
+    400282: SkahdiRig_r_Finger_01_01SHJnt
+    400284: SkahdiRig_r_Finger_01_02SHJnt
+    400286: SkahdiRig_r_Finger_01_03SHJnt
+    400288: SkahdiRig_r_Finger_01_04SHJnt
+    400290: SkahdiRig_r_Finger_02_01SHJnt
+    400292: SkahdiRig_r_Finger_02_02SHJnt
+    400294: SkahdiRig_r_Finger_02_03SHJnt
+    400296: SkahdiRig_r_Finger_02_04SHJnt
+    400298: SkahdiRig_r_Finger_03_01SHJnt
+    400300: SkahdiRig_r_Finger_03_02SHJnt
+    400302: SkahdiRig_r_Finger_03_03SHJnt
+    400304: SkahdiRig_r_Finger_03_04SHJnt
+    400306: SkahdiRig_r_Finger_04_01SHJnt
+    400308: SkahdiRig_r_Finger_04_02SHJnt
+    400310: SkahdiRig_r_Finger_04_03SHJnt
+    400312: SkahdiRig_r_Finger_04_04SHJnt
+    400314: SkahdiRig_r_Hair2_01_01SHJnt
+    400316: SkahdiRig_r_Hair2_01_02SHJnt
+    400318: SkahdiRig_r_Hair2_01_03SHJnt
+    400320: SkahdiRig_r_Hair2_01_04SHJnt
+    400322: SkahdiRig_r_Leg_AnkleSHJnt
+    400324: SkahdiRig_r_Leg_BallSHJnt
+    400326: SkahdiRig_r_Leg_HipSHJnt
+    400328: SkahdiRig_r_Leg_KneeSHJnt
+    400330: SkahdiRig_r_Leg_ToeSHJnt
+    400332: SkahdiRig_r_Lip1_AuxSHJnt
+    400334: SkahdiRig_r_Lip4_AuxSHJnt
+    400336: SkahdiRig_r_Lip5_AuxSHJnt
+    400338: SkahdiRig_r_LowerLid_AuxSHJnt
+    400340: SkahdiRig_r_Shackle_AuxSHJnt
+    400342: SkahdiRig_r_ShirtSide_01_01SHJnt
+    400344: SkahdiRig_r_ShirtSide_01_02SHJnt
+    400346: SkahdiRig_r_ShirtSide_01_03SHJnt
+    400348: SkahdiRig_r_Thumb_01_01SHJnt
+    400350: SkahdiRig_r_Thumb_01_02SHJnt
+    400352: SkahdiRig_r_Thumb_01_03SHJnt
+    400354: SkahdiRig_r_Thumb_01_04SHJnt
+    400356: SkahdiRig_r_UpperLid_AuxSHJnt
+    400358: SkahdiRig_ROOTSHJnt
+    400360: SkahdiRig_ShirtBack_01_01SHJnt
+    400362: SkahdiRig_ShirtBack_01_02SHJnt
+    400364: SkahdiRig_ShirtBack_01_03SHJnt
+    400366: SkahdiRig_ShirtFront_01_01SHJnt
+    400368: SkahdiRig_ShirtFront_01_02SHJnt
+    400370: SkahdiRig_ShirtFront_01_03SHJnt
+    400372: SkahdiRig_SHJntGrp
+    400374: SkahdiRig_Spine_01SHJnt
+    400376: SkahdiRig_Spine_02SHJnt
+    400378: SkahdiRig_Spine_03SHJnt
+    400380: SkahdiRig_Spine_04SHJnt
+    400382: SkahdiRig_Spine_TopSHJnt
+    400384: SkahdiRig_tongue_01_01SHJnt
+    400386: SkahdiRig_tongue_01_02SHJnt
+    400388: SkahdiRig_tongue_01_03SHJnt
+    400390: TeethMesh1
+    400392: TeethMesh2
+    400394: TongueMesh
+    400396: TorsoMesh
+    4300000: NecklaceMesh1
+    4300002: NecklaceMesh2
+    4300004: BuckleMesh1
+    4300006: BuckleMesh2
+    4300008: BeltMesh
+    4300010: ShirtMesh
+    4300012: TorsoMesh
+    4300014: EyebrowMeshL
+    4300016: HornMeshL
+    4300018: EyebrowMeshR
+    4300020: EyebrwMeshR
+    4300022: HeadMesh
+    4300024: ShakleMesh1
+    4300026: ShakleMesh2
+    4300028: ShakleMesh3
+    4300030: ShakleMesh4
+    4300032: ShakleMesh5
+    4300034: ShakleMesh6
+    4300036: ShakleMesh7
+    4300038: TeethMesh1
+    4300040: TeethMesh2
+    4300042: TongueMesh
+    4300044: EyeL
+    4300046: EyeR
+    4300048: HairMesh1
+    4300050: HairMesh2
+    4300052: HairMesh3
+    4300054: HairMesh4
+    4300056: HairMesh5
+    4300058: HairMesh6
+    4300060: HairMesh7
+    4300062: HairMesh8
+    4300064: HairMesh9
+    9500000: //RootNode
+    13700000: BeltMesh
+    13700002: BuckleMesh1
+    13700004: BuckleMesh2
+    13700006: EyebrowMeshL
+    13700008: EyebrowMeshR
+    13700010: EyebrwMeshR
+    13700012: EyeL
+    13700014: EyeR
+    13700016: HairMesh1
+    13700018: HairMesh2
+    13700020: HairMesh3
+    13700022: HairMesh4
+    13700024: HairMesh5
+    13700026: HairMesh6
+    13700028: HairMesh7
+    13700030: HairMesh8
+    13700032: HairMesh9
+    13700034: HeadMesh
+    13700036: HornMeshL
+    13700038: NecklaceMesh1
+    13700040: NecklaceMesh2
+    13700042: ShakleMesh1
+    13700044: ShakleMesh2
+    13700046: ShakleMesh3
+    13700048: ShakleMesh4
+    13700050: ShakleMesh5
+    13700052: ShakleMesh6
+    13700054: ShakleMesh7
+    13700056: ShirtMesh
+    13700058: TeethMesh1
+    13700060: TeethMesh2
+    13700062: TongueMesh
+    13700064: TorsoMesh
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    animationCompression: 3
+    animationRotationError: .5
+    animationPositionError: .5
+    animationScaleError: .5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    splitTangentsAcrossUV: 1
+    normalImportMode: 0
+    tangentImportMode: 1
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    human:
+    - boneName: SkahdiRig_ROOTSHJnt
+      humanName: Hips
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: SkahdiRig_r_Leg_HipSHJnt
+      humanName: RightUpperLeg
+      limit:
+        min: {x: -60, y: -60, z: -90}
+        max: {x: 60, y: 60, z: 50}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: SkahdiRig_r_Leg_KneeSHJnt
+      humanName: RightLowerLeg
+      limit:
+        min: {x: -90, y: 0, z: -80}
+        max: {x: 90, y: 0, z: 80}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: SkahdiRig_r_Leg_AnkleSHJnt
+      humanName: RightFoot
+      limit:
+        min: {x: 0, y: -30, z: -50}
+        max: {x: 0, y: 30, z: 50}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: SkahdiRig_r_Leg_ToeSHJnt
+      humanName: RightToes
+      limit:
+        min: {x: 0, y: 0, z: -50}
+        max: {x: 0, y: 0, z: 50}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: SkahdiRig_Spine_01SHJnt
+      humanName: Spine
+      limit:
+        min: {x: -40, y: -40, z: -40}
+        max: {x: 40, y: 40, z: 40}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: SkahdiRig_Spine_03SHJnt
+      humanName: Chest
+      limit:
+        min: {x: -40, y: -40, z: -40}
+        max: {x: 39.9999962, y: 40, z: 40}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 1
+    - boneName: SkahdiRig_r_Arm_ClavicleSHJnt
+      humanName: RightShoulder
+      limit:
+        min: {x: 0, y: -15, z: -15}
+        max: {x: 0, y: 15, z: 30}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: SkahdiRig_r_Arm_ShoulderSHJnt
+      humanName: RightUpperArm
+      limit:
+        min: {x: -90, y: -100, z: -60}
+        max: {x: 90, y: 100, z: 100}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: SkahdiRig_r_Arm_ElbowSHJnt
+      humanName: RightLowerArm
+      limit:
+        min: {x: -90, y: 0, z: -80}
+        max: {x: 90, y: 0, z: 80}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: SkahdiRig_r_Arm_WristSHJnt
+      humanName: RightHand
+      limit:
+        min: {x: 0, y: -40, z: -80}
+        max: {x: 0, y: 40, z: 80}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: SkahdiRig_Neck_01SHJnt
+      humanName: Neck
+      limit:
+        min: {x: -40, y: -40, z: -40}
+        max: {x: 40, y: 40, z: 40}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: SkahdiRig_Neck_TopSHJnt
+      humanName: Head
+      limit:
+        min: {x: -40, y: -40, z: -40}
+        max: {x: 40, y: 40, z: 40}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: SkahdiRig_Head_JawSHJnt
+      humanName: Jaw
+      limit:
+        min: {x: 0, y: -10, z: -10}
+        max: {x: 0, y: 10, z: 10}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: SkahdiRig_r_Eye_01SHJnt
+      humanName: RightEye
+      limit:
+        min: {x: 0, y: -20, z: -10}
+        max: {x: 0, y: 20, z: 15}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: SkahdiRig_l_Eye_01SHJnt
+      humanName: LeftEye
+      limit:
+        min: {x: 0, y: -20, z: -10}
+        max: {x: 0, y: 20, z: 15}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: SkahdiRig_l_Arm_ClavicleSHJnt
+      humanName: LeftShoulder
+      limit:
+        min: {x: 0, y: -15, z: -15}
+        max: {x: 0, y: 15, z: 30}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: SkahdiRig_l_Arm_ShoulderSHJnt
+      humanName: LeftUpperArm
+      limit:
+        min: {x: -90, y: -100, z: -60}
+        max: {x: 90, y: 100, z: 100}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: SkahdiRig_l_Arm_ElbowSHJnt
+      humanName: LeftLowerArm
+      limit:
+        min: {x: -90, y: 0, z: -80}
+        max: {x: 90, y: 0, z: 80}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: SkahdiRig_l_Arm_WristSHJnt
+      humanName: LeftHand
+      limit:
+        min: {x: 0, y: -40, z: -80}
+        max: {x: 0, y: 40, z: 80}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: SkahdiRig_l_Leg_HipSHJnt
+      humanName: LeftUpperLeg
+      limit:
+        min: {x: -60, y: -60, z: -90}
+        max: {x: 60, y: 60, z: 50}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: SkahdiRig_l_Leg_KneeSHJnt
+      humanName: LeftLowerLeg
+      limit:
+        min: {x: -90, y: 0, z: -80}
+        max: {x: 90, y: 0, z: 80}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: SkahdiRig_l_Leg_AnkleSHJnt
+      humanName: LeftFoot
+      limit:
+        min: {x: 0, y: -30, z: -50}
+        max: {x: 0, y: 30, z: 50}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: SkahdiRig_l_Leg_ToeSHJnt
+      humanName: LeftToes
+      limit:
+        min: {x: 0, y: 0, z: -50}
+        max: {x: 0, y: 0, z: 50}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: SkahdiRig_l_Thumb_01_01SHJnt
+      humanName: Left Thumb Proximal
+      limit:
+        min: {x: 0, y: -25, z: -20}
+        max: {x: 0, y: 25, z: 20}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: SkahdiRig_l_Thumb_01_02SHJnt
+      humanName: Left Thumb Intermediate
+      limit:
+        min: {x: 0, y: 0, z: -40}
+        max: {x: 0, y: 0, z: 35}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: SkahdiRig_l_Thumb_01_03SHJnt
+      humanName: Left Thumb Distal
+      limit:
+        min: {x: 0, y: 0, z: -40}
+        max: {x: 0, y: 0, z: 35}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: SkahdiRig_l_Finger_01_01SHJnt
+      humanName: Left Index Proximal
+      limit:
+        min: {x: 0, y: -20, z: -50}
+        max: {x: 0, y: 20, z: 50}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: SkahdiRig_l_Finger_01_02SHJnt
+      humanName: Left Index Intermediate
+      limit:
+        min: {x: 0, y: 0, z: -45}
+        max: {x: 0, y: 0, z: 45}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: SkahdiRig_l_Finger_01_03SHJnt
+      humanName: Left Index Distal
+      limit:
+        min: {x: 0, y: 0, z: -45}
+        max: {x: 0, y: 0, z: 45}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: SkahdiRig_l_Finger_02_01SHJnt
+      humanName: Left Middle Proximal
+      limit:
+        min: {x: 0, y: -7.5, z: -50}
+        max: {x: 0, y: 7.5, z: 50}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: SkahdiRig_l_Finger_02_02SHJnt
+      humanName: Left Middle Intermediate
+      limit:
+        min: {x: 0, y: 0, z: -45}
+        max: {x: 0, y: 0, z: 45}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: SkahdiRig_l_Finger_02_03SHJnt
+      humanName: Left Middle Distal
+      limit:
+        min: {x: 0, y: 0, z: -45}
+        max: {x: 0, y: 0, z: 45}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: SkahdiRig_l_Finger_03_01SHJnt
+      humanName: Left Ring Proximal
+      limit:
+        min: {x: 0, y: -7.5, z: -50}
+        max: {x: 0, y: 7.5, z: 50}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: SkahdiRig_l_Finger_03_02SHJnt
+      humanName: Left Ring Intermediate
+      limit:
+        min: {x: 0, y: 0, z: -45}
+        max: {x: 0, y: 0, z: 45}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: SkahdiRig_l_Finger_03_03SHJnt
+      humanName: Left Ring Distal
+      limit:
+        min: {x: 0, y: 0, z: -45}
+        max: {x: 0, y: 0, z: 45}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: SkahdiRig_l_Finger_04_01SHJnt
+      humanName: Left Little Proximal
+      limit:
+        min: {x: 0, y: -20, z: -50}
+        max: {x: 0, y: 20, z: 50}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: SkahdiRig_l_Finger_04_02SHJnt
+      humanName: Left Little Intermediate
+      limit:
+        min: {x: 0, y: 0, z: -45}
+        max: {x: 0, y: 0, z: 45}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: SkahdiRig_l_Finger_04_03SHJnt
+      humanName: Left Little Distal
+      limit:
+        min: {x: 0, y: 0, z: -45}
+        max: {x: 0, y: 0, z: 45}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: SkahdiRig_r_Thumb_01_01SHJnt
+      humanName: Right Thumb Proximal
+      limit:
+        min: {x: 0, y: -25, z: -20}
+        max: {x: 0, y: 25, z: 20}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: SkahdiRig_r_Thumb_01_02SHJnt
+      humanName: Right Thumb Intermediate
+      limit:
+        min: {x: 0, y: 0, z: -40}
+        max: {x: 0, y: 0, z: 35}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: SkahdiRig_r_Thumb_01_03SHJnt
+      humanName: Right Thumb Distal
+      limit:
+        min: {x: 0, y: 0, z: -40}
+        max: {x: 0, y: 0, z: 35}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: SkahdiRig_r_Finger_01_01SHJnt
+      humanName: Right Index Proximal
+      limit:
+        min: {x: 0, y: -20, z: -50}
+        max: {x: 0, y: 20, z: 50}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: SkahdiRig_r_Finger_01_02SHJnt
+      humanName: Right Index Intermediate
+      limit:
+        min: {x: 0, y: 0, z: -45}
+        max: {x: 0, y: 0, z: 45}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: SkahdiRig_r_Finger_01_03SHJnt
+      humanName: Right Index Distal
+      limit:
+        min: {x: 0, y: 0, z: -45}
+        max: {x: 0, y: 0, z: 45}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: SkahdiRig_r_Finger_02_01SHJnt
+      humanName: Right Middle Proximal
+      limit:
+        min: {x: 0, y: -7.5, z: -50}
+        max: {x: 0, y: 7.5, z: 50}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: SkahdiRig_r_Finger_02_02SHJnt
+      humanName: Right Middle Intermediate
+      limit:
+        min: {x: 0, y: 0, z: -45}
+        max: {x: 0, y: 0, z: 45}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: SkahdiRig_r_Finger_02_03SHJnt
+      humanName: Right Middle Distal
+      limit:
+        min: {x: 0, y: 0, z: -45}
+        max: {x: 0, y: 0, z: 45}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: SkahdiRig_r_Finger_03_01SHJnt
+      humanName: Right Ring Proximal
+      limit:
+        min: {x: 0, y: -7.5, z: -50}
+        max: {x: 0, y: 7.5, z: 50}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: SkahdiRig_r_Finger_03_02SHJnt
+      humanName: Right Ring Intermediate
+      limit:
+        min: {x: 0, y: 0, z: -45}
+        max: {x: 0, y: 0, z: 45}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: SkahdiRig_r_Finger_03_03SHJnt
+      humanName: Right Ring Distal
+      limit:
+        min: {x: 0, y: 0, z: -45}
+        max: {x: 0, y: 0, z: 45}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: SkahdiRig_r_Finger_04_01SHJnt
+      humanName: Right Little Proximal
+      limit:
+        min: {x: 0, y: -20, z: -50}
+        max: {x: 0, y: 20, z: 50}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: SkahdiRig_r_Finger_04_02SHJnt
+      humanName: Right Little Intermediate
+      limit:
+        min: {x: 0, y: 0, z: -45}
+        max: {x: 0, y: 0, z: 45}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: SkahdiRig_r_Finger_04_03SHJnt
+      humanName: Right Little Distal
+      limit:
+        min: {x: 0, y: 0, z: -45}
+        max: {x: 0, y: 0, z: 45}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    skeleton:
+    - name: Skahdi(Clone)
+      position: {x: 0, y: 0, z: 0}
+      rotation: {x: 0, y: 0, z: 0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: BodyGroup
+      position: {x: 0, y: 0, z: 0}
+      rotation: {x: 0, y: 0, z: 0, w: 1}
+      scale: {x: .829999983, y: .829999983, z: .829999983}
+      transformModified: 1
+    - name: ShakdiBody
+      position: {x: 0, y: 0, z: 0}
+      rotation: {x: 0, y: 0, z: 0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: BeltMesh
+      position: {x: 0, y: 0, z: 0}
+      rotation: {x: 0, y: 0, z: 0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: BuckleMesh1
+      position: {x: 0, y: 0, z: 0}
+      rotation: {x: 0, y: 0, z: 0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: BuckleMesh2
+      position: {x: 0, y: 0, z: 0}
+      rotation: {x: 0, y: 0, z: 0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: NecklaceMesh1
+      position: {x: 0, y: 0, z: 0}
+      rotation: {x: 0, y: 0, z: 0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: NecklaceMesh2
+      position: {x: 0, y: 0, z: 0}
+      rotation: {x: 0, y: 0, z: 0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: ShirtMesh
+      position: {x: 0, y: 0, z: 0}
+      rotation: {x: 0, y: 0, z: 0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: TorsoMesh
+      position: {x: 0, y: 0, z: 0}
+      rotation: {x: 0, y: 0, z: 0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: EyeL
+      position: {x: 0, y: 0, z: 0}
+      rotation: {x: 0, y: 0, z: 0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: EyeR
+      position: {x: 0, y: 0, z: 0}
+      rotation: {x: 0, y: 0, z: 0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: group
+      position: {x: .00500587048, y: 1.58587205, z: .452818364}
+      rotation: {x: 0, y: 0, z: 0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: pasted__directionalLight1
+      position: {x: -.00500587048, y: .00337341311, z: -.00340080261}
+      rotation: {x: .561466932, y: .506162643, z: -.162253112, w: .63421464}
+      scale: {x: 17.8905811, y: 17.8905811, z: 17.8905811}
+      transformModified: 1
+    - name: pasted__directionalLight2
+      position: {x: -.00500587048, y: .00337341311, z: -.00340080261}
+      rotation: {x: -.521841466, y: -.244085819, z: -.0472944863, w: .81600672}
+      scale: {x: 17.8905811, y: 17.8905811, z: 17.8905811}
+      transformModified: 1
+    - name: pasted__directionalLight3
+      position: {x: -.00500587048, y: .00337341311, z: -.00340080261}
+      rotation: {x: .579513609, y: -.0892585889, z: .160013065, w: .794098675}
+      scale: {x: 17.8905811, y: 17.8905811, z: 17.8905811}
+      transformModified: 1
+    - name: pasted__directionalLight4
+      position: {x: -.00500587048, y: .00337341311, z: -.00340080261}
+      rotation: {x: .96556288, y: -.0869108811, z: -.1709124, w: .175851613}
+      scale: {x: 17.8905811, y: 17.8905811, z: 17.8905811}
+      transformModified: 1
+    - name: HairGroup
+      position: {x: 0, y: 0, z: 0}
+      rotation: {x: 0, y: 0, z: 0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: HairMesh1
+      position: {x: 0, y: 0, z: 0}
+      rotation: {x: 0, y: 0, z: 0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: HairMesh2
+      position: {x: 0, y: 0, z: 0}
+      rotation: {x: 0, y: 0, z: 0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: HairMesh3
+      position: {x: 0, y: 0, z: 0}
+      rotation: {x: 0, y: 0, z: 0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: HairMesh4
+      position: {x: 0, y: 0, z: 0}
+      rotation: {x: 0, y: 0, z: 0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: HairMesh5
+      position: {x: 0, y: 0, z: 0}
+      rotation: {x: 0, y: 0, z: 0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: HairMesh6
+      position: {x: 0, y: 0, z: 0}
+      rotation: {x: 0, y: 0, z: 0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: HairMesh7
+      position: {x: 0, y: 0, z: 0}
+      rotation: {x: 0, y: 0, z: 0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: HairMesh8
+      position: {x: 0, y: 0, z: 0}
+      rotation: {x: 0, y: 0, z: 0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: HairMesh9
+      position: {x: 0, y: 0, z: 0}
+      rotation: {x: 0, y: 0, z: 0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: HeadGroup
+      position: {x: 0, y: 0, z: 0}
+      rotation: {x: 0, y: 0, z: 0, w: 1}
+      scale: {x: .829999983, y: .829999983, z: .829999983}
+      transformModified: 1
+    - name: EyebrowMeshL
+      position: {x: 0, y: 0, z: 0}
+      rotation: {x: 0, y: 0, z: 0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: EyebrowMeshR
+      position: {x: 0, y: 0, z: 0}
+      rotation: {x: 0, y: 0, z: 0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: EyebrwMeshR
+      position: {x: 0, y: 0, z: 0}
+      rotation: {x: 0, y: 0, z: 0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: HeadMesh
+      position: {x: 0, y: 0, z: 0}
+      rotation: {x: 0, y: 0, z: 0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: HornMeshL
+      position: {x: 0, y: 0, z: 0}
+      rotation: {x: 0, y: 0, z: 0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: MouthGroup
+      position: {x: -.0456850901, y: 1.1608727, z: .0629762188}
+      rotation: {x: -.0529147126, y: 0, z: -0, w: .998599052}
+      scale: {x: 3.31806827, y: 3.31806827, z: 3.31806827}
+      transformModified: 1
+    - name: TeethMesh1
+      position: {x: -2.67679369e-18, y: -.264857799, z: -.00549000967}
+      rotation: {x: 0, y: 0, z: 0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: TeethMesh2
+      position: {x: -2.67679369e-18, y: -.265312165, z: -.00553829875}
+      rotation: {x: 0, y: 0, z: 0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: TongueMesh
+      position: {x: -0, y: -.264857799, z: -.00549000967}
+      rotation: {x: 0, y: 0, z: 0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: ShakleGroup
+      position: {x: 0, y: 0, z: 0}
+      rotation: {x: 0, y: 0, z: 0, w: 1}
+      scale: {x: .829999983, y: .829999983, z: .829999983}
+      transformModified: 1
+    - name: ShakleMesh1
+      position: {x: 0, y: 0, z: 0}
+      rotation: {x: 0, y: 0, z: 0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: ShakleMesh2
+      position: {x: 0, y: 0, z: 0}
+      rotation: {x: 0, y: 0, z: 0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: ShakleMesh3
+      position: {x: 0, y: 0, z: 0}
+      rotation: {x: 0, y: 0, z: 0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: ShakleMesh4
+      position: {x: 0, y: 0, z: 0}
+      rotation: {x: 0, y: 0, z: 0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: ShakleMesh5
+      position: {x: 0, y: 0, z: 0}
+      rotation: {x: 0, y: 0, z: 0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: ShakleMesh6
+      position: {x: 0, y: 0, z: 0}
+      rotation: {x: 0, y: 0, z: 0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: ShakleMesh7
+      position: {x: 0, y: 0, z: 0}
+      rotation: {x: 0, y: 0, z: 0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: SkahdiRig_SHJntGrp
+      position: {x: 0, y: 0, z: 0}
+      rotation: {x: 0, y: 0, z: 0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: SkahdiRig_MAINSHJnt
+      position: {x: 0, y: 0, z: 0}
+      rotation: {x: 0, y: 0, z: 0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: SkahdiRig_ROOTSHJnt
+      position: {x: -0, y: .757679105, z: .0190725271}
+      rotation: {x: 0, y: 0, z: 0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: SkahdiRig_Spine_01SHJnt
+      position: {x: -9.62964972e-34, y: .055609066, z: .0200381298}
+      rotation: {x: 0, y: 0, z: -.707106829, w: .707106829}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: SkahdiRig_Spine_02SHJnt
+      position: {x: -.055609107, y: 1.23477022e-17, z: .00539273303}
+      rotation: {x: 0, y: 0, z: 0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: SkahdiRig_Spine_03SHJnt
+      position: {x: -.055609107, y: -4.71389251e-33, z: -.00153537712}
+      rotation: {x: 0, y: 0, z: 0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: SkahdiRig_Spine_04SHJnt
+      position: {x: -.055609107, y: -1.23477022e-17, z: -.0251082443}
+      rotation: {x: 0, y: 0, z: 0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: SkahdiRig_ShirtBack_01_01SHJnt
+      position: {x: .00929213408, y: 0, z: -.0549058951}
+      rotation: {x: -.0616585948, y: .729119897, z: -.68104881, w: .0274778977}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: SkahdiRig_ShirtBack_01_02SHJnt
+      position: {x: -.0388439968, y: -1.42108544e-16, z: -7.1054272e-17}
+      rotation: {x: -.0339913368, y: -.0630290359, z: -.0241693854, w: -.997139871}
+      scale: {x: .999999642, y: .999999583, z: .999999762}
+      transformModified: 1
+    - name: SkahdiRig_ShirtBack_01_03SHJnt
+      position: {x: -.0388439968, y: 7.1054272e-17, z: -3.5527136e-17}
+      rotation: {x: 5.96046306e-08, y: 0, z: 0, w: 1}
+      scale: {x: 1.00000012, y: 1, z: 1.00000012}
+      transformModified: 1
+    - name: SkahdiRig_ShirtFront_01_01SHJnt
+      position: {x: .0276348442, y: -1.42108544e-16, z: .107721917}
+      rotation: {x: -.0129439645, y: .712039709, z: .701934636, w: .0109411562}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: SkahdiRig_ShirtFront_01_02SHJnt
+      position: {x: -.0503623933, y: 7.1054272e-17, z: 2.84217088e-16}
+      rotation: {x: -.00714534521, y: -.00141620636, z: .0168893337, w: .999830902}
+      scale: {x: .999999881, y: 1, z: 1}
+      transformModified: 1
+    - name: SkahdiRig_ShirtFront_01_03SHJnt
+      position: {x: -.0503623933, y: 1.06581408e-16, z: 7.1054272e-17}
+      rotation: {x: 0, y: 0, z: 0, w: 1}
+      scale: {x: 1, y: .999999881, z: 1}
+      transformModified: 1
+    - name: SkahdiRig_Spine_TopSHJnt
+      position: {x: -.0556090996, y: -1.23477005e-17, z: -.0286330879}
+      rotation: {x: 0, y: 0, z: 0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: SkahdiRig_Neck_01SHJnt
+      position: {x: -.0533462949, y: 0, z: -3.85846199e-09}
+      rotation: {x: 0, y: 0, z: 0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: SkahdiRig_Neck_02SHJnt
+      position: {x: -.036743816, y: 3.55271347e-16, z: 1.85681781e-09}
+      rotation: {x: 0, y: 0, z: 0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: SkahdiRig_Neck_TopSHJnt
+      position: {x: -.0287448429, y: -7.1054272e-17, z: -5.64667291e-09}
+      rotation: {x: 0, y: 0, z: 0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: SkahdiRig_Head_JawSHJnt
+      position: {x: -.0229564831, y: 1.80732995e-09, z: .0363596492}
+      rotation: {x: 0, y: 0, z: .707106829, w: .707106829}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: SkahdiRig_Head_JawEndSHJnt
+      position: {x: 3.5527136e-17, y: -.0310808178, z: .0492212176}
+      rotation: {x: .707106829, y: 3.36029516e-29, z: 3.36029516e-29, w: .707106829}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: SkahdiRig_l_Lip5_AuxSHJnt
+      position: {x: -.0140136592, y: .00650904002, z: -.0116554294}
+      rotation: {x: -.707106829, y: 2.23788913e-24, z: 2.23788913e-24, w: .707106829}
+      scale: {x: 1, y: .999999881, z: .999999881}
+      transformModified: 1
+    - name: SkahdiRig_r_Lip5_AuxSHJnt
+      position: {x: .0140136592, y: .00650904002, z: -.0116554294}
+      rotation: {x: -.707106829, y: 2.23788913e-24, z: 2.23788913e-24, w: .707106829}
+      scale: {x: 1, y: .999999881, z: .999999881}
+      transformModified: 1
+    - name: SkahdiRig_Lip_AuxSHJnt
+      position: {x: -1.49643995e-06, y: .0129770003, z: -.0116158398}
+      rotation: {x: -.707106829, y: 2.23788913e-24, z: 2.23788913e-24, w: .707106829}
+      scale: {x: 1, y: .999999881, z: .999999881}
+      transformModified: 1
+    - name: SkahdiRig_Head_TopSHJnt
+      position: {x: -.137608081, y: 1.7763568e-17, z: 7.64831665e-09}
+      rotation: {x: 1.46226271e-23, y: -1.46226271e-23, z: .707106829, w: .707106829}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: SkahdiRig_Hair1_01_01SHJnt
+      position: {x: 3.5527136e-17, y: .0408738032, z: .0274893604}
+      rotation: {x: -0, y: -.707106829, z: 0, w: .707106829}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: SkahdiRig_Hair1_01_02SHJnt
+      position: {x: -.0526883528, y: .00527403923, z: -4.60616256e-09}
+      rotation: {x: -1.01907869e-08, y: -2.26592487e-08, z: .158057764, w: .987429857}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: SkahdiRig_Hair1_01_03SHJnt
+      position: {x: -.0558616072, y: -.0180022307, z: 1.7763568e-17}
+      rotation: {x: 0, y: 0, z: .353781134, w: .935328245}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: SkahdiRig_Hair1_01_04SHJnt
+      position: {x: -.0525151566, y: -.0210028831, z: 3.5527136e-17}
+      rotation: {x: 0, y: 0, z: -.297452718, w: -.954736531}
+      scale: {x: 1.00000012, y: .999999881, z: 1}
+      transformModified: 1
+    - name: SkahdiRig_Hair1_01_05SHJnt
+      position: {x: -.0558400825, y: -.0152678816, z: -1.7763568e-17}
+      rotation: {x: 0, y: 0, z: 0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: SkahdiRig_Hair1_01_06SHJnt
+      position: {x: -.0498014539, y: -.00513810245, z: 8.88178367e-17}
+      rotation: {x: 0, y: 0, z: 0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: SkahdiRig_l_Eye_01SHJnt
+      position: {x: -.0285218358, y: -.0730571151, z: .0576569214}
+      rotation: {x: .5, y: .5, z: -.5, w: .5}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: SkahdiRig_r_Eye_01SHJnt
+      position: {x: .0285218395, y: -.0730571225, z: .0576569214}
+      rotation: {x: .5, y: .5, z: -.5, w: .5}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: SkahdiRig_l_Ear_01_01SHJnt
+      position: {x: -.0824735984, y: -.0467492826, z: -3.5527136e-17}
+      rotation: {x: 0, y: 0, z: .180042043, w: .98365891}
+      scale: {x: .999999344, y: .999999344, z: 1}
+      transformModified: 1
+    - name: SkahdiRig_l_Ear_01_02SHJnt
+      position: {x: -.0562028959, y: -.00106862397, z: 1.06581408e-16}
+      rotation: {x: 0, y: 0, z: -5.96046377e-08, w: 1}
+      scale: {x: .999999285, y: .999999106, z: 1}
+      transformModified: 1
+    - name: SkahdiRig_l_Ear_01_03SHJnt
+      position: {x: -.0481574126, y: -.00468818191, z: -2.13162816e-16}
+      rotation: {x: 0, y: 0, z: 5.96046377e-08, w: 1}
+      scale: {x: .999999344, y: .999999583, z: 1}
+      transformModified: 1
+    - name: SkahdiRig_r_Ear_01_01SHJnt
+      position: {x: .0824735984, y: -.0467492826, z: 7.1054272e-17}
+      rotation: {x: 4.4857613e-24, y: 2.45079314e-23, z: -.180042043, w: .98365891}
+      scale: {x: .999999344, y: .999999344, z: 1}
+      transformModified: 1
+    - name: SkahdiRig_r_Ear_01_02SHJnt
+      position: {x: .0562028959, y: -.00106862397, z: 1.06581408e-16}
+      rotation: {x: -1.97215207e-30, y: -3.00753182e-30, z: 5.96046377e-08, w: 1}
+      scale: {x: .999999285, y: .999999106, z: 1}
+      transformModified: 1
+    - name: SkahdiRig_r_Ear_01_03SHJnt
+      position: {x: .0481574126, y: -.00468818191, z: -1.42108544e-16}
+      rotation: {x: -7.88860811e-31, y: 1.13398746e-30, z: -5.96046377e-08, w: 1}
+      scale: {x: .999999344, y: .999999583, z: 1}
+      transformModified: 1
+    - name: SkahdiRig_l_Lip1_AuxSHJnt
+      position: {x: -.0306294989, y: -.127002403, z: .079681538}
+      rotation: {x: 0, y: 0, z: -2.54882587e-32, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: SkahdiRig_r_Lip1_AuxSHJnt
+      position: {x: .0306294989, y: -.127002403, z: .079681538}
+      rotation: {x: 0, y: 0, z: -2.76612954e-39, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: SkahdiRig_Lip2_AuxSHJnt
+      position: {x: 3.5527136e-17, y: -.120672472, z: .101510733}
+      rotation: {x: 0, y: 0, z: -2.54882587e-32, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: SkahdiRig_l_Lip4_AuxSHJnt
+      position: {x: -.01467581, y: -.121313684, z: .0960862413}
+      rotation: {x: 0, y: 0, z: -2.54882587e-32, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: SkahdiRig_r_Lip4_AuxSHJnt
+      position: {x: .01467581, y: -.121313684, z: .0960862413}
+      rotation: {x: 0, y: 0, z: -2.54882587e-32, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: SkahdiRig_l_UpperLid_AuxSHJnt
+      position: {x: -.0285218395, y: -.0730571225, z: .0576569214}
+      rotation: {x: 0, y: 0, z: -2.95372079e-32, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: SkahdiRig_r_UpperLid_AuxSHJnt
+      position: {x: .0285218395, y: -.0730571225, z: .0576569214}
+      rotation: {x: 0, y: 0, z: -2.95372079e-32, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: SkahdiRig_l_LowerLid_AuxSHJnt
+      position: {x: -.0285218395, y: -.0730571225, z: .0576569214}
+      rotation: {x: 0, y: 0, z: -1.24575407e-23, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: SkahdiRig_r_LowerLid_AuxSHJnt
+      position: {x: .0285218395, y: -.0730571225, z: .0576569214}
+      rotation: {x: 0, y: 0, z: -2.76612954e-39, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: SkahdiRig_Nose_AuxSHJnt
+      position: {x: 3.5527136e-17, y: -.100065611, z: .106234603}
+      rotation: {x: 0, y: 0, z: -2.54882587e-32, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: SkahdiRig_l_Cheek_AuxSHJnt
+      position: {x: -.0474142879, y: -.111610375, z: .0727611259}
+      rotation: {x: 1.52894323e-23, y: -.382690012, z: -1.3892754e-23, w: .923876822}
+      scale: {x: 1.00000012, y: 1, z: 1.00000036}
+      transformModified: 1
+    - name: SkahdiRig_r_Cheek_AuxSHJnt
+      position: {x: .0474142879, y: -.111610375, z: .0727611259}
+      rotation: {x: 6.00168453e-24, y: .382690012, z: -1.42845118e-23, w: .923876822}
+      scale: {x: 1.00000012, y: 1, z: 1.00000036}
+      transformModified: 1
+    - name: SkahdiRig_l_Eyebrow_AuxSHJnt
+      position: {x: -.0120462002, y: -.0514693595, z: .0949312374}
+      rotation: {x: 0, y: 0, z: -2.54882587e-32, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: SkahdiRig_l_Eyebrow2_AuxSHJnt
+      position: {x: -.0349927209, y: -.0416698195, z: .0886072516}
+      rotation: {x: 0, y: 0, z: -2.54882587e-32, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: SkahdiRig_l_Eyebrow3_AuxSHJnt
+      position: {x: -.0538647696, y: -.0419523604, z: .0769187585}
+      rotation: {x: 0, y: 0, z: -2.54882587e-32, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: SkahdiRig_r_Eyebrow_AuxSHJnt
+      position: {x: .0120462002, y: -.0514693595, z: .0949312374}
+      rotation: {x: 0, y: 0, z: -2.54882587e-32, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: SkahdiRig_r_Eyebrow2_AuxSHJnt
+      position: {x: .0349927209, y: -.0416698195, z: .0886072516}
+      rotation: {x: 0, y: 0, z: -2.54882587e-32, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: SkahdiRig_r_Eyebrow3_AuxSHJnt
+      position: {x: .0538647696, y: -.0419523604, z: .0769187585}
+      rotation: {x: 0, y: 0, z: -2.54882587e-32, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: SkahdiRig_tongue_01_01SHJnt
+      position: {x: -1.59872109e-16, y: -.13502717, z: .0596550889}
+      rotation: {x: -.112928055, y: .698031008, z: -.112928055, w: .698031008}
+      scale: {x: 1.00000012, y: 1, z: 1.00000012}
+      transformModified: 1
+    - name: SkahdiRig_tongue_01_02SHJnt
+      position: {x: -.0167209152, y: -1.42108544e-16, z: -1.7763568e-17}
+      rotation: {x: 7.45057971e-09, y: 4.65661232e-10, z: .184775695, w: .982780814}
+      scale: {x: 1.00000024, y: .999999881, z: .999999762}
+      transformModified: 1
+    - name: SkahdiRig_tongue_01_03SHJnt
+      position: {x: -.0167209152, y: -5.68434176e-16, z: -1.7763568e-17}
+      rotation: {x: 2.79396684e-09, y: -5.82076401e-11, z: -4.19095016e-08, w: 1}
+      scale: {x: 1.00000012, y: 1, z: 1}
+      transformModified: 1
+    - name: SkahdiRig_r_Hair2_01_01SHJnt
+      position: {x: .0284071937, y: .00310751167, z: .0799790099}
+      rotation: {x: .116539054, y: -.0839669183, z: -.342890978, w: .928328633}
+      scale: {x: .99999994, y: 1, z: 1}
+      transformModified: 1
+    - name: SkahdiRig_r_Hair2_01_02SHJnt
+      position: {x: .054469388, y: -.00801469386, z: -.0125070112}
+      rotation: {x: -.044907514, y: -.0280455984, z: -.232175454, w: .971231818}
+      scale: {x: .999999344, y: 1, z: 1.00000131}
+      transformModified: 1
+    - name: SkahdiRig_r_Hair2_01_03SHJnt
+      position: {x: .0743219107, y: -.0177402962, z: -.00536966743}
+      rotation: {x: -.134325966, y: -.0956523567, z: -.210535571, w: .963577747}
+      scale: {x: 1.00000024, y: 1.00000036, z: .999999821}
+      transformModified: 1
+    - name: SkahdiRig_r_Hair2_01_04SHJnt
+      position: {x: .0410862043, y: -.0189804044, z: .00589649379}
+      rotation: {x: -5.58793403e-08, y: 3.72528941e-09, z: -1.45751955e-07, w: 1}
+      scale: {x: 1.00000024, y: 1.00000036, z: 1.00000012}
+      transformModified: 1
+    - name: SkahdiRig_l_Hair2_01_01SHJnt
+      position: {x: -.0388439968, y: .00725658657, z: .0744576752}
+      rotation: {x: -.035937231, y: -.070571214, z: .239448562, w: .967673838}
+      scale: {x: 1.00000024, y: .999999821, z: 1.00000119}
+      transformModified: 1
+    - name: SkahdiRig_l_Hair2_01_02SHJnt
+      position: {x: -.0395449065, y: .000606828078, z: -.00579807069}
+      rotation: {x: -1.67638046e-08, y: 1.49011594e-08, z: .348009527, w: .937491059}
+      scale: {x: 1.00000036, y: 1, z: .999999523}
+      transformModified: 1
+    - name: SkahdiRig_l_Hair2_01_03SHJnt
+      position: {x: -.0797414184, y: -.0179472696, z: -.00204752642}
+      rotation: {x: .143110335, y: .214663506, z: .229150191, w: .938578248}
+      scale: {x: 1.00000036, y: .999999881, z: .999999821}
+      transformModified: 1
+    - name: SkahdiRig_l_Hair2_01_04SHJnt
+      position: {x: -.0438434593, y: -.0214186274, z: -.0242568776}
+      rotation: {x: 0, y: 0, z: 0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: SkahdiRig_HairBits1_01_01SHJnt
+      position: {x: .0949325636, y: -.0878107697, z: .0417695567}
+      rotation: {x: .387614995, y: .912744582, z: .0526190326, w: -.117826439}
+      scale: {x: 1.00000024, y: .99999994, z: 1.00000095}
+      transformModified: 1
+    - name: SkahdiRig_HairBits1_01_02SHJnt
+      position: {x: -.0388439968, y: -1.42108544e-16, z: 2.13162816e-16}
+      rotation: {x: 7.45057971e-09, y: 1.86264493e-09, z: -5.96046377e-08, w: 1}
+      scale: {x: .99999994, y: .99999994, z: 1.00000024}
+      transformModified: 1
+    - name: SkahdiRig_HairBits5_01_01SHJnt
+      position: {x: .0245165229, y: .0455165058, z: .0241353363}
+      rotation: {x: .099779807, y: -.78157264, z: -.135472775, w: .60069567}
+      scale: {x: 1.00000024, y: 1, z: 1.00000012}
+      transformModified: 1
+    - name: SkahdiRig_HairBits5_01_02SHJnt
+      position: {x: -.0388439968, y: 1.42108544e-16, z: -5.3290704e-17}
+      rotation: {x: 1.71363354e-07, y: 3.16649675e-08, z: -5.96046448e-08, w: 1}
+      scale: {x: 1, y: .999999762, z: 1.00000024}
+      transformModified: 1
+    - name: SkahdiRig_HairBits5_01_03SHJnt
+      position: {x: -.0388439968, y: 8.52651264e-16, z: 6.21724896e-17}
+      rotation: {x: 0, y: 0, z: 0, w: 1}
+      scale: {x: .999999702, y: 1.00000024, z: .999999762}
+      transformModified: 1
+    - name: SkahdiRig_HairBits2_01_01SHJnt
+      position: {x: .0102236988, y: .0518022105, z: .0422108695}
+      rotation: {x: .324911892, y: -.492103457, z: -.513115227, w: .623681962}
+      scale: {x: 1.00000024, y: .999999881, z: .999999821}
+      transformModified: 1
+    - name: SkahdiRig_HairBits2_01_02SHJnt
+      position: {x: -.0388439968, y: -2.30926381e-16, z: 9.76996256e-17}
+      rotation: {x: -2.98023188e-08, y: -1.49011594e-08, z: 1.49011594e-08, w: 1}
+      scale: {x: .999999642, y: .999999762, z: .99999994}
+      transformModified: 1
+    - name: SkahdiRig_HairBits4_01_01SHJnt
+      position: {x: -.0224052779, y: .0380071886, z: -.00100057223}
+      rotation: {x: .0698401406, y: -.637671292, z: -.112258106, w: .758877993}
+      scale: {x: .999999881, y: .999999821, z: .999999821}
+      transformModified: 1
+    - name: SkahdiRig_HairBits4_01_02SHJnt
+      position: {x: -.0539110936, y: .00538892066, z: -.00280301203}
+      rotation: {x: 1.97440386e-06, y: 7.1246177e-07, z: 1.63912773e-07, w: 1}
+      scale: {x: .99999994, y: 1.00000024, z: 1.00000024}
+      transformModified: 1
+    - name: SkahdiRig_HairBits4_01_03SHJnt
+      position: {x: -.049282141, y: -9.30933238e-05, z: -.00248032832}
+      rotation: {x: 0, y: 0, z: 0, w: 1}
+      scale: {x: .99999994, y: 1, z: 1}
+      transformModified: 1
+    - name: SkahdiRig_HairBits3_01_01SHJnt
+      position: {x: -.0475310758, y: .0361835063, z: .0480672382}
+      rotation: {x: .423322082, y: -.685565412, z: -.241551042, w: .540787995}
+      scale: {x: 1.00000012, y: .999999881, z: .999999881}
+      transformModified: 1
+    - name: SkahdiRig_HairBits3_01_02SHJnt
+      position: {x: -.0388439968, y: 0, z: 1.7763568e-17}
+      rotation: {x: -1.49011576e-08, y: 0, z: 0, w: 1}
+      scale: {x: .999999881, y: 1, z: 1.00000012}
+      transformModified: 1
+    - name: SkahdiRig_l_Arm_ClavicleSHJnt
+      position: {x: -0, y: -.0279536676, z: .0336500965}
+      rotation: {x: -.0425792411, y: .0425792411, z: .70996058, w: .701662421}
+      scale: {x: 1, y: 1, z: .99999994}
+      transformModified: 1
+    - name: SkahdiRig_l_Arm_ShoulderSHJnt
+      position: {x: -.0703356192, y: .00327893998, z: -.0336501189}
+      rotation: {x: .0232283231, y: -.0570475832, z: .0247414876, w: .997794509}
+      scale: {x: 1.0000006, y: .999999225, z: .999999702}
+      transformModified: 1
+    - name: SkahdiRig_l_Arm_ElbowSHJnt
+      position: {x: -.193671942, y: 1.00127089e-07, z: -1.95198044e-08}
+      rotation: {x: -.00110314798, y: .033012569, z: -.0151016386, w: .999340296}
+      scale: {x: 1.00000024, y: .999999464, z: 1.00000036}
+      transformModified: 1
+    - name: SkahdiRig_l_Arm_WristSHJnt
+      position: {x: -.193672717, y: 6.81162476e-07, z: -7.64806263e-09}
+      rotation: {x: -.00296484982, y: -.0446070172, z: .066253826, w: .99680078}
+      scale: {x: 1.00000012, y: .999999762, z: 1}
+      transformModified: 1
+    - name: SkahdiRig_l_Finger_01_01SHJnt
+      position: {x: -.106327951, y: .0376311913, z: .0862056613}
+      rotation: {x: -.00143185502, y: .168484241, z: -.14441514, w: .975066781}
+      scale: {x: .999999642, y: .999999821, z: 1.00000036}
+      transformModified: 1
+    - name: SkahdiRig_l_Finger_01_02SHJnt
+      position: {x: -.0742049515, y: -.00993030891, z: -.00848217122}
+      rotation: {x: .0431549661, y: -.040074639, z: .0817170739, w: .994914114}
+      scale: {x: 1.00000072, y: .999999106, z: 1.00000036}
+      transformModified: 1
+    - name: SkahdiRig_l_Finger_01_03SHJnt
+      position: {x: -.0777773634, y: -.0033096734, z: -.00419214647}
+      rotation: {x: .0106606213, y: -.0241618138, z: -.00482664071, w: .99963963}
+      scale: {x: 1.00000191, y: .999996781, z: 1}
+      transformModified: 1
+    - name: SkahdiRig_l_Finger_01_04SHJnt
+      position: {x: -.0500111841, y: -.00529989693, z: 3.85888654e-09}
+      rotation: {x: -3.72528959e-08, y: -1.49011576e-08, z: -2.08616214e-07, w: 1}
+      scale: {x: .999999344, y: .99999994, z: 1.00000012}
+      transformModified: 1
+    - name: SkahdiRig_l_Finger_02_01SHJnt
+      position: {x: -.0999264419, y: .0320981555, z: .0223517697}
+      rotation: {x: -.00896648504, y: .0476052724, z: -.108449399, w: .992921054}
+      scale: {x: .999999821, y: 1, z: 1}
+      transformModified: 1
+    - name: SkahdiRig_l_Finger_02_02SHJnt
+      position: {x: -.101798378, y: -.00563754048, z: .00594187947}
+      rotation: {x: -.00879859738, y: .026163904, z: .0561663024, w: .998039782}
+      scale: {x: 1.0000006, y: .999997735, z: 1.00000012}
+      transformModified: 1
+    - name: SkahdiRig_l_Finger_02_03SHJnt
+      position: {x: -.0825081393, y: 3.03505175e-07, z: 1.7763568e-17}
+      rotation: {x: 2.24681465e-08, y: 1.80763806e-07, z: .0310764574, w: .999517083}
+      scale: {x: 1.00000274, y: .999997377, z: .999999881}
+      transformModified: 1
+    - name: SkahdiRig_l_Finger_02_04SHJnt
+      position: {x: -.0607908703, y: -4.97238117e-09, z: -2.48689959e-16}
+      rotation: {x: 7.60053087e-09, y: 2.35570141e-09, z: -5.96046306e-08, w: 1}
+      scale: {x: .999999762, y: .999999881, z: .99999994}
+      transformModified: 1
+    - name: SkahdiRig_l_Finger_03_01SHJnt
+      position: {x: -.099925831, y: .032098148, z: -.0402418971}
+      rotation: {x: -.0222952999, y: .0735825747, z: -.220995083, w: .972239494}
+      scale: {x: .999999166, y: 1.00000048, z: 1.00000012}
+      transformModified: 1
+    - name: SkahdiRig_l_Finger_03_02SHJnt
+      position: {x: -.0820005387, y: -.0226801466, z: 5.98584826e-09}
+      rotation: {x: 5.58793234e-09, y: -4.26661906e-08, z: .102456398, w: .994737506}
+      scale: {x: 1.00000095, y: .999999762, z: 1.00000048}
+      transformModified: 1
+    - name: SkahdiRig_l_Finger_03_03SHJnt
+      position: {x: -.075846374, y: -.00987818185, z: -2.17260276e-09}
+      rotation: {x: 7.79982656e-08, y: -2.13476596e-08, z: -.0205932353, w: .999787986}
+      scale: {x: 1.00000179, y: .999999404, z: .999999881}
+      transformModified: 1
+    - name: SkahdiRig_l_Finger_03_04SHJnt
+      position: {x: -.0414012596, y: -.00978602376, z: 3.09646353e-09}
+      rotation: {x: -5.58793412e-09, y: 4.65661176e-10, z: -2.97441076e-08, w: 1}
+      scale: {x: 1.00000048, y: 1.00000072, z: 1.00000012}
+      transformModified: 1
+    - name: SkahdiRig_l_Finger_04_01SHJnt
+      position: {x: -.0999259129, y: .0320981517, z: -.0912680402}
+      rotation: {x: -.0473056734, y: .07623218, z: -.315381199, w: .944714606}
+      scale: {x: .999998271, y: 1.00000083, z: 1.00000036}
+      transformModified: 1
+    - name: SkahdiRig_l_Finger_04_02SHJnt
+      position: {x: -.0605612397, y: -.0305090118, z: 2.12254641e-08}
+      rotation: {x: -.00454768399, y: .0254652686, z: .190067828, w: .981430113}
+      scale: {x: 1.00000143, y: 1, z: 1.00000072}
+      transformModified: 1
+    - name: SkahdiRig_l_Finger_04_03SHJnt
+      position: {x: -.0580313206, y: -.00909008458, z: -.00409583095}
+      rotation: {x: .0216022991, y: -.00794476178, z: -.0250819158, w: .999420404}
+      scale: {x: 1.00000048, y: .999998808, z: 1.00000024}
+      transformModified: 1
+    - name: SkahdiRig_l_Finger_04_04SHJnt
+      position: {x: -.0353802256, y: -.00939328503, z: -.0015870264}
+      rotation: {x: 7.45057882e-09, y: -6.51925669e-09, z: -3.04425996e-08, w: 1}
+      scale: {x: .999999464, y: .999999404, z: 1.00000036}
+      transformModified: 1
+    - name: SkahdiRig_l_Thumb_01_01SHJnt
+      position: {x: -.0694348961, y: -.0428324938, z: .104342788}
+      rotation: {x: .488087714, y: .323298305, z: -.260069758, w: .76786226}
+      scale: {x: 1.00000167, y: 1.00000083, z: .999999344}
+      transformModified: 1
+    - name: SkahdiRig_l_Thumb_01_02SHJnt
+      position: {x: -.0578121543, y: .00618430879, z: .0018275663}
+      rotation: {x: -.000219270427, y: .0394338369, z: -.140377417, w: .98931247}
+      scale: {x: 1.00000095, y: .999999583, z: .999999762}
+      transformModified: 1
+    - name: SkahdiRig_l_Thumb_01_03SHJnt
+      position: {x: -.0574293248, y: -.0141755305, z: -.00389240286}
+      rotation: {x: .00947493408, y: -.0247182678, z: .17331329, w: .984510899}
+      scale: {x: .99999994, y: .999999225, z: 1.0000006}
+      transformModified: 1
+    - name: SkahdiRig_l_Thumb_01_04SHJnt
+      position: {x: -.0443479829, y: .0018620817, z: -.00027296925}
+      rotation: {x: -7.45057918e-08, y: 0, z: -2.98023153e-08, w: 1}
+      scale: {x: .999999285, y: .999999821, z: .99999994}
+      transformModified: 1
+    - name: SkahdiRig_r_Arm_ClavicleSHJnt
+      position: {x: 1.42108544e-16, y: .0279536694, z: .0336500891}
+      rotation: {x: .0425776839, y: -.0425776839, z: .701663315, w: .709959924}
+      scale: {x: 1.00000012, y: 1, z: 1}
+      transformModified: 1
+    - name: SkahdiRig_r_Arm_ShoulderSHJnt
+      position: {x: .0703362525, y: .00327854976, z: -.0336500891}
+      rotation: {x: .023221463, y: .0570431128, z: -.0247418955, w: .997794986}
+      scale: {x: 1.00000036, y: .999999285, z: .999999285}
+      transformModified: 1
+    - name: SkahdiRig_r_Arm_ElbowSHJnt
+      position: {x: .193671301, y: 6.39822204e-08, z: -9.40354568e-08}
+      rotation: {x: -.00110191805, y: -.0330099426, z: .0150940334, w: .999340415}
+      scale: {x: 1.00000072, y: .999998927, z: 1.00000024}
+      transformModified: 1
+    - name: SkahdiRig_r_Arm_WristSHJnt
+      position: {x: .193672583, y: 6.01682245e-07, z: -5.01131758e-09}
+      rotation: {x: -.00296337553, y: .0445848294, z: -.0662537664, w: .996801794}
+      scale: {x: .99999994, y: .999999881, z: 1}
+      transformModified: 1
+    - name: SkahdiRig_r_Finger_01_01SHJnt
+      position: {x: .106327951, y: .0376311988, z: .0862056613}
+      rotation: {x: -.00143191358, y: -.168483898, z: .144415408, w: .9750669}
+      scale: {x: .999999821, y: .999999464, z: 1.00000036}
+      transformModified: 1
+    - name: SkahdiRig_r_Finger_01_02SHJnt
+      position: {x: .0742049664, y: -.00993030891, z: -.00848217588}
+      rotation: {x: .0431548879, y: .0400746502, z: -.0817174092, w: .994914114}
+      scale: {x: 1.00000072, y: .999999344, z: 1.00000012}
+      transformModified: 1
+    - name: SkahdiRig_r_Finger_01_03SHJnt
+      position: {x: .0777773559, y: -.00330966921, z: -.00419214554}
+      rotation: {x: .0106605859, y: .0241623111, z: .00482698344, w: .99963963}
+      scale: {x: 1.00000262, y: .999996364, z: .999999881}
+      transformModified: 1
+    - name: SkahdiRig_r_Finger_01_04SHJnt
+      position: {x: .0500111915, y: -.00529988576, z: 9.04494146e-10}
+      rotation: {x: 2.98023153e-08, y: -3.72528959e-08, z: -1.16415293e-07, w: 1}
+      scale: {x: .999999344, y: 1.00000024, z: 1}
+      transformModified: 1
+    - name: SkahdiRig_r_Finger_02_01SHJnt
+      position: {x: .0999264568, y: .0320981517, z: .0223517697}
+      rotation: {x: -.00896634348, y: -.0476050898, z: .108448297, w: .992921174}
+      scale: {x: .999999762, y: 1.00000012, z: 1}
+      transformModified: 1
+    - name: SkahdiRig_r_Finger_02_02SHJnt
+      position: {x: .10179837, y: -.00563752512, z: .00594188971}
+      rotation: {x: -.00879864488, y: -.0261639971, z: -.0561649762, w: .998039842}
+      scale: {x: 1.00000095, y: .999997616, z: 1}
+      transformModified: 1
+    - name: SkahdiRig_r_Finger_02_03SHJnt
+      position: {x: .0825081542, y: 3.01112749e-07, z: 1.06581408e-16}
+      rotation: {x: 1.89756832e-08, y: 8.19272259e-08, z: -.0310762282, w: .999517024}
+      scale: {x: 1.00000322, y: .999997318, z: 1}
+      transformModified: 1
+    - name: SkahdiRig_r_Finger_02_04SHJnt
+      position: {x: .0607908703, y: -4.97238073e-09, z: -1.06581408e-16}
+      rotation: {x: 5.27251576e-09, y: -2.31887043e-09, z: -8.94069458e-08, w: 1}
+      scale: {x: .999999762, y: .99999994, z: 1}
+      transformModified: 1
+    - name: SkahdiRig_r_Finger_03_01SHJnt
+      position: {x: .0999258384, y: .0320981555, z: -.0402418897}
+      rotation: {x: -.0222952086, y: -.0735825226, z: .220994249, w: .972239792}
+      scale: {x: .999998927, y: 1.00000024, z: 1.00000012}
+      transformModified: 1
+    - name: SkahdiRig_r_Finger_03_02SHJnt
+      position: {x: .0820005387, y: -.0226801466, z: 5.98584826e-09}
+      rotation: {x: -3.44589104e-08, y: -1.08018789e-07, z: -.102454074, w: .994737744}
+      scale: {x: 1.00000107, y: .99999994, z: 1.00000036}
+      transformModified: 1
+    - name: SkahdiRig_r_Finger_03_03SHJnt
+      position: {x: .0758463666, y: -.00987816975, z: -2.05254569e-09}
+      rotation: {x: 9.03382258e-08, y: 1.35201745e-07, z: .0205929391, w: .999787927}
+      scale: {x: 1.00000215, y: .999999344, z: .99999994}
+      transformModified: 1
+    - name: SkahdiRig_r_Finger_03_04SHJnt
+      position: {x: .0414012596, y: -.00978603307, z: 2.46690024e-09}
+      rotation: {x: -1.86264471e-09, y: -2.32830599e-09, z: -5.98374612e-08, w: 1}
+      scale: {x: 1.0000006, y: 1.0000006, z: 1.00000012}
+      transformModified: 1
+    - name: SkahdiRig_r_Finger_04_01SHJnt
+      position: {x: .0999259278, y: .0320981592, z: -.0912680328}
+      rotation: {x: -.0473055765, y: -.0762320757, z: .315380245, w: .944714963}
+      scale: {x: .999998331, y: 1.00000095, z: 1.00000048}
+      transformModified: 1
+    - name: SkahdiRig_r_Finger_04_02SHJnt
+      position: {x: .0605612397, y: -.0305090118, z: 2.12254641e-08}
+      rotation: {x: -.00454780366, y: -.0254658032, z: -.190067619, w: .981430173}
+      scale: {x: 1.00000155, y: .999999642, z: 1.00000048}
+      transformModified: 1
+    - name: SkahdiRig_r_Finger_04_03SHJnt
+      position: {x: .0580313206, y: -.00909008365, z: -.0040958412}
+      rotation: {x: .0216025598, y: .00794509426, z: .0250820778, w: .999420345}
+      scale: {x: 1.00000095, y: .999998212, z: 1.00000048}
+      transformModified: 1
+    - name: SkahdiRig_r_Finger_04_04SHJnt
+      position: {x: .0353802256, y: -.00939328503, z: -.0015870264}
+      rotation: {x: -1.49011559e-08, y: 1.49011559e-08, z: -1.19034624e-07, w: 1}
+      scale: {x: .999999642, y: .999999881, z: 1.00000048}
+      transformModified: 1
+    - name: SkahdiRig_r_Thumb_01_01SHJnt
+      position: {x: .069434911, y: -.0428324789, z: .104342788}
+      rotation: {x: .488090128, y: -.323300272, z: .260064304, w: .767861605}
+      scale: {x: 1.00000167, y: 1.00000107, z: .999998748}
+      transformModified: 1
+    - name: SkahdiRig_r_Thumb_01_02SHJnt
+      position: {x: .0578121468, y: .00618431391, z: .00182757259}
+      rotation: {x: -.000219374793, y: -.0394342951, z: .140376583, w: .98931253}
+      scale: {x: 1.0000006, y: 1, z: 1.00000012}
+      transformModified: 1
+    - name: SkahdiRig_r_Thumb_01_03SHJnt
+      position: {x: .0574293397, y: -.0141755268, z: -.00389240938}
+      rotation: {x: .00947528705, y: .0247180443, z: -.1733132, w: .984510899}
+      scale: {x: .999999344, y: .999999881, z: 1.0000006}
+      transformModified: 1
+    - name: SkahdiRig_r_Thumb_01_04SHJnt
+      position: {x: .0443479568, y: .00186207436, z: -.000272966048}
+      rotation: {x: 0, y: -8.94069458e-08, z: -7.45057918e-08, w: 1}
+      scale: {x: .999999523, y: .99999994, z: 1}
+      transformModified: 1
+    - name: SkahdiRig_Necklace_01_01SHJnt
+      position: {x: -.0726220235, y: 0, z: -.0347442031}
+      rotation: {x: -.439402431, y: .554008603, z: .554008603, w: .439402431}
+      scale: {x: 1.00000012, y: .999999821, z: 1.00000012}
+      transformModified: 1
+    - name: SkahdiRig_Necklace_01_02SHJnt
+      position: {x: -.069799304, y: -.00473428192, z: 1.42108544e-16}
+      rotation: {x: 3.72528985e-09, y: 0, z: .315582812, w: .948898077}
+      scale: {x: .999999523, y: .999999881, z: .999999881}
+      transformModified: 1
+    - name: SkahdiRig_Necklace_01_03SHJnt
+      position: {x: -.0505786799, y: 2.6645351e-16, z: 1.42108544e-16}
+      rotation: {x: 0, y: 0, z: -5.96046377e-08, w: 1}
+      scale: {x: 1, y: .999999523, z: 1}
+      transformModified: 1
+    - name: SkahdiRig_l_Breast_AuxSHJnt
+      position: {x: -.00523335999, y: -.0541097857, z: .0609352402}
+      rotation: {x: .0477671698, y: -.28677398, z: .646344304, w: .705491424}
+      scale: {x: .999999642, y: 1.00000048, z: .999999523}
+      transformModified: 1
+    - name: SkahdiRig_l_Breast2_AuxSHJnt
+      position: {x: .000253902719, y: .000414268899, z: .0367791578}
+      rotation: {x: 0, y: 0, z: 0, w: 1}
+      scale: {x: 1.00000012, y: 1.0000006, z: 1.00000024}
+      transformModified: 1
+    - name: SkahdiRig_l_ShirtSide_01_01SHJnt
+      position: {x: -1.42108544e-16, y: -.0858544335, z: -2.13162816e-16}
+      rotation: {x: 0, y: 0, z: 1, w: 0}
+      scale: {x: 1.00000024, y: 1.00000024, z: 1}
+      transformModified: 1
+    - name: SkahdiRig_l_ShirtSide_01_02SHJnt
+      position: {x: -.0388439968, y: -2.13162816e-16, z: 7.1054272e-17}
+      rotation: {x: -1.75324277e-09, y: -4.38310777e-10, z: 0, w: 1}
+      scale: {x: 1, y: .999999881, z: 1}
+      transformModified: 1
+    - name: SkahdiRig_l_ShirtSide_01_03SHJnt
+      position: {x: -.0388439968, y: 2.13162816e-16, z: -1.42108544e-16}
+      rotation: {x: 1.11022289e-16, y: -5.55111446e-17, z: 1.03397564e-25, w: 1}
+      scale: {x: 1.00000012, y: 1, z: 1}
+      transformModified: 1
+    - name: SkahdiRig_r_Breast_AuxSHJnt
+      position: {x: -.00523335999, y: .0541097857, z: .0609352402}
+      rotation: {x: -.28677398, y: .047767207, z: .705491483, w: .646344244}
+      scale: {x: .999999702, y: 1.00000048, z: .999999583}
+      transformModified: 1
+    - name: SkahdiRig_r_Breast2_AuxSHJnt
+      position: {x: -.000253902719, y: .000414268899, z: .0367791578}
+      rotation: {x: 0, y: 0, z: 0, w: 1}
+      scale: {x: 1, y: 1.00000072, z: 1.00000036}
+      transformModified: 1
+    - name: SkahdiRig_r_ShirtSide_01_01SHJnt
+      position: {x: .00123902713, y: .0883013681, z: -.00300566852}
+      rotation: {x: 1.75324288e-09, y: -5.55111446e-17, z: 0, w: 1}
+      scale: {x: 1.00000012, y: 1, z: 1}
+      transformModified: 1
+    - name: SkahdiRig_r_ShirtSide_01_02SHJnt
+      position: {x: .0388439968, y: -7.1054272e-17, z: 0}
+      rotation: {x: 1.11022289e-16, y: 0, z: 0, w: 1}
+      scale: {x: 1, y: .999999881, z: 1}
+      transformModified: 1
+    - name: SkahdiRig_r_ShirtSide_01_03SHJnt
+      position: {x: .0388439968, y: 0, z: -2.13162816e-16}
+      rotation: {x: 0, y: 0, z: 0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: SkahdiRig_r_Leg_HipSHJnt
+      position: {x: .0699665174, y: -.0606458262, z: -.00320450123}
+      rotation: {x: .0506210886, y: .0124926632, z: .784406245, w: .618052125}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: SkahdiRig_r_Leg_KneeSHJnt
+      position: {x: -.277921319, y: 1.42108544e-16, z: 1.06581408e-16}
+      rotation: {x: -1.49011594e-08, y: -.0654308274, z: -7.03148473e-08, w: .997857094}
+      scale: {x: .999999583, y: .99999994, z: .99999994}
+      transformModified: 1
+    - name: SkahdiRig_r_Shackle_AuxSHJnt
+      position: {x: -.281210542, y: -.00915088691, z: -.0052895844}
+      rotation: {x: -.10675098, y: .0331853777, z: -.741753936, w: .661289752}
+      scale: {x: .999999821, y: .999999821, z: .999999642}
+      transformModified: 1
+    - name: SkahdiRig_r_Chain1_AuxSHJnt
+      position: {x: .0874065161, y: -.00271542114, z: .00561242225}
+      rotation: {x: -6.26896508e-08, y: 5.04951458e-09, z: -1.44931619e-07, w: 1}
+      scale: {x: .99999994, y: 1, z: .999999821}
+      transformModified: 1
+    - name: SkahdiRig_Chain2_AuxSHJnt
+      position: {x: .03096967, y: -.0243445337, z: -.0228554029}
+      rotation: {x: -2.15368323e-09, y: 3.7834974e-10, z: 6.33462989e-08, w: 1}
+      scale: {x: 1.00000012, y: 1.00000012, z: .999999881}
+      transformModified: 1
+    - name: SkahdiRig_r_Leg_AnkleSHJnt
+      position: {x: -.309169739, y: -2.28785844e-08, z: -4.5158199e-08}
+      rotation: {x: .0716024563, y: .0767607912, z: -.125027955, w: .986584544}
+      scale: {x: 1.00000012, y: .999999821, z: 1}
+      transformModified: 1
+    - name: SkahdiRig_r_Leg_BallSHJnt
+      position: {x: -.111118466, y: .00387006882, z: .0994808078}
+      rotation: {x: 5.96046306e-08, y: .707103848, z: -7.44685349e-06, w: .70710969}
+      scale: {x: .999998987, y: .999998987, z: .999999762}
+      transformModified: 1
+    - name: SkahdiRig_r_Leg_ToeSHJnt
+      position: {x: -.0587356836, y: -.0107096341, z: -.00855701137}
+      rotation: {x: 2.98023153e-08, y: -8.94069458e-08, z: -4.47034729e-08, w: 1}
+      scale: {x: .999999523, y: .999999344, z: 1.00000012}
+      transformModified: 1
+    - name: SkahdiRig_l_Leg_HipSHJnt
+      position: {x: -.0699665174, y: -.0606458262, z: -.00320450123}
+      rotation: {x: -.0124927433, y: -.0506209545, z: .618052185, w: .784406185}
+      scale: {x: .99999994, y: .99999994, z: 1}
+      transformModified: 1
+    - name: SkahdiRig_l_Leg_KneeSHJnt
+      position: {x: -.277921319, y: 2.37587712e-16, z: 2.13162816e-16}
+      rotation: {x: -7.4505806e-09, y: -.0654309914, z: -8.37026164e-08, w: .997857153}
+      scale: {x: .999999821, y: .999999523, z: 1.00000012}
+      transformModified: 1
+    - name: SkahdiRig_l_Shackle_AuxSHJnt
+      position: {x: -.264458179, y: .00317119714, z: .00402088929}
+      rotation: {x: -.0331853852, y: .106750987, z: -.661289692, w: .741754055}
+      scale: {x: .999999702, y: 1, z: .999999523}
+      transformModified: 1
+    - name: SkahdiRig_l_Chain1_AuxSHJnt
+      position: {x: -.0817925334, y: -.00131068763, z: -.0026012545}
+      rotation: {x: 2.64844835e-09, y: -3.71073794e-09, z: -1.00588281e-07, w: 1}
+      scale: {x: .99999994, y: .99999994, z: .999999821}
+      transformModified: 1
+    - name: SkahdiRig_l_Leg_AnkleSHJnt
+      position: {x: -.30916971, y: 2.75927938e-08, z: -4.77779345e-08}
+      rotation: {x: -.0716024563, y: .0767607689, z: .125027969, w: .986584485}
+      scale: {x: 1, y: 1.00000024, z: .999999762}
+      transformModified: 1
+    - name: SkahdiRig_l_Leg_BallSHJnt
+      position: {x: -.111118473, y: -.00387005787, z: .0994808078}
+      rotation: {x: -8.94069601e-08, y: .707103908, z: 7.52881078e-06, w: .707109749}
+      scale: {x: .999999046, y: .999999404, z: 1}
+      transformModified: 1
+    - name: SkahdiRig_l_Leg_ToeSHJnt
+      position: {x: -.0587356798, y: .0107096238, z: -.00855700579}
+      rotation: {x: -1.49011559e-08, y: -1.49011555e-07, z: -1.49011559e-08, w: 1}
+      scale: {x: .999999166, y: .999999404, z: 1}
+      transformModified: 1
+    armTwist: .492000014
+    foreArmTwist: .5
+    upperLegTwist: .5
+    legTwist: .5
+    armStretch: .0500000007
+    legStretch: .296999991
+    feetSpacing: 0
+    rootMotionBoneName: Character1_Hips
+    hasTranslationDoF: 1
+  lastHumanDescriptionAvatarSource: {fileID: 9000000, guid: a7ad49df78a89c94da215784cfb987ba,
+    type: 3}
+  animationType: 3
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

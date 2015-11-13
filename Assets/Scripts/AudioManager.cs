@@ -8,11 +8,6 @@ using System.Collections.Generic;
 static public class AudioManager
 {
     /// <summary>
-    /// Audio Source to play audio
-    /// </summary>
-    static public AudioSource audioSource;
-
-    /// <summary>
     /// Key : string arg
     /// Value : GameObject
     /// play audio depend on the string arg
@@ -59,6 +54,10 @@ static public class AudioManager
         // AudioSource asrc = Gameobject aud AudioSource.  AudioSource Asrc = Aud(AudioSource) What?!
         GameObject aud = audioTable[argument];
         AudioSource asrc = aud.GetComponent<AudioSource>();
+
+		if (asrc == null)
+			Debug.Log ("Need to add AudioSource");
+
         // Setting spatialBlend 0 is 2D & 1 is 3D;
         asrc.clip = audioTable[argument].GetComponent<AudioSource>().clip;
         asrc.spatialBlend = 1;
@@ -80,24 +79,13 @@ static public class AudioManager
     {
         GameObject aud = audioTable[argument];
         AudioSource asrc = aud.GetComponent<AudioSource>();
+
+		if (asrc == null)
+			Debug.Log ("Need to add AudioSource");
+
         if (!asrc.isPlaying)
         {
             asrc.Play();
         }
     }
 }
-
-/*
-    Problem: we faced 2D to 3D audio Clips
-    Solution: So if one audio clip was 3D and the other two were 2D, the two audioclips will switch to 3D audio Clips
-    Because they have all the same message, therefore, I guess 3D is MORE BETTER! It takes over.
-
-    Problem: Change Audio Clips for the backgrund by Triggers
-    Solution: When Tran heard of destroying scenes, she figured out by making prefabs for Audio
-    When we make these Prefabs for Audio 
-    Init Audio for Start Scene
-    When switching, destroy Init Audio and switch to Game Background Audio and etc
-
-    Problem: Keep playing AudioClips without cutting them off/resetting everytime they enter the trigger
-    Solution: 3:22pm, we got nothing for now. BUT SPOON!
-*/
