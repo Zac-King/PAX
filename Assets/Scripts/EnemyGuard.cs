@@ -76,10 +76,8 @@ public class EnemyGuard : MonoBehaviour
 						}
 					}
 				}
-				Debug.DrawLine(transform.position, hit.transform.position, Color.blue);
 			}
 
-			Debug.DrawLine(transform.position, (transform.position + heading), Color.red);
 		}
 		fsm.MakeTransitionTo(STATES.IDLE);
 	}
