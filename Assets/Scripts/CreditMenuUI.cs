@@ -3,7 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine.UI;
 
-public class CreditMenu : MonoBehaviour {
+public class CreditMenuUI : MonoBehaviour {
 
 	 
 	public Text End;
@@ -15,6 +15,9 @@ public class CreditMenu : MonoBehaviour {
 	{
 		textPos = Programmers.transform.position;
 		StartCoroutine ("credits");
+
+		MenuSystem.AddPrefab ("start->end", gameObject);	
+		MenuSystem.ListenerToTransition ("gamestatechanged");
 	}
 	
 
