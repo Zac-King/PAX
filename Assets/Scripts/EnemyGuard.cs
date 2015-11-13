@@ -61,22 +61,21 @@ public class EnemyGuard : MonoBehaviour
 			float dist = Vector3.Distance(transform.position, target.transform.position);                        	
 
 			bool hasHit = Physics.Raycast(transform.position, heading, out hit, dist);	                       
-			if (hasHit && hit.transform.gameObject == target)                                                      
+			if (hasHit)
 			{
-				rb.AddForce(heading * speedConst * speed);
-
-				if(yDist > 1f)
+				if(hit.transform.gameObject == target || hit.transform.CompareTag("Enemy"))                                                      
 				{
-					if(canJump)
+					rb.AddForce(heading * speedConst * speed);
+
+					if(yDist > 1f)
 					{
-						rb.AddForce(transform.up * speed * yDist * 100);
-						canJump = false;
+						if(canJump)
+						{
+							rb.AddForce(transform.up * speed * yDist * 100);
+							canJump = false;
+						}
 					}
 				}
-			}
-			else if (hasHit)
-			{
-				print (name + ":" + hit.transform.name);
 				Debug.DrawLine(transform.position, hit.transform.position, Color.blue);
 			}
 
