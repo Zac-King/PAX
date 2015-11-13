@@ -5,7 +5,7 @@ using System.Collections.Generic;
 public class PlayerChain : MonoBehaviour 
 {
 	[SerializeField]
-	float ChainLenght;
+	Vector3 ChainLength;
 
 	[SerializeField]
 	float ChainSlack;
@@ -23,29 +23,35 @@ public class PlayerChain : MonoBehaviour
 		ChainAnchor = FindObjectOfType<PlayerManager>().GetComponent<PlayerManager>().Player1;
 		ChainTarget = FindObjectOfType<PlayerManager>().GetComponent<PlayerManager>().Player2;
 
-		ChainLenght = CalcDis(ChainAnchor.transform.position, ChainTarget.transform.position);
-
-		Debug.Log(ChainAnchor.transform.position + LinkPrefab.transform.lossyScale);
-
-		DrawChain();
+		ChainLength = new Vector3(CalcDis(ChainAnchor.transform.position, ChainTarget.transform.position) + ChainSlack, 
+		                          CalcDis(ChainAnchor.transform.position, ChainTarget.transform.position) + ChainSlack,
+		                          CalcDis(ChainAnchor.transform.position, ChainTarget.transform.position) + ChainSlack);
 	}
 
 	void DrawChain()
 	{
-		GameObject l = Instantiate(LinkPrefab, new Vector3(ChainAnchor.transform.position.x + LinkPrefab.transform.lossyScale.x, 1, ChainAnchor.transform.position.z + LinkPrefab.transform.lossyScale.z)
-		                           					, Quaternion.identity) as GameObject;
+		
 	}
 
 	float CalcDis(Vector3 pos1, Vector3 pos2)
 	{
 		float dis;
 		dis = ((pos2.y - pos1.y) * (pos2.y - pos1.y)) + ((pos2.x - pos1.x) * (pos2.x - pos1.x)) + ((pos2.z - pos1.z) * (pos2.z - pos1.z));
-		return Mathf.Sqrt(dis) + ChainSlack;
+		return Mathf.Sqrt(dis);
 	}
+
+//	Vector3 CheckDisplacment(GameObject a)
+//	{
+////		Vector3 a = Vector3.zero;
+////		if(CalcDis(ChainAnchor.transform.position, ChainTarget.transform.position) > ChainLength.x)
+////		{
+////			a.x = CalcDis(ChainAnchor.transform.position, ChainTarget.transform.position) - ChainLength;
+////		}
+//	}
 
 	// Update is called once per frame
 	void Update () 
 	{
-			
+
 	}
 }
