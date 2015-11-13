@@ -1090,7 +1090,7 @@ Transform:
   - {fileID: 1784353534}
   - {fileID: 866204680}
   m_Father: {fileID: 1540129302}
-  m_RootOrder: 3
+  m_RootOrder: 1
 --- !u!65 &297328618
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -3718,15 +3718,15 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 22498084, guid: 7e72af44ad605854985aa9fe951ce387, type: 2}
       propertyPath: m_AnchorMax.x
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 22498084, guid: 7e72af44ad605854985aa9fe951ce387, type: 2}
       propertyPath: m_AnchorMax.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 22409980, guid: 7e72af44ad605854985aa9fe951ce387, type: 2}
       propertyPath: m_AnchorMax.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 22473292, guid: 7e72af44ad605854985aa9fe951ce387, type: 2}
       propertyPath: m_AnchorMax.x
@@ -4923,9 +4923,9 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 575413577}
+  - {fileID: 297328617}
   - {fileID: 476451946}
   - {fileID: 1046548344}
-  - {fileID: 297328617}
   - {fileID: 555778710}
   - {fileID: 2027823379}
   - {fileID: 240356570}
@@ -4970,7 +4970,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 9
+  m_RootOrder: 7
 --- !u!4 &1562571838 stripped
 Transform:
   m_PrefabParentObject: {fileID: 488744, guid: 69d9484af2fb3f94bbf69568ad2e3edc, type: 2}
