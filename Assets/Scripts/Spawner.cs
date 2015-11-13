@@ -106,7 +106,3 @@ public class Spawner : MonoBehaviour
     private List<GameObject> units = new List<GameObject>();
     
 }
-
-
-
-}
