@@ -3,6 +3,7 @@ using System.Collections.Generic;
 
 public class PlayerManager : Singleton<PlayerManager>
 {
+    PlayerStates player1States, player2States;
 
     public GameObject Player1
     {
@@ -47,11 +48,16 @@ public class PlayerManager : Singleton<PlayerManager>
             Player2 = players[1];
 			Player1.GetComponent<PlayerCharacterController>().PlayerNumber = 2;
         }
+
+        player1States = Player1.GetComponent<PlayerStates>();
+        player2States = Player2.GetComponent<PlayerStates>();
     }
 
     void Update()
     {
-        if(Player1.activeSelf == false && Player2.activeSelf == false)
+        if (Player1.activeSelf == false && 
+            Player2.activeSelf == false
+            )
             GameStateManager.ToGameover();
     }
 }
