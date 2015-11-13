@@ -17,7 +17,7 @@ public class CreditMenuUI : MonoBehaviour {
 		StartCoroutine ("credits");
 
 		MenuSystem.AddPrefab ("start->end", gameObject);	
-		MenuSystem.ListenerToTransition ("transition");
+		MenuSystem.ListenerToTransition ("gamestatechanged");
 	}
 	
 
