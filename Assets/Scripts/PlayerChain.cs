@@ -23,7 +23,7 @@ public class PlayerChain : MonoBehaviour
 		ChainAnchor = FindObjectOfType<PlayerManager>().GetComponent<PlayerManager>().Player1;
 		ChainTarget = FindObjectOfType<PlayerManager>().GetComponent<PlayerManager>().Player2;
 
-		ChainLenght = CalcDis(ChainAnchor.transform.position, ChainTarget.transform.position);
+		ChainLenght = CalcDis(ChainAnchor.transform.position, ChainTarget.transform.position) + ChainSlack;
 
 		Debug.Log(ChainAnchor.transform.position + LinkPrefab.transform.lossyScale);
 
@@ -32,20 +32,24 @@ public class PlayerChain : MonoBehaviour
 
 	void DrawChain()
 	{
-		GameObject l = Instantiate(LinkPrefab, new Vector3(ChainAnchor.transform.position.x + LinkPrefab.transform.lossyScale.x, 1, ChainAnchor.transform.position.z + LinkPrefab.transform.lossyScale.z)
-		                           					, Quaternion.identity) as GameObject;
+		
 	}
 
 	float CalcDis(Vector3 pos1, Vector3 pos2)
 	{
 		float dis;
 		dis = ((pos2.y - pos1.y) * (pos2.y - pos1.y)) + ((pos2.x - pos1.x) * (pos2.x - pos1.x)) + ((pos2.z - pos1.z) * (pos2.z - pos1.z));
-		return Mathf.Sqrt(dis) + ChainSlack;
+		return Mathf.Sqrt(dis);
+	}
+
+	void DistanceCheck(GameObject a)
+	{
+		
 	}
 
 	// Update is called once per frame
 	void Update () 
 	{
-			
+
 	}
 }
