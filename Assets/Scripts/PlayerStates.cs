@@ -32,9 +32,8 @@ public class PlayerStates : HealthStats
         _fsm.m_currentState = STATES.ALIVE;
 
         handleDead = HandleDead;
-        _fsm.AddTransition(STATES.ALIVE, STATES.DEAD, handleDead); 
+        _fsm.AddTransition(STATES.ALIVE, STATES.DEAD, handleDead);
     }
-    
  
     // Callback EnterDeadState;
 

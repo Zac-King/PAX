@@ -28,6 +28,8 @@ public class CameraListener : MonoBehaviour
         {
             //store activator gameObject in a temporary variable for when null we can retrieve later
             GameObject temp = activator1;
+            //  Checks for a trigger collider; If the game object in the activator slot
+            // is not trigger, but has a child that is a trigger, the child becomes the activator
             if (activator1.transform.childCount > 0)
             {
                 Collider[] _activator1 = activator1.gameObject.GetComponentsInChildren<Collider>();
@@ -44,7 +46,7 @@ public class CameraListener : MonoBehaviour
 
             }
         }
-
+        //do the same thing if a second activator exists
         if (activator2 != null)
         {
             GameObject temp = activator2;
@@ -65,7 +67,9 @@ public class CameraListener : MonoBehaviour
             }
         }
 
+        //listening for "checkpoint" to swap cameras
         Messenger.AddListener<GameObject,Transform>(listeningForSetCam, SetCam);
+        //listening for "playerdied" to switch the follow targets to the alive player
         Messenger.AddListener<string>(listeningForReTarget, SetTarget);
         Messenger.MarkAsPermanent(listeningForSetCam);
         Messenger.MarkAsPermanent(listeningForReTarget);
