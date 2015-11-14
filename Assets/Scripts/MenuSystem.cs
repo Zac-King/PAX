@@ -26,13 +26,4 @@ static public class MenuSystem
 		else
 			Debug.Log (argument + " not found");
 	}
-
-	static public void printMenus()
-	{
-		foreach (KeyValuePair<string, GameObject> Menu in menus) 
-		{
-			Debug.Log(Menu.Key);
-		}
-	}
-
 }
