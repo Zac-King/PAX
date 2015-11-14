@@ -9,9 +9,10 @@ GameObject:
   m_Component:
   - 4: {fileID: 419682}
   - 54: {fileID: 5480514}
+  - 65: {fileID: 6572086}
   - 114: {fileID: 11456886}
   - 135: {fileID: 13509596}
-  - 65: {fileID: 6555316}
+  - 114: {fileID: 11498602}
   m_Layer: 0
   m_Name: Roomba
   m_TagString: Untagged
@@ -29,7 +30,7 @@ GameObject:
   - 4: {fileID: 485524}
   - 33: {fileID: 3386570}
   - 23: {fileID: 2301524}
-  - 65: {fileID: 6518356}
+  - 65: {fileID: 6593674}
   - 114: {fileID: 11409036}
   m_Layer: 0
   m_Name: Filling
@@ -169,7 +170,7 @@ Rigidbody:
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 0
+  m_Constraints: 80
   m_CollisionDetection: 0
 --- !u!64 &6493390
 MeshCollider:
@@ -183,19 +184,7 @@ MeshCollider:
   serializedVersion: 2
   m_Convex: 1
   m_Mesh: {fileID: 10206, guid: 0000000000000000e000000000000000, type: 0}
---- !u!65 &6518356
-BoxCollider:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 155736}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 1.10000002, y: 2, z: 1.10000002}
-  m_Center: {x: 0, y: 0, z: 0}
---- !u!65 &6555316
+--- !u!65 &6572086
 BoxCollider:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -205,8 +194,20 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1, y: .200000003, z: 1}
-  m_Center: {x: 0, y: .100000001, z: 0}
+  m_Size: {x: .899999976, y: .200000003, z: .899999976}
+  m_Center: {x: 0, y: .0989999995, z: 0}
+--- !u!65 &6593674
+BoxCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 155736}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1.10000002, y: 5, z: 1.10000002}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &11409036
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -218,8 +219,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 968f7eedc9f396c49959f5a66b942807, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  timer: 1
-  canAttack: 1
+  m_message: takedamage
+  m_timer: 1
 --- !u!114 &11456886
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -232,8 +233,21 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 1
-  range: 10
+  range: 5
   target: {fileID: 0}
+--- !u!114 &11498602
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 112332}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 60dd3a2a21ee2134687e9986136b5278, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _health: 1
+  maxHealth: 1
 --- !u!135 &13509596
 SphereCollider:
   m_ObjectHideFlags: 1
@@ -244,7 +258,7 @@ SphereCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 10
+  m_Radius: 5
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!1001 &100100000
 Prefab:
@@ -252,7 +266,19 @@ Prefab:
   serializedVersion: 2
   m_Modification:
     m_TransformParent: {fileID: 0}
-    m_Modifications: []
+    m_Modifications:
+    - target: {fileID: 0}
+      propertyPath: m_Constraints
+      value: 80
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: maxHealth
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: _health
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 112332}

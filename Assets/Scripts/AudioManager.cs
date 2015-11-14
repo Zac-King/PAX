@@ -8,42 +8,18 @@ using System.Collections.Generic;
 static public class AudioManager
 {
     /// <summary>
-    /// Audio Source to play audio
-    /// </summary>
-    static public AudioSource AmbientAS;
-
-    /// <summary>
     /// Key : string arg
     /// Value : GameObject
     /// play audio depend on the string arg
     /// </summary>
     static Dictionary<string, GameObject> audioTable = new Dictionary<string, GameObject>();
 
-    static Dictionary<string, AudioClip> ambientTable = new Dictionary<string, AudioClip>();
-
     /// Add AudioClip with string argument to Dictionary
     /// Argument that audio need to play to
     /// GameObject that plays with the assign argument
     static public void AddAudioToDictionary(string argument, GameObject audioGameObject)
     {
-        audioTable.Add(argument, audioGameObject);
-    }
-
-
-    static public void AddAmbientAudio(string argument, AudioClip sound)
-    {
-        ambientTable.Add(argument, sound);
-    }
-
-    static public void AddAmbientListener(string message)
-    {
-        Messenger.AddListener<string>(message, changeAmbientAudio);
-    }
-
-    static private void changeAmbientAudio(string argument)
-    {
-        AmbientAS.clip = ambientTable[argument];
-        AmbientAS.Play();
+            audioTable.Add(argument, audioGameObject);
     }
 
     /// <summary>
@@ -78,12 +54,19 @@ static public class AudioManager
         // AudioSource asrc = Gameobject aud AudioSource.  AudioSource Asrc = Aud(AudioSource) What?!
         GameObject aud = audioTable[argument];
         AudioSource asrc = aud.GetComponent<AudioSource>();
+
+		if (asrc == null)
+			Debug.Log ("Need to add AudioSource");
+
         // Setting spatialBlend 0 is 2D & 1 is 3D;
         asrc.clip = audioTable[argument].GetComponent<AudioSource>().clip;
         asrc.spatialBlend = 1;
         asrc.minDistance = 1.0f;
         asrc.maxDistance = 5.0f;
-        asrc.Play();
+        if (!asrc.isPlaying)
+        {
+            asrc.Play();
+        }
     }
 
     /// <summary>
@@ -96,7 +79,13 @@ static public class AudioManager
     {
         GameObject aud = audioTable[argument];
         AudioSource asrc = aud.GetComponent<AudioSource>();
-        asrc.Play();
-    }
 
+		if (asrc == null)
+			Debug.Log ("Need to add AudioSource");
+
+        if (!asrc.isPlaying)
+        {
+            asrc.Play();
+        }
+    }
 }
