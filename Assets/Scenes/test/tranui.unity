@@ -1028,13 +1028,42 @@ Prefab:
       propertyPath: gameover
       value: 
       objectReference: {fileID: 1754781645}
-    m_RemovedComponents: []
+    - target: {fileID: 11446002, guid: 7e72af44ad605854985aa9fe951ce387, type: 2}
+      propertyPath: player1
+      value: 
+      objectReference: {fileID: 276726070}
+    - target: {fileID: 11446002, guid: 7e72af44ad605854985aa9fe951ce387, type: 2}
+      propertyPath: player2
+      value: 
+      objectReference: {fileID: 276726068}
+    m_RemovedComponents:
+    - {fileID: 11494716, guid: 7e72af44ad605854985aa9fe951ce387, type: 2}
   m_ParentPrefab: {fileID: 100100000, guid: 7e72af44ad605854985aa9fe951ce387, type: 2}
   m_IsPrefabParent: 0
 --- !u!224 &276726067 stripped
 RectTransform:
   m_PrefabParentObject: {fileID: 22401564, guid: 7e72af44ad605854985aa9fe951ce387,
     type: 2}
+  m_PrefabInternal: {fileID: 276726066}
+--- !u!1 &276726068 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 156932, guid: 7e72af44ad605854985aa9fe951ce387, type: 2}
+  m_PrefabInternal: {fileID: 276726066}
+--- !u!114 &276726069
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 276726068}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3ea97f1705bd0a9478a9f339a2e5ee7b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  listeningFor: gethit
+--- !u!1 &276726070 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 178806, guid: 7e72af44ad605854985aa9fe951ce387, type: 2}
   m_PrefabInternal: {fileID: 276726066}
 --- !u!1 &297328616
 GameObject:
@@ -3918,25 +3947,6 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1160084976}
   m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
---- !u!1 &1196846710 stripped
-GameObject:
-  m_PrefabParentObject: {fileID: 196284, guid: 3f06eb30bddb36b428bdce59aa6e1b02, type: 2}
-  m_PrefabInternal: {fileID: 1502628296}
---- !u!114 &1196846717
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1196846710}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6f11167ae2eeb12448cfab54c8dd68e7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_strength: 0
-  m_health: 0
-  m_speed: 0
-  m_mana: 0
 --- !u!1001 &1202703296
 Prefab:
   m_ObjectHideFlags: 0
@@ -4545,11 +4555,11 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 11430826, guid: 3f06eb30bddb36b428bdce59aa6e1b02, type: 2}
       propertyPath: inputType
-      value: 2
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 196284, guid: 3f06eb30bddb36b428bdce59aa6e1b02, type: 2}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 0}

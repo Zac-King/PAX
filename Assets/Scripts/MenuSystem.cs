@@ -5,11 +5,16 @@ using System.Collections.Generic;
 
 static public class MenuSystem
 {
-	static Dictionary<string, GameObject> menus = new Dictionary<string, GameObject>();
+	static Dictionary<string, List<GameObject>> menus = new Dictionary<string, List<GameObject>>();
 	
 	static public void AddPrefab(string argument, GameObject prefab)
 	{
-		menus.Add(argument, prefab);
+		//menus.Add(argument, prefab);
+		if(menus.ContainsKey(argument) == false)
+		{
+			menus.Add(argument, new List<GameObject>());
+		}
+		menus [argument].Add (prefab);
 	}
 	
 	static public void ListenerToTransition(string message)
@@ -21,7 +26,10 @@ static public class MenuSystem
 	{
 		if (menus.ContainsKey (argument)) 
 		{ 
-			menus [argument].SetActive (true);
+			foreach (GameObject obj in menus[argument])
+			{
+				obj.SetActive(true);
+			}
 		} 
 		else
 			Debug.Log (argument + " not found");
