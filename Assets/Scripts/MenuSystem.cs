@@ -10,6 +10,10 @@ static public class MenuSystem
 	static public void AddPrefab(string argument, GameObject prefab)
 	{
 		//menus.Add(argument, prefab);
+		if(menus.ContainsKey(argument) == false)
+		{
+			menus.Add(argument, new List<GameObject>());
+		}
 		menus [argument].Add (prefab);
 	}
 	
