@@ -21,7 +21,7 @@ static public class MenuSystem
 	{
 		Messenger.AddListener<string>(message, selfActivate);
 	}
-	
+
 	static private void selfActivate(string argument)
 	{
 		if (menus.ContainsKey (argument)) 

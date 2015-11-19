@@ -1,14 +1,15 @@
 ﻿using UnityEngine;
+using System;
 using System.Collections;
 
 public class MenuUI : MonoBehaviour 
 {
-
 	public GameObject player1;
 	public GameObject player2;
 	public GameObject creditmenu;
 	public GameObject ingame;
 	public GameObject gameover;
+
 
 	void Start () 
 	{
@@ -20,4 +21,11 @@ public class MenuUI : MonoBehaviour
 		MenuSystem.AddPrefab ("play->pause", ingame);
 		MenuSystem.ListenerToTransition ("gamestatechanged");
 	}
+
+	public void turnPlayeroff()
+	{
+		player1.SetActive (false);
+		player2.SetActive (false);
+	}
+
 }
