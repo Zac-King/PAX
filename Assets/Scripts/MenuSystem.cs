@@ -41,12 +41,15 @@ static public class MenuSystem
 		Messenger.AddListener<string>(message, selfActivate);
 	}
 
+<<<<<<< HEAD
 	/// <summary>
 	/// SelfActiviate sets gameobjects to true(switch them on)
 	/// </summary>
 	/// <param name="argument">Argument.
 	/// Key to get the gameobject of that key
 	/// </param>
+=======
+>>>>>>> coringuyen/master
 	static private void selfActivate(string argument)
 	{
 		if (menus.ContainsKey (argument)) 
